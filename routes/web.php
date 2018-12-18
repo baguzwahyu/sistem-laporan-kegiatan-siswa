@@ -21,3 +21,6 @@ Route::get('/hello', function () {
 Route::get('/smk', function () {
     echo "smk telkom du";
 });
+Route::get('/BIIS',function() {
+    echo "terserah";
+});
