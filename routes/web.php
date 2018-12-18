@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', function () {
-    echo "Bro";
+    return view('bro');
 });
 Route::get('/smk', function () {
     echo "smk telkom du";
