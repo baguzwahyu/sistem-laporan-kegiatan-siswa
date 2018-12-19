@@ -36,6 +36,11 @@ Route::get('/pelajar',function() {
  Route::get('/sekolah',function(){
      echo "smk telkom DU";
  });
+<<<<<<< HEAD
 Route::get('/kelas', function () {
     echo"Classroom";
+=======
+Route::get('/contact',function() {
+    echo"person";
+>>>>>>> e03713d21d0b7dda338f6b0d264ebe1f8af3ef09
 });
