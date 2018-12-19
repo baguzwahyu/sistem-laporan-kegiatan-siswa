@@ -33,3 +33,6 @@ route::get('/siswa',function(){
 Route::get('/pelajar',function() {
      echo "M. NUZULUL KIROMI";
  });
+ route::get('/sekolah',function(){
+     echo "smk telkom DU";
+ });
