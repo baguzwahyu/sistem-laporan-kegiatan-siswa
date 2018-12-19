@@ -24,3 +24,6 @@ Route::get('/smk', function () {
 Route::get('/BIIS',function() {
     echo "terserah";
 });
+route::get('/siswa',function(){
+    echo "siswa smk telkom";
+});
