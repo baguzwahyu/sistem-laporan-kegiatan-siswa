@@ -18,9 +18,15 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     echo "Bro";
 });
+
 Route::get('/smk', function () {
     echo "smk telkom du";
-});
+}); 
+
 Route::get('/BIIS',function() {
     echo "terserah";
 });
+
+ Route::get('/KIROMI',function() {
+     echo "M. NUZULUL KIROMI";
+ });
