@@ -27,6 +27,6 @@ Route::get('/BIIS',function() {
     echo "terserah";
 });
 
- Route::get('/KIROMI',function() {
+Route::get('/pelajar',function() {
      echo "M. NUZULUL KIROMI";
  });
