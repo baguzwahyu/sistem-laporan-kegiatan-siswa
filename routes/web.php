@@ -18,12 +18,18 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     return view('bro');
 });
+
 Route::get('/smk', function () {
     echo "smk telkom du";
-});
+}); 
+
 Route::get('/BIIS',function() {
     echo "terserah";
 });
 route::get('/siswa',function(){
     echo "siswa smk telkom";
 });
+
+Route::get('/pelajar',function() {
+     echo "M. NUZULUL KIROMI";
+ });
