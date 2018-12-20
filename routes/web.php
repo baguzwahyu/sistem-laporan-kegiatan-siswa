@@ -42,3 +42,7 @@ Route::get('/kelas', function () {
 Route::get('/contact',function() {
     echo"person";
 });
+Route::resource('/guru','GuruController');
+Route::resource('/perusahaan','PerusahaanController');
+Route::resource('/siswa','SiswaController');
+Route::resource('/pembimbing','PembimbingController');
