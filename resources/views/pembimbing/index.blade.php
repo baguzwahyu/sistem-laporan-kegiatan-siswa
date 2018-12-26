@@ -19,14 +19,15 @@
                 <tr>
                     <td>{{$value->id}}</td>
                     <td>{{$value->nama}}</td>
+                    
                     <td>
-                            <a href="{{URL::to('pembimbing/' .$pembimbing->id. '/edit')}}" class="btn btn-warning">edit</a>
-                              <form action="{{ url('pembimbing',[$pembimbing->id])}}" method="POST">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="submit" value="DELETE" class="btn btn-danger">
-                              </form>
-                    </td>
+                    <form action="{{ route('pembimbing.destroy', $value->id) }}" method="post">
+                        {{ csrf_field() }}
+                        <input name="_method" type="hidden" value="DELETE">
+                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
+                        <a href="{{route('pembimbing.edit', $value->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i>Edit</a>
+                    </form>
+                </td>
                 </tr>
             @endforeach
 
