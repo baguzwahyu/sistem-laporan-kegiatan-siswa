@@ -1,7 +1,6 @@
 @extends('layouts.master') @section('title','Pembimbing') @section('content')
                     
-    <!--<form action="{{ url('Pembimbing', [$pembimbing->id]) }}" method="POST"> -->
-            <form action="{{route('pembimbing.update', $pembimbing ->id)}}" method="POST">
+    <form action="{{route('pembimbing.update', $pembimbing ->id)}}" method="POST">
         {{ csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         <div class="form-group">
