@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'PembimbingController@index');
+
+Route::get('/master', function () {
+    return view('layouts.master');
 });
 
 Route::get('/hello', function () {

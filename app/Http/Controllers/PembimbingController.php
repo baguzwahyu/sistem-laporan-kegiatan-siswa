@@ -14,7 +14,9 @@ class PembimbingController extends Controller
      */
     public function index()
     {
-        //
+        $pembimbing = Pembimbing::all();
+
+        return view('pembimbing.index', compact('pembimbing'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PembimbingController extends Controller
      */
     public function create()
     {
-        //
+        return view('pembimbing.create');
     }
 
     /**
@@ -35,7 +37,16 @@ class PembimbingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pembimbing= Pembimbing::create([
+            'nama'  => $request->nama
+        ]);
+
+        $pembimbing = new Pembimbing([
+            'nama'=>$request->get('nama'),
+        ]);
+
+        $pembimbing->save();
+        return redirect('/');
     }
 
     /**
@@ -55,9 +66,10 @@ class PembimbingController extends Controller
      * @param  \App\Pembimbing  $pembimbing
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pembimbing $pembimbing)
+    public function edit( $id)
     {
-        //
+        $pembimbing = pembimbing::findOrfail($id);
+        return view('pembimbing.edit',compact('pembimbing'));
     }
 
     /**
@@ -67,9 +79,13 @@ class PembimbingController extends Controller
      * @param  \App\Pembimbing  $pembimbing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pembimbing $pembimbing)
+    public function update(Request $request,$id)
     {
-        //
+        $pembimbing=pembimbing::findOrfail($id);
+
+        $pembimbing->update($request->all());
+
+        return redirect()->route('pembimbing.index');
     }
 
     /**
@@ -80,6 +96,8 @@ class PembimbingController extends Controller
      */
     public function destroy(Pembimbing $pembimbing)
     {
-        //
+        $pembimbing->delete();
+
+        return redirect('/pembimbing/');
     }
 }
