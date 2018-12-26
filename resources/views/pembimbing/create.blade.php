@@ -14,8 +14,7 @@
         </div>
       @endif
 
-
-<form action="#" method="POST" enctype="multipart/form-data">
+<form action="{{route('pembimbing.store')}}" method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
 
   <div class="form-row">

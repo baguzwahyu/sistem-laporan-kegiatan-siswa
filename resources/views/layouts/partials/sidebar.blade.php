@@ -4,12 +4,12 @@
             <a href="{{url('/')}}" class="site_title"><i class="fa fa-paw"></i> <span>{{config('app.name')}}</span></a>
         </div>
 
-        <div class="clearfix"></div>
+        <div class="clearfix" color="red"></div>
 
         <!-- menu profile quick info -->
         <div class="profile">
             <div class="profile_pic">
-                <img src="/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="img/logo.png" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
@@ -25,11 +25,11 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                    <li><a href="#"><i class="fa fa-home"></i> Daftar Pembimbing</a>
+                    <li><a href="#"><i class="fa fa-home"></i> HOME</a>
                     </li>
-                    <li><a><i class="fa fa-shopping-cart"></i>Order <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-shopping-cart"></i>Daftar Siswa <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#"><i class="fa fa-cart-plus"></i>New Order</a></li>
+                            <li><a href="#"><i class="fa fa-cart-plus"></i>Guru/Wali Kelas</a></li>
                         </ul>
                     </li>                    
                     <li><a><i class="fa fa-table"></i>Table <span class="fa fa-chevron-down"></span></a>
@@ -48,6 +48,24 @@
                             <li><a href="#">Configuration</a></li>
                         </ul>
                     </li>
+                    <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="#">Fixed Sidebar</a></li>
+                          <li><a href="#">Fixed Footer</a></li>
+                        </ul>
+                      </li>
+                      <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                              <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                  <li><a href="e_commerce.html">E-commerce</a></li>
+                                  <li><a href="projects.html">Projects</a></li>
+                                  <li><a href="project_detail.html">Project Detail</a></li>
+                                  <li><a href="contacts.html">Contacts</a></li>
+                                  <li><a href="profile.html">Profile</a></li>
+                                </ul>
+                              </li></ul></div>
                 </ul>
             </div>
 
