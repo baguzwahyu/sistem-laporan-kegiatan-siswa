@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\siswa;
+use Validator;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -14,7 +15,8 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        //
+        $siswa = siswa::all();
+        return view('siswa.index', compact('siswa'));
     }
 
     /**
@@ -24,7 +26,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('siswa.create');
     }
 
     /**
@@ -35,7 +37,22 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->Validate($request,[
+            'nama'=>'required|',
+            'jurusan'=>'required|',
+            'kelas'=>'required|',
+            'guru_id'=>'required',
+            'pembimbing_id'=>'required'
+        ]);
+        $siswa = new siswa([
+            'nama'=>$request->get('nama'),
+            'jurusan'=>$request->get('jurusan'),
+            'kelas'=>$request->get('kelas'),
+            'guru_id'=>$request->get('guru_id'),
+            'pembimbing_id'=>$request->get('pembimbing_id'),
+        ]);
+        $siswa->save();
+        return redirect('/');
     }
 
     /**
@@ -55,9 +72,10 @@ class SiswaController extends Controller
      * @param  \App\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function edit(siswa $siswa)
+    public function edit($id)
     {
-        //
+       $siswa = siswa::findorfail($id);
+       return view('siswa.edit',compact('siswa'));
     }
 
     /**
@@ -67,9 +85,11 @@ class SiswaController extends Controller
      * @param  \App\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, siswa $siswa)
+    public function update(Request $request,$siswa)
     {
-        //
+        $siswa = siswa::findorfail($siswa);
+        $siswa ->update($request->all());
+        return redirect()->route('siswa.index');
     }
 
     /**
@@ -80,6 +100,7 @@ class SiswaController extends Controller
      */
     public function destroy(siswa $siswa)
     {
-        //
+        $siswa->delete();
+        return redirect('/siswa/');
     }
 }

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PembimbingController@index');
+Route::get('/', 'siswaController@index');
 
 Route::get('/master', function () {
     return view('layouts.master');

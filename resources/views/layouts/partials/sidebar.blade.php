@@ -65,7 +65,9 @@
                                   <li><a href="contacts.html">Contacts</a></li>
                                   <li><a href="profile.html">Profile</a></li>
                                 </ul>
-                              </li></ul></div>
+                              </li>
+                            </ul>
+                     </div>
                 </ul>
             </div>
 
