@@ -28,15 +28,19 @@ class PembimbingController extends Controller
     public function store(Request $request)
     {
         $this->Validate($request,[
-            'nama'=>'required|'
+            'nama'          =>'required|',
+            'telephone'     =>'required|',
+            'bagian'        =>'required'
         ]);
         
         $pembimbing = new Pembimbing([
-            'nama'=>$request->get('nama'),
+            'nama'          =>$request->get('nama'),
+            'telephone'     =>$request->get('telephone'),
+            'bagian'        =>$request->get('bagian')
         ]);
 
         $pembimbing->save();
-        return redirect('/');
+        return redirect('pembimbing');
     }
 
     public function show(Pembimbing $pembimbing)

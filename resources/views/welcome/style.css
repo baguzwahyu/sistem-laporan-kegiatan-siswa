@@ -1,0 +1,29 @@
+
+.navbar-brand{
+	font-family: viga;
+	font-size: 32px;
+}
+
+.tombol{
+
+	text-transform : uppercase; 
+	border-radius : 50px;
+}
+
+
+@media (min-width: 992px) {
+	.nav-link{
+	text-transform: uppercase;
+	margin-right: 30px; 
+}
+
+.nav-link:hover::after{
+	content: '';
+	display: block;
+	border-bottom: 4px solid #0B63DC;
+	width: 50% !important;
+	margin: auto;
+	padding-bottom: 5px;
+	margin-bottom: -8px;
+}
+}

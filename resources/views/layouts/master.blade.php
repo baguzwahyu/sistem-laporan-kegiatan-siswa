@@ -26,6 +26,9 @@
     <!-- bootstrap-daterangepicker -->
     <link href="{{ asset('vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 
+     
+
+
     <!-- Custom Theme Style -->
     <link href="{{ asset('build/css/custom.min.css')}}" rel="stylesheet">
   </head>
@@ -67,10 +70,11 @@
         <!-- /page content -->
        
         <!-- footer content -->
+        @include('layouts.partials.footercontent') 
         <!-- footer button -->
 @include('layouts.partials.menubutton')
     <!-- /footer content -->
- @include('layouts.partials.footercontent')   
+  
     </div>
 </div>
 

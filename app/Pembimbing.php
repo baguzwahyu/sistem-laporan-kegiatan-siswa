@@ -8,5 +8,5 @@ class Pembimbing extends Model
 {
     protected $table =  'pembimbing';
 
-    protected $fillable = ['id','nama'];
+    protected $fillable = ['id','nama','telephone','bagian'];
 }
