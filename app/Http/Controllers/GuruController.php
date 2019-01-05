@@ -3,83 +3,73 @@
 namespace App\Http\Controllers;
 
 use App\Guru;
+use Validator;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $guru = Guru::all();
+
+        return view('guru.index',compact('guru'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        return view('guru.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required|',
+            'mapel'=> 'required|'
+        ]);
+
+        $guru = new Guru([
+            'nama' =>$request->get('nama'),
+            'mapel' =>$request->get('mapel'),
+        ]);
+        $guru ->save();
+        return redirect('/guru');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Guru  $guru
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Guru $guru)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Guru  $guru
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Guru $guru)
+    
+    public function edit($id)
     {
-        //
+        $guru= guru::findOrFail($id);
+
+        return view('guru.edit',compact('guru'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Guru  $guru
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Guru $guru)
+    
+    public function update(Request $request,$guru)
     {
-        //
+        $guru=guru::findOrfail($guru);
+
+        $guru->update($request->all());
+
+        return redirect()->route('guru.index');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Guru  $guru
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Guru $guru)
-    {
-        //
+    
+    public function destroy($guru)
+    {   
+        $guru = guru::findOrFail($guru);
+
+        $guru->delete();
+        
+        return redirect('/guru');
     }
 }
