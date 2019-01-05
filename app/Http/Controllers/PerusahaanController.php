@@ -14,7 +14,9 @@ class PerusahaanController extends Controller
      */
     public function index()
     {
-        //
+        $perusahaan = Perusahaan::all();
+
+        return view('perusahaan.index', compact('perusahaan'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PerusahaanController extends Controller
      */
     public function create()
     {
-        //
+        return view('perusahaan.create');
     }
 
     /**
@@ -35,7 +37,18 @@ class PerusahaanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'kodepembimbing' => 'required',
+            'nama'  => 'required'
+        ]);
+
+        $perusahaan = new Perusahaan([
+            'kodepembimbing'=>$request->get('kodepembimbing'),
+            'nama'=>$request->get('nama')
+        ]);
+
+        $perusahaan->save();
+        return redirect('/');
     }
 
     /**
@@ -55,9 +68,10 @@ class PerusahaanController extends Controller
      * @param  \App\Perusahaan  $perusahaan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Perusahaan $perusahaan)
+    public function edit($id)
     {
-        //
+        $perusahaan = Perusahaan::findOrfail($id);
+        return view('perusahaan.edit',compact('perusahaan'));
     }
 
     /**
@@ -67,9 +81,13 @@ class PerusahaanController extends Controller
      * @param  \App\Perusahaan  $perusahaan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Perusahaan $perusahaan)
+    public function update(Request $request, $perusahaan)
     {
-        //
+        $perusahaan = Perusahaan::findOrfail($perusahaan);
+
+        $perusahaan->update($request->all());
+
+        return redirect()->route('perusahaan.index');
     }
 
     /**
@@ -78,8 +96,11 @@ class PerusahaanController extends Controller
      * @param  \App\Perusahaan  $perusahaan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Perusahaan $perusahaan)
+    public function destroy($perusahaan)
     {
-        //
+        $perusahaan = Perusahaan::findOrFail($perusahaan);
+        $perusahaan->delete();
+
+        return redirect('/perusahaan/');
     }
 }
