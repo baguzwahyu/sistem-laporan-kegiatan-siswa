@@ -15,10 +15,17 @@ class CreatePerusahaansTable extends Migration
     {
         Schema::create('perusahaan', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('kodepembimbing');
+            $table->integer('kodepembimbing')->unsigned();
             $table->string('nama');
             $table->timestamps();
+
+
+            $table->foreign('kodepembimbing')
+            ->references('id')
+            ->on('pembimbing')
+            ->onDelete('cascade');      
         });
+           
     }
 
     /**
