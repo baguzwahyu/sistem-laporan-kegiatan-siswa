@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\siswa;
+use App\Guru;
+use App\Pembimbing;
 use Validator;
+use DB;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -15,9 +18,19 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $siswa = siswa::all();
+        $siswa = siswa::with('guru')->get();
+        $siswa = siswa::with('pembimbing')->get();
         return view('siswa.index', compact('siswa'));
     }
+    // public function index()
+    // {
+        // $siswa = DB::table('guru')
+        // ->join('siswa', 'siswa.guru_id', '=', 'guru.id')
+        // ->join('pembimbing', 'siswa.pembimbing_id', '=', 'pembimbing.id')
+        // ->select('siswa.*', 'guru.nama as gru','pembimbing.nama as ppp')
+        // ->get();
+        // return view('siswa.index', compact('siswa'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -26,7 +39,9 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        return view('siswa.create');
+        $gurus = guru::all();
+        $pembimbings = pembimbing::all();
+        return view('siswa.create', compact('gurus','pembimbings'));
     }
 
     /**
@@ -37,6 +52,7 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
+                
         $this->Validate($request,[
             'nama'=>'required|',
             'jurusan'=>'required|',
@@ -51,8 +67,9 @@ class SiswaController extends Controller
             'guru_id'=>$request->get('guru_id'),
             'pembimbing_id'=>$request->get('pembimbing_id'),
         ]);
+
         $siswa->save();
-        return redirect('/');
+        return redirect('siswa');
     }
 
     /**
