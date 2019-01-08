@@ -65,18 +65,26 @@
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">guru_id</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" id="guru_id" name="guru_id">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                  </div>
+               
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3">guru</label>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                  <select class="form-control" name="guru_id" >
+                    @foreach ($gurus as $guru)
+                  <option value="{{$guru->id}}">{{$guru->nama}}</option>
+                    @endforeach
+                    
+                </select>
                 </div>
+              </div>
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-3">pembimbing_id</label>
                   <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" id="pembimbing_id" name="pembimbing_id">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    <select class="form-control" name="pembimbing_id" >
+                          @foreach ($pembimbings as $pembimbing)
+                      <option value="{{$pembimbing->id}}">{{$pembimbing->nama}}</option>
+                          @endforeach
+                    </select>
               </div>
           </div> 
                 <div class="ln_solid"></div>

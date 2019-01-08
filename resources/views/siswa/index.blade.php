@@ -35,26 +35,26 @@
               <th>NAMA</th>
               <th>JURUSAN</th>
               <th>KELAS</th>
-              <th>ID GURU</th>
-              <th>ID PEMBIMBING</th>
+              <th>GURU</th>
+              <th>PEMBIMBING</th>
               <th>ACTION</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($siswa as $key => $value)
+            @foreach($siswa as $key => $sin)
                 <tr>
-		    <th scope="row">{{$value->id}}</th>
-                    <td>{{$value->nama}}</td>                 
-                    <td>{{$value->jurusan}}</td>
-                    <td>{{$value->kelas}}</td>
-                    <td>{{$value->guru_id}}</td>
-                    <td>{{$value->pembimbing_id}}</td>
+		    <th scope="row">{{$sin->id}}</th>
+                    <td>{{$sin->nama}}</td>                 
+                    <td>{{$sin->jurusan}}</td>
+                    <td>{{$sin->kelas}}</td>
+                    <td>{{$sin->guru->nama}}</td>
+                    <td>{{$sin->pembimbing->nama}}</td>
                     <td>
-                    <form action="{{ route('pembimbing.destroy', $value->id) }}" method="post">
+                    <form action="{{ route('pembimbing.destroy', $sin->id) }}" method="post">
                         {{ csrf_field() }}
                         <input name="_method" type="hidden" value="DELETE">
                         <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                        <a href="{{route('pembimbing.edit', $value->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <a href="{{route('pembimbing.edit', $sin->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                     </form>
                 </td>
                 </tr>
