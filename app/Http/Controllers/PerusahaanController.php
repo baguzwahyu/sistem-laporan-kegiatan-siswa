@@ -48,7 +48,7 @@ class PerusahaanController extends Controller
         ]);
 
         $perusahaan->save();
-        return redirect('/');
+        return redirect('/perusahaan');
     }
 
     /**
