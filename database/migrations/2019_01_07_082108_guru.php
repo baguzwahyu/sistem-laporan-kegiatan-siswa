@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePerusahaansTable extends Migration
+class Guru extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,13 @@ class CreatePerusahaansTable extends Migration
      */
     public function up()
     {
-        Schema::create('perusahaan', function (Blueprint $table) {
+        Schema::create('guru', function (Blueprint $table) 
+      {
             $table->increments('id');
-            $table->integer('kodepembimbing')->unsigned();
             $table->string('nama');
+            $table->string('mapel');
             $table->timestamps();
-
-
-            $table->foreign('kodepembimbing')
-            ->references('id')
-            ->on('pembimbing')
-            ->onDelete('cascade');      
-        });
-           
+      });
     }
 
     /**
@@ -35,6 +29,6 @@ class CreatePerusahaansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perusahaan');
+        Schema::dropIfExists('guru');
     }
 }

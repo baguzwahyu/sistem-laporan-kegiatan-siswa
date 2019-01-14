@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSiswasTable extends Migration
+class Siswa extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class CreateSiswasTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswa', function (Blueprint $table) {
+        Schema::create('siswa', function (Blueprint $table) 
+        {
             $table->increments('id');
             $table->string('nama');
             $table->string('jurusan');
@@ -23,15 +24,14 @@ class CreateSiswasTable extends Migration
             $table->timestamps();
 
             $table->foreign('guru_id')
-            ->references('id')->on('guru')
-            ->onDelete('cascade');
+                  ->references('id')->on('guru')
+                  ->onDelete('cascade');
     
-        $table->foreign('pembimbing_id')
-            ->references('id')->on('pembimbing')
-            ->onDelete('cascade');
-           });
+            $table->foreign('pembimbing_id')
+                  ->references('id')->on('pembimbing')
+                  ->onDelete('cascade');
 
-          
+        });
     }
 
     /**
