@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Pembimbing;
 use App\Perusahaan;
+use Validator;
+use DB;
 use Illuminate\Http\Request;
 
 class PerusahaanController extends Controller
@@ -14,7 +16,7 @@ class PerusahaanController extends Controller
      */
     public function index()
     {
-        $perusahaan = Perusahaan::all();
+        $perusahaan = perusahaan::with('pembimbing')->get();
 
         return view('perusahaan.index', compact('perusahaan'));
     }
@@ -26,7 +28,8 @@ class PerusahaanController extends Controller
      */
     public function create()
     {
-        return view('perusahaan.create');
+        $pembimbings = pembimbing::all();
+        return view('perusahaan.create', compact('pembimbings'));
     }
 
     /**
@@ -70,9 +73,13 @@ class PerusahaanController extends Controller
      */
     public function edit($id)
     {
-        $perusahaan = Perusahaan::findOrfail($id);
-        return view('perusahaan.edit',compact('perusahaan'));
-    }
+        $perusahaan = perusahaan::find($id);
+
+        return view('perusahaan.edit')->with('perusahaan', $perusahaan)
+     
+                       ->with('pembimbing', Pembimbing::all());
+
+     }
 
     /**
      * Update the specified resource in storage.
@@ -83,8 +90,18 @@ class PerusahaanController extends Controller
      */
     public function update(Request $request, $perusahaan)
     {
-        $perusahaan = Perusahaan::findOrfail($perusahaan);
+        $this->validate($request,[
+            'kodepembimbing' => 'required',
+            'nama'  => 'required'
+        ]);
 
+        $perusahaan = new Perusahaan([
+            'kodepembimbing'=>$request->get('kodepembimbing'),
+            'nama'=>$request->get('nama')
+        ]);
+
+        $perusahaan = Perusahaan::findOrfail($perusahaan);
+        $perusahaan->save();
         $perusahaan->update($request->all());
 
         return redirect()->route('perusahaan.index');
