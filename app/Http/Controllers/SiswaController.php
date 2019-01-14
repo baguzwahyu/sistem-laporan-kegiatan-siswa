@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\siswa;
+use App\Siswa;
 use App\Guru;
 use App\Pembimbing;
 use Validator;
@@ -78,7 +78,7 @@ class SiswaController extends Controller
      * @param  \App\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function show(siswa $siswa)
+    public function show( $id)
     {
         //
     }
@@ -91,8 +91,15 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-       $siswa = siswa::findorfail($id);
-       return view('siswa.edit',compact('siswa'));
+        $siswa = siswa::find($id);
+
+        return view('siswa.edit')->with('siswa', $siswa)
+                                 ->with('pembimbing', Pembimbing::all())
+                                 ->with('guru', Guru::all());
+       
+        
+       
+       
     }
 
     /**
@@ -102,11 +109,26 @@ class SiswaController extends Controller
      * @param  \App\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$siswa)
+    public function update(Request $request,$id)
     {
-        $siswa = siswa::findorfail($siswa);
-        $siswa ->update($request->all());
-        return redirect()->route('siswa.index');
+       
+        $this->Validate($request,[
+            'nama'=>'required|',
+            'jurusan'=>'required|',
+            'kelas'=>'required|',
+            'guru_id'=>'required',
+            'pembimbing_id'=>'required'
+        ]);
+        $siswa = new siswa([
+            'nama'=>$request->get('nama'),
+            'jurusan'=>$request->get('jurusan'),
+            'kelas'=>$request->get('kelas'),
+            'guru_id'=>$request->get('guru_id'),
+            'pembimbing_id'=>$request->get('pembimbing_id'),
+        ]);
+
+        $siswa->save();
+        return redirect('siswa');
     }
 
     /**
