@@ -1,7 +1,7 @@
 @push('header-scripts')
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-@endpush
+
 @extends('layouts.master')
 @section('title','Perusahaan')
 @section('content')
@@ -27,7 +27,7 @@
             @foreach($perusahaan as $key => $prs)
                 <tr>
                     <td>{{$prs->id}}</td>
-                    <td>{{$prs->kodepembimbing}}</td>
+                    <td>{{$prs->pembimbing->nama}}</td>
                     <td>{{$prs->nama}}</td>
                     
                     <td>
@@ -48,13 +48,5 @@
               </div>
 
 @endsection
-@push('scripts')
-  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#tabel-data').DataTable();
-        });
-    </script>
+
 @endpush
