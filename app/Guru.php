@@ -15,5 +15,5 @@ class Guru extends Model
     {
         return $this->hasMany('App\Siswa');
     }
-
+    
 }
