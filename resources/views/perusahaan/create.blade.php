@@ -32,9 +32,14 @@
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kodepembimbing">Kode Pembimbing<span>*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing<span>*</span>
                         </label>
-                          <input type="text" name="kodepembimbing" id="kodepembimbing" class="form-control">
+                        <select class="form-control" name="pembimbing_id" >
+                          @foreach ($pembimbings as $row)
+                        <option value="{{$row->id}}">{{$row->nama}}</option>
+                          @endforeach
+                          
+                      </select>
                       </div><br>
 
                       <div class="form-group">

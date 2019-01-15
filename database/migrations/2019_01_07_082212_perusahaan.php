@@ -16,12 +16,12 @@ class Perusahaan extends Migration
         Schema::create('perusahaan', function (Blueprint $table) 
       {
         $table->increments('id');
-        $table->integer('kodepembimbing')->unsigned();
+        $table->integer('pembimbing_id')->unsigned();
         $table->string('nama');
         $table->timestamps();
 
 
-        $table->foreign('kodepembimbing')
+        $table->foreign('pembimbing_id')
               ->references('id')
               ->on('pembimbing')
               ->onDelete('cascade');      

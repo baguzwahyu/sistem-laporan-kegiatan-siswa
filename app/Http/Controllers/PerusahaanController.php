@@ -41,12 +41,12 @@ class PerusahaanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'kodepembimbing' => 'required',
+            'pembimbing_id' => 'required',
             'nama'  => 'required'
         ]);
 
         $perusahaan = new Perusahaan([
-            'kodepembimbing'=>$request->get('kodepembimbing'),
+            'pembimbing_id'=>$request->get('pembimbing_id'),
             'nama'=>$request->get('nama')
         ]);
 
@@ -88,22 +88,21 @@ class PerusahaanController extends Controller
      * @param  \App\Perusahaan  $perusahaan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $perusahaan)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'kodepembimbing' => 'required',
+            'pembimbing_id' => 'required',
             'nama'  => 'required'
         ]);
 
         $perusahaan = new Perusahaan([
-            'kodepembimbing'=>$request->get('kodepembimbing'),
+            'pembimbing_id'=>$request->get('pembimbing_id'),
             'nama'=>$request->get('nama')
         ]);
 
-        $perusahaan = Perusahaan::findOrfail($perusahaan);
-        $perusahaan->save();
+        $perusahaan = Perusahaan::findOrfail($id);
         $perusahaan->update($request->all());
-
+        $perusahaan->save();
         return redirect()->route('perusahaan.index');
     }
 

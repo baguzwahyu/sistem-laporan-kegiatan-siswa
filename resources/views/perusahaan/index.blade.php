@@ -18,7 +18,7 @@
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>Kode Pembimbing   </th>
+                          <th>Pembimbing</th>
                           <th>Nama              </th>
                           <th>Action          </th>
                         </tr>
