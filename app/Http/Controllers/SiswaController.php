@@ -95,7 +95,10 @@ class SiswaController extends Controller
 
         return view('siswa.edit')->with('siswa', $siswa)
                                  ->with('pembimbing', Pembimbing::all())
-                                 ->with('guru', Guru::all());    
+                                 ->with('guru', Guru::all());
+       
+        
+       
        
     }
 
@@ -123,10 +126,9 @@ class SiswaController extends Controller
             'guru_id'=>$request->get('guru_id'),
             'pembimbing_id'=>$request->get('pembimbing_id'),
         ]);
-        $siswa = siswa::findorfail($id);
-            $siswa ->update($request->all());
-            $siswa->save();
-        return redirect()->route('siswa.index');
+
+        $siswa->save();
+        return redirect('siswa');
     }
 
     /**
