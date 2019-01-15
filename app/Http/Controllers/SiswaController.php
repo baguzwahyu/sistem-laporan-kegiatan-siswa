@@ -11,32 +11,17 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $siswa = siswa::with('guru')->get();
         $siswa = siswa::with('pembimbing')->get();
-        return view('siswa.index', compact('siswa'));
-    }
-    // public function index()
-    // {
-        // $siswa = DB::table('guru')
-        // ->join('siswa', 'siswa.guru_id', '=', 'guru.id')
-        // ->join('pembimbing', 'siswa.pembimbing_id', '=', 'pembimbing.id')
-        // ->select('siswa.*', 'guru.nama as gru','pembimbing.nama as ppp')
-        // ->get();
-        // return view('siswa.index', compact('siswa'));
-    // }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+        return view('siswa.index',compact('siswa') );
+    }
+       
+
+    
     public function create()
     {
         $gurus = guru::all();
@@ -44,12 +29,7 @@ class SiswaController extends Controller
         return view('siswa.create', compact('gurus','pembimbings'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
                 
@@ -83,12 +63,7 @@ class SiswaController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\siswa  $siswa
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         $siswa = siswa::find($id);
@@ -131,12 +106,7 @@ class SiswaController extends Controller
         return redirect('siswa');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\siswa  $siswa
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(siswa $siswa)
     {
         $siswa->delete();

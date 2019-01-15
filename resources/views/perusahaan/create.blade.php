@@ -1,4 +1,7 @@
-@extends('layouts.master') @section('title','Tabel Perusahaan') @section('content')
+@extends('layouts.master')
+@section('title','Perusahaan') 
+@section('content')
+
   @if ($errors->any())
       <div class="alert alert-danger">
           <ul>
@@ -50,7 +53,11 @@
                     <br>
                     <div class="form-group col-md-12">
                     <a class="btn btn-warning" href="{{url('perusahaan')}}">Cancel</a>
-                        <button type="submit" class="btn btn-success" value="save">Save</button>
-                    </div>
-</form>
+                    <button type="submit" value="save" class="btn btn-success">Save</button>
+                  </div>
+                </div>
+      </form>
+
+ <!-- validator -->
+ <script src="../vendors/validator/validator.js"></script>
 @endsection
