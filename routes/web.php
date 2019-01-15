@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PembimbingController@index');
+Route::get('/', 'pembimbingController@index');
 Route::get('/', 'siswaController@index');
 
 Route::get('/master', function () {
@@ -49,3 +49,4 @@ Route::resource('/guru','GuruController');
 Route::resource('/perusahaan','PerusahaanController');
 Route::resource('/siswa','SiswaController');
 Route::resource('/pembimbing','PembimbingController');
+
