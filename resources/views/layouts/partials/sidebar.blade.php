@@ -27,9 +27,12 @@
                 <ul class="nav side-menu">
                     <li><a href="#"><i class="fa fa-home"></i> HOME</a>
                     </li>
-                    <li><a><i class="fa fa-shopping-cart"></i>Daftar Siswa <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-list-alt"></i>Menu <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#"><i class="fa fa-cart-plus"></i>Guru/Wali Kelas</a></li>
+                        <li><a href="{{url('siswa')}}"><i class="fa fa-user"></i>Siswa</a></li>
+                        <li><a href="{{url('guru')}}"><i class="fa fa-user"></i>Guru</a></li>
+                            <li><a href="{{url('pembimbing')}}"><i class="fa fa-user"></i>Pembimbing</a></li>
+                            <li><a href="{{url('perusahaan')}}"><i class="fa fa-user"></i>Perusahaan</a></li>
                         </ul>
                     </li>                    
                     <li><a><i class="fa fa-table"></i>Table <span class="fa fa-chevron-down"></span></a>
