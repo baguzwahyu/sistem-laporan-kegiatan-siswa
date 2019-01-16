@@ -6,9 +6,9 @@
     <meta charset="utf-8">  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+	<link rel="icon" href="{{ url('img/logo.png') }}" type="image/ico" />
 
-    <title>| smk telkom du | </title>
+    <title>| SMK TELKOM DU | </title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -42,16 +42,16 @@
     {{--/topnav--}}
 
     <!-- top navigation -->
+    @include('layouts.partials.header1')
     <!-- /top navigation -->
-
+    
         <!-- page content -->
         <div class="right_col" role="main" >
             <div class="page-title">
                 <div class="title_left">
                     <h3>@yield('title')</h3>
                 </div>
-
-                 <div class="title_right">
+                <div class="title_right">
                     <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search for...">
@@ -79,45 +79,45 @@
 </div>
 
     <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <script src="{{URL('vendors/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{URL('vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- FastClick -->
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <script src="{{URL('vendors/fastclick/lib/fastclick.js')}}"></script>
     <!-- NProgress -->
-    <script src="../vendors/nprogress/nprogress.js"></script>
+    <script src="{{URL('vendors/nprogress/nprogress.js')}}"></script>
     <!-- Chart.js -->
-    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <script src="{{URL('vendors/Chart.js/dist/Chart.min.js')}}"></script>
     <!-- gauge.js -->
-    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <script src="{{URL('vendors/gauge.js/dist/gauge.min.js')}}"></script>
     <!-- bootstrap-progressbar -->
-    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="{{URL('vendors/bootstrap-progressbar/bootstrap-progressbar.min.js')}}/"></script>
     <!-- iCheck -->
-    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <script src="{{URL('vendors/iCheck/icheck.min.js')}}"></script>
     <!-- Skycons -->
-    <script src="../vendors/skycons/skycons.js"></script>
+    <script src="{{URL('vendors/skycons/skycons.js')}}"></script>
     <!-- Flot -->
-    <script src="../vendors/Flot/jquery.flot.js"></script>
-    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <script src="{{URL('vendors/Flot/jquery.flot.js')}}"></script>
+    <script src="{{URL('vendors/Flot/jquery.flot.pie.js')}}"></script>
+    <script src="{{URL('vendors/Flot/jquery.flot.time.js')}}"></script>
+    <script src="{{URL('vendors/Flot/jquery.flot.stack.js')}}"></script>
+    <script src="{{URL('vendors/Flot/jquery.flot.resize.js')}}"></script>
     <!-- Flot plugins -->
-    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <script src="{{URL('vendors/flot.orderbars/js/jquery.flot.orderBars.js')}}"></script>
+    <script src="{{URL('vendors/flot-spline/js/jquery.flot.spline.min.js')}}"></script>
+    <script src="{{URL('vendors/flot.curvedlines/curvedLines.js')}}"></script>
     <!-- DateJS -->
-    <script src="../vendors/DateJS/build/date.js"></script>
+    <script src="{{URL('vendors/DateJS/build/date.js')}}"></script>
     <!-- JQVMap -->
-    <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="{{URL('vendors/jqvmap/dist/jquery.vmap.js')}}"></script>
+    <script src="{{URL('vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+    <script src="{{URL('vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
     <!-- bootstrap-daterangepicker -->
-    <script src="../vendors/moment/min/moment.min.js"></script>
-    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="{{URL('vendors/moment/min/moment.min.js')}}"></script>
+    <script src="{{URL('vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
+    <script src="{{URL('build/js/custom.min.js')}}"></script>
 
 @stack('scripts')
 

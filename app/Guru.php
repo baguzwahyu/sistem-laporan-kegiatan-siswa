@@ -16,4 +16,9 @@ class Guru extends Model
         return $this->hasMany('App\Siswa');
     }
 
+    public function perusahaan()
+    {
+        return $this->hasMany('App\Perusahaan');
+    }
+
 }

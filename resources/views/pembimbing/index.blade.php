@@ -2,15 +2,15 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
 @extends('layouts.master')
-@section('title','pembimbing') 
+@section('title','Pembimbing') 
 @section('content')
 
 
-<a class="btn btn-success fa fa-user" href="{{URL::to('pembimbing/create')}}">+</a>
+<a class="btn btn-success" href="{{URL::to('pembimbing/create')}}">+ Pembimbing</a>
 <div class="col-md-12 col-sm-12 col-xs-24">
     <div class="x_panel">
       <div class="x_title">
-        <h2>Daftar Pembimbing <small color="blue">Perusahaan</small></h2>
+        <h2>Daftar Pembimbing <small color="blue">SMK TELEKOMUNIKASI DU</small></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -33,11 +33,11 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>NAMA</th>
-              <th>TELEPHONE</th>
-              <th>BAGIAN</th>
-              <th>ACTION</th>
+              <th><h4># Id</h4></th>
+              <th><h4>Nama</h4></th>
+              <th><h4>Telephone</h4></th>
+              <th><h4>Bagian</h4></th>
+              <th><h4>Action</h4></th>
             </tr>
           </thead>
           <tbody>
@@ -51,8 +51,8 @@
                     <form action="{{ route('pembimbing.destroy', $value->id) }}" method="post">
                         {{ csrf_field() }}
                         <input name="_method" type="hidden" value="DELETE">
-                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                        <a href="{{route('pembimbing.edit', $value->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
+                        <a href="{{route('pembimbing.edit', $value->id)}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a>
                     </form>
                 </td>
                 </tr>
