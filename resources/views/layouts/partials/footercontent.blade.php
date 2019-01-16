@@ -4,9 +4,4 @@
         </div>
         <div class="clearfix"></div>
 
-
-        <div class="pull-left">
-          Admind Page 
-        </div>
-        <div class="clearfix"></div>
-      </footer>
+</footer>

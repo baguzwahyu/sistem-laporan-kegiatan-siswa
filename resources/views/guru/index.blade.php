@@ -40,17 +40,17 @@
                         </tr>
                       </thead>
         <tbody>
-            @foreach($guru as $key => $value)
+            @foreach($guru as $key => $row)
                 <tr>
-                    <td>{{$value->id}}</td>
-                    <td>{{$value->nama}}</td>
-                    <td>{{$value->mapel}}</td>
+                    <td>{{$row->id}}</td>
+                    <td>{{$row->nama}}</td>
+                    <td>{{$row->mapel}}</td>
                     <td>
-                        <form action="{{ route('guru.destroy', $value->id) }}" method="post">
+                        <form action="{{ route('guru.destroy', $row->id) }}" method="post">
                             {{ csrf_field() }}
                             <input name="_method" type="hidden" value="DELETE">
                             <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
-                            <a href="{{route('guru.edit', $value->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i>Edit</a>
+                            <a href="{{route('guru.edit', $row->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i>Edit</a>
                         </form>
                                 </td>
                                 </tr>

@@ -27,11 +27,11 @@
     <link href="{{ asset('vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 
      
-
-
+   
     <!-- Custom Theme Style -->
     <link href="{{ asset('build/css/custom.min.css')}}" rel="stylesheet">
   </head>
+ 
 <body class="nav-md" >
 <div class="container body">
 

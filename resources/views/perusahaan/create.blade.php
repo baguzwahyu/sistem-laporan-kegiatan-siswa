@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title','Tabel Perusahaan') @section('content')
+@extends('layouts.master')@section('title','Perusahaan') @section('content')
   @if ($errors->any())
       <div class="alert alert-danger">
           <ul>
@@ -42,15 +42,16 @@
                     <br />
                    
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3" >Pembimbing</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing</label>
                         <div class="col-md-9 col-sm-9 col-xs-9">
                         <select class="form-control" name="pembimbing_id" >
-                          @foreach ($pembimbings as $pembimbing)
-                          <option value="{{$pembimbing->id}}">{{$pembimbing->nama}}</option>
+                          @foreach ($pembimbings as $row)
+                        <option value="{{$row->id}}">{{$row->nama}}</option>
                           @endforeach
-                          </select>
+                          
+                      </select>
                       </div>
-                    </div>
+                      </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3" >Nama</label>
@@ -63,10 +64,11 @@
                 <div class="form-group">
                   <div class="col-md-9 col-md-offset-3">
                     <a class="btn btn-warning" href="{{url('perusahaan')}}">Cancel</a>
-                        <button type="submit" class="btn btn-success" value="save">Save</button>
-                    </div>
+                    <button type="submit" value="save" class="btn btn-success">Save</button>
                   </div>
-               
-                  
-</form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </form>
 @endsection

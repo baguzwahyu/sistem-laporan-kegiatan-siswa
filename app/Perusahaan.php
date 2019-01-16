@@ -8,10 +8,11 @@ class Perusahaan extends Model
 {
     protected $table = 'perusahaan';
     
-    protected $fillable = ['id','kodepembimbing','nama'];
+    protected $fillable = ['id','pembimbing_id','nama'];
 
+    
     public function pembimbing()
-{
-    return $this->belongsTo('App\Pembimbing');
-}
+    {
+        return $this->belongsTo('App\Pembimbing');
+    }
 }

@@ -33,10 +33,10 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th><h4># Id</h4></th>
-                          <th><h4>Pembimbing</h4></th>
-                          <th><h4>Nama</h4></th>
-                          <th><h4>Action</h4></th>
+                          <th>Id</th>
+                          <th>Pembimbing</th>
+                          <th>Nama              </th>
+                          <th>Action          </th>
                         </tr>
                       </thead>
         <tbody>
