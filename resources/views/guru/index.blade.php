@@ -1,17 +1,32 @@
 @push('header-scripts')
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-
 @extends('layouts.master')
 @section('title','Guru')
 @section('content')
 
+
+<a class="btn btn-success" href="{{URL::to('guru/create')}}">+ Guru</a>
 <div class="col-md-12 col-sm-12 col-xs-24">
                 <div class="x_panel">
                   <div class="x_title">
-                  <a class="btn btn-success" href="{{URL::to('guru/create')}}">+ Guru</a>
-
-                    <div class="clearfix"></div>
+                  <h2>Daftar Guru <small color="blue">SMK Telekomunikasi DU </small></h2>
+                         <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                            </ul>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                        </ul>
+                      <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
 
@@ -37,18 +52,14 @@
                             <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
                             <a href="{{route('guru.edit', $row->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i>Edit</a>
                         </form>
-                </td>
-                </tr>
-            @endforeach
-
-        </tbody>
-    </table>
-                  </div>
-
+                                </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                   </div>
                 </div>
-              </div>
-
+                </div>
+                </div>
 @endsection
-
 @endpush

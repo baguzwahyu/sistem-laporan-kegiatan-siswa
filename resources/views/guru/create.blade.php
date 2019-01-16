@@ -1,7 +1,4 @@
-
-@extends('layouts.master')
-@section('title','Guru')
-@section('content')
+@extends('layouts.master') @section('title','Guru') @section('content')
   @if ($errors->any())
       <div class="alert alert-danger">
           <ul>
@@ -57,7 +54,7 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-3">mapel</label>
             <div class="col-md-9 col-sm-9 col-xs-9">
               <input type="text" class="form-control" id="mapel" name="mapel">
-              <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+              <span class="fa fa-book form-control-feedback right" aria-hidden="true"></span>
             </div>
           </div>
        

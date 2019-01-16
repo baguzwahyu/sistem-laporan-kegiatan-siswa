@@ -1,7 +1,4 @@
-@extends('layouts.master')
-@section('title','Perusahaan') 
-@section('content')
-
+@extends('layouts.master')@section('title','Perusahaan') @section('content')
   @if ($errors->any())
       <div class="alert alert-danger">
           <ul>
@@ -17,47 +14,61 @@
         </div>
       @endif
 
-
-<form action="{{route('perusahaan.store')}}" method="POST" enctype="multipart/form-data">
+<form class="form-horizontal form-label-left" action="{{route('perusahaan.store')}}" method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
 
-  <div class="clearfix"></div>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12 col-sm-24 col-xs-24">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Tambah Perusahaan :</h2>
-                    
+                    <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
                     <div class="clearfix"></div>
-                    <div class="form-row">
+                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
+                   
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing<span>*</span>
-                        </label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing</label>
+                        <div class="col-md-9 col-sm-9 col-xs-9">
                         <select class="form-control" name="pembimbing_id" >
                           @foreach ($pembimbings as $row)
                         <option value="{{$row->id}}">{{$row->nama}}</option>
                           @endforeach
                           
                       </select>
-                      </div><br>
+                      </div>
+                      </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Nama">Nama<span>*</span>
-                        </label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" >Nama</label>
+                        <div class="col-md-9 col-sm-9 col-xs-9">
                           <input type="text" name="nama" id="nama" class="form-control">
-                      </div><br>
-                    <br>
-                    <div class="form-group col-md-12">
+                      </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                <div class="form-group">
+                  <div class="col-md-9 col-md-offset-3">
                     <a class="btn btn-warning" href="{{url('perusahaan')}}">Cancel</a>
                     <button type="submit" value="save" class="btn btn-success">Save</button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
       </form>
-
- <!-- validator -->
- <script src="../vendors/validator/validator.js"></script>
 @endsection

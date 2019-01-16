@@ -14,6 +14,9 @@
 Route::get('/', 'pembimbingController@index');
 Route::get('/', 'siswaController@index');
 
+Route::get('/register', function () {
+    return view('layouts.register');
+});
 Route::get('/master', function () {
     return view('layouts.master');
 });
@@ -44,10 +47,6 @@ Route::get('/kelas', function () {
 });
 Route::get('/contact',function() {
     echo"person";
-});
-
-Route::get('/coba',function() {
-    echo"coba";
 });
 Route::resource('/guru','GuruController');
 Route::resource('/perusahaan','PerusahaanController');
