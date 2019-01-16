@@ -1,6 +1,6 @@
 <footer>
         <div class="pull-right">
-          Website By KiromiFreedom From <a href="http://smktelkomdu.sch.id/"><ins>SMK TELKOM DU</ins></a>
+          Website By Irgi Fahrias From <a href="http://smktelkomdu.sch.id/">SMK TELKOM DU</a>
         </div>
         <div class="clearfix"></div>
 

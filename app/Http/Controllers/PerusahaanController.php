@@ -52,8 +52,12 @@ class PerusahaanController extends Controller
     
     public function edit($id)
     {
-        $perusahaan = Perusahaan::findOrfail($id);
-        return view('perusahaan.edit',compact('perusahaan'));
+        $perusahaan = perusahaan::find($id);
+
+        return view('perusahaan.edit')->with('perusahaan', $perusahaan)
+                                 ->with('pembimbing', Pembimbing::all());
+                                 
+       
     }
 
     /**
