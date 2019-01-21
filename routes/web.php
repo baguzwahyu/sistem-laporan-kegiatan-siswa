@@ -11,11 +11,21 @@
 |
 */
 
-Route::get('/', 'pembimbingController@index');
-Route::get('/', 'siswaController@index');
+Route::get('/pembimbing/cari', 'pembimbingController@cari');
 
-Route::get('/register', function () {
-    return view('layouts.register');
+Route::get('/guru/cari','guruController@cari');
+Route::get('/perusahaan','PerusahaanController@index');
+
+Route::get('/results',function(){
+$siswa = \App\Siswa::where('nama','like','%' . request('query').'%')->get();
+return view('/siswa/search')->with('siswa',$siswa)
+                      ->with('nama','search results :' . request('query'))
+                      ->with('query',request('query'));
+                    
+});
+
+Route::get('/login', function () {
+    return view('login.login');
 });
 Route::get('/master', function () {
     return view('layouts.master');
