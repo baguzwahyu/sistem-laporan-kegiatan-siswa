@@ -6,6 +6,18 @@
 @section('content')
 <a class="btn btn-success" href="{{URL::to('siswa/create')}}">+ Siswa</a>
 <div class="col-md-12 col-sm-12 col-xs-24">
+    <form action="/results" method="GET">                 
+      <div class="title_right">
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for..."  name="query">
+                  <span class="input-group-btn">
+           <button class="btn btn-default" type="button">cari</button> 
+          </span>
+              </div>
+          </div>
+      </div> 
+    </form>
     <div class="x_panel">
       <div class="x_title">
         <h2>Daftar Siswa <small color="blue">SMK Telekomunikasi DU</small></h2>
