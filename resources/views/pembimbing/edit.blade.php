@@ -1,6 +1,4 @@
 @extends('layouts.master') @section('title','Pembimbing') @section('content')
-
-
 <form class="form-horizontal form-label-left" method="POST" action="{{route('pembimbing.update', $pembimbing ->id)}}" >
     {{ csrf_field()}}
   <input type="hidden" name="_method" value="PATCH">
@@ -27,7 +25,7 @@
 
 
         <div class="form-group">
-          <label class="control-label col-md-3 col-sm-3 col-xs-3">NAMA</label>
+          <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama</label>
           <div class="col-md-9 col-sm-9 col-xs-9">
           <input type="text" class="form-control" name="nama" value="{{$pembimbing->nama}}">
             <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>

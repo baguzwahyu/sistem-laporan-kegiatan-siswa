@@ -60,7 +60,7 @@
                   <label class="control-label col-md-3 col-sm-3 col-xs-3">bagian</label>
                   <div class="col-md-9 col-sm-9 col-xs-9">
                     <input type="text" class="form-control" id="bagian" name="bagian">
-                    <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    <span class="fa fa-book form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
              

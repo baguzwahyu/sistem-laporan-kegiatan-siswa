@@ -35,7 +35,7 @@
                         <li><a href="{{URL('perusahaan')}}">Perusahaan</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-list-alt"></i>Form Input <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-users"></i>Kelompok <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Supplier</a></li>
                         </ul>

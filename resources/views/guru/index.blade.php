@@ -6,8 +6,21 @@
 @section('content')
 
 
-<a class="btn btn-success" href="{{URL::to('guru/create')}}">+ Guru</a>
+
 <div class="col-md-12 col-sm-12 col-xs-24">
+        <form action="/rest" method="GET">   
+            <div class="title_right">
+                <div class="col-md-3 col-sm-3 col-xs-6 form-group pull-right top_search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for..."  name="qr">
+                        <span class="input-group-btn">
+                <button class="btn btn-default" type="button">cari</button> 
+                </span>
+                    </div>
+                </div>
+            </div> 
+          </form>   
+    <a class="btn btn-success" href="{{URL::to('guru/create')}}">+ Guru</a>
                 <div class="x_panel">
                   <div class="x_title">
                   <h2>Daftar Guru <small color="blue">SMK Telekomunikasi DU </small></h2>

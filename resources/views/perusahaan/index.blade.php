@@ -5,11 +5,20 @@
 @section('title','Perusahaan')
 @section('content')
 
-
-<a class="btn btn-success" href="{{URL::to('perusahaan/create')}}">+ Perusahaan</a>
-<div class="col-md-12 col-sm-12 col-xs-24">
-
-                 
+            <div class="col-md-12 col-sm-12 col-xs-24">
+              <form action="/result" method="GET">   
+                <div class="title_right">
+                    <div class="col-md-3 col-sm-3 col-xs-6 form-group pull-right top_search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for..."  name="querys">
+                            <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">cari</button> 
+                    </span>
+                        </div>
+                    </div>
+                </div> 
+              </form>
+           <a class="btn btn-success" href="{{URL::to('perusahaan/create')}}">+perusahaan</a> 
                 <div class="x_panel">
                   <div class="x_title">
                   <h2>Daftar Perusahaan <small color="blue">SMK TELEKOMUNIKASI DU</small></h2>
@@ -36,10 +45,10 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th><h4>#Id</h4></th>
-                          <th><h4>Nama  Perusahaan</h4></th>
-                          <th><h4>Pembimbing</h4></th>
-                          <th><h4>Action</h4></th>
+                          <th>Id</th>
+                          <th>Nama</th>
+                          <th>Pembimbing</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
         <tbody>

@@ -41,26 +41,25 @@
                   <div class="x_content">
                     <br />
                    
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing</label>
-                        <div class="col-md-9 col-sm-9 col-xs-9">
-                        <select class="form-control" name="pembimbing_id" >
-                          @foreach ($pembimbings as $row)
-                        <option value="{{$row->id}}">{{$row->nama}}</option>
-                          @endforeach
-                          
-                      </select>
-                      </div>
-                      </div>
-
-                      <div class="form-group">
+                    <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3" >Nama</label>
                         <div class="col-md-9 col-sm-9 col-xs-9">
                           <input type="text" name="nama" id="nama" class="form-control">
                       </div>
                     </div>
 
-                    <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing</label>
+                        <div class="col-md-9 col-sm-9 col-xs-9">
+                        <select class="form-control" name="pembimbing_id" >
+                          @foreach ($pembimbings as $row)
+                        <option value="{{$row->id}}">{{$row->nama}}</option>
+                          @endforeach                         
+                      </select>
+                      </div>
+                      </div>
+
+              <div class="ln_solid"></div>
                 <div class="form-group">
                   <div class="col-md-9 col-md-offset-3">
                     <a class="btn btn-warning" href="{{url('perusahaan')}}">Cancel</a>
