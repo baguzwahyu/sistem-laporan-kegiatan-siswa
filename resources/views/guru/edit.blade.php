@@ -1,9 +1,7 @@
-
 @extends('layouts.master') @section('title','Guru') @section('content')
-
-    <form action="{{route('guru.update', $guru->id)}}" method="POST" class="form-horizontal form-label-left">
-        {{ csrf_field()}}
-        <input type="hidden" name="_method" value="PATCH">
+<form class="form-horizontal form-label-left" method="POST" action="{{route('guru.update', $guru ->id)}}" >
+    {{ csrf_field()}}
+  <input type="hidden" name="_method" value="PATCH">
  <div class="col-md-12 col-sm-24 col-xs-24">
     <div class="x_panel">
       <div class="x_title">
@@ -27,7 +25,7 @@
 
 
         <div class="form-group">
-          <label class="control-label col-md-3 col-sm-3 col-xs-3">NAMA</label>
+          <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama</label>
           <div class="col-md-9 col-sm-9 col-xs-9">
           <input type="text" class="form-control" name="nama" value="{{$guru->nama}}">
             <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
@@ -35,13 +33,14 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3 col-sm-3 col-xs-3">MAPEL</label>
+          <label class="control-label col-md-3 col-sm-3 col-xs-3">mapel</label>
           <div class="col-md-9 col-sm-9 col-xs-9">
-            <input type="text" class="form-control"  name="mapel" value="{{ $guru->mapel }}">
+            <input type="text" class="form-control"  name="mapel" value="{{$guru->mapel}}">
             <span class="fa fa-book form-control-feedback right" aria-hidden="true"></span>
           </div>          
         </div>
-     
+
+        
         <div class="ln_solid"></div>
 
         <div class="form-group">
@@ -52,6 +51,7 @@
         </div>
     </div>
  </div>
-    
+</form>
+
  @endsection
  
