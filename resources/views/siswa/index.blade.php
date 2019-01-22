@@ -8,8 +8,6 @@
 <div class="col-md-12 col-sm-12 col-xs-24">
    
     <form action="/results" method="GET">   
-      {{ csrf_field() }} 
-                
       <div class="title_right">
           <div class="col-md-3 col-sm-3 col-xs-6 form-group pull-right top_search">
               <div class="input-group">

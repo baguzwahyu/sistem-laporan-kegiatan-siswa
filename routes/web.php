@@ -11,16 +11,27 @@
 |
 */
 
-Route::get('/pembimbing/cari', 'pembimbingController@cari');
+Route::get('/root', function(){
+$pembimbing=\App\Pembimbing::where('nama','like','%'.request('queri').'%')->get();
+return view('/pembimbing/search')->with('pembimbing',$pembimbing)
+                                 ->with('nama','search result :' . request('queri'))
+                                 ->with('queri',request('queri'));
 
-Route::get('/guru/cari','guruController@cari');
+});
+
+Route::get('/rest',function(){
+$guru=\App\Guru::where('nama','like','%'.request('qr').'%')->get();
+return view('/guru/search')->with('guru',$guru)
+                           ->with('nama','search result :' . request('qr'))
+                           ->with('qr',request('qr'));
+});
 
 
-Route::get('/perusahaan',function(){
-$perusahaan=\App\perusahaan::where('nama','like','%' . request('query').'%')->get();
+Route::get('/result',function(){
+$perusahaan=\App\perusahaan::where('nama','like','%' . request('querys').'%')->get();
 return view('/perusahaan/search')->with('perusahaan',$perusahaan)
-                                 ->with('nama','search results :' . request('query'))
-                                 ->with('query',request('query'));
+                                 ->with('nama','search result :' . request('querys'))
+                                 ->with('querys',request('querys'));
 });
 
 Route::get('/results',function(){

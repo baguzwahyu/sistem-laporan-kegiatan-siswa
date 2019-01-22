@@ -27,21 +27,20 @@
             <div class="x_content">
               <br />
 
-
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing </label>
-                  <select class="form-control" name="pembimbing_id" >
-                    @foreach ($pembimbing as $post)
-                   <option value="{{ $post->id }}">{{ $post->nama }}</option>   
-                    @endforeach
-                 </select>
-                </div>
-
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nama">Nama 
                 </label>
                   <input type="text" name="nama" id="nama" class="form-control"  value="{{$perusahaan->nama}}">
               </div>
+
+              <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing </label>
+                    <select class="form-control" name="pembimbing_id" >
+                      @foreach ($pembimbing as $post)
+                     <option value="{{ $post->id }}">{{ $post->nama }}</option>   
+                      @endforeach
+                   </select>
+                  </div>
               
                 <div class="form-group col-md-12">
               <button class="btn btn-warning" href="index.blade.php">Cancel</button> 
