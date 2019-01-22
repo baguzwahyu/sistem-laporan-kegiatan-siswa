@@ -119,4 +119,20 @@ class PerusahaanController extends Controller
 
         return redirect('/perusahaan/');
     }
+
+    // public function cari(Request $request)
+	// {
+	// 	// menangkap data pencarian
+	// 	$cari = $request->cari;
+ 
+    // 		// mengambil data dari table pegawai sesuai pencarian data
+	// 	$perusahaan = DB::table('perusahaan')
+    //     ->where('nama','like',"%".$cari."%")
+    //     ->paginate();
+ 
+    // 		// mengirim data pegawai ke view index
+	// 	return view('index',['perusahaan' => $perusahaan]);
+ 
+	// }
+
 }

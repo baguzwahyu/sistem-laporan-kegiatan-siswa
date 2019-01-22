@@ -14,7 +14,12 @@
 Route::get('/pembimbing/cari', 'pembimbingController@cari');
 
 Route::get('/guru/cari','guruController@cari');
-Route::get('/perusahaan','PerusahaanController@index');
+Route::get('/perusahaan',function(){
+$perusahaan=\App\perusahaan::where('nama','like','%' . request('query').'%')->get();
+return view('/perusahaan/search')->with('perusahaan',$perusahaan)
+                                 ->with('nama','search results :' . request('query'))
+                                 ->with('query',request('query'));
+});
 
 Route::get('/results',function(){
 $siswa = \App\Siswa::where('nama','like','%' . request('query').'%')->get();
