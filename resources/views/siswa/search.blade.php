@@ -5,12 +5,8 @@
 @section('title','SISWA')
 @section('content')
 
-
-
 @if ($siswa->count() > 0)
 
-<a class="btn btn-success fa fa-user" href="{{URL::to('siswa/create')}}">+</a><br>
-<a class="btn btn-primary" href="{{URL::to('siswa')}}"><=</a>
 <div class="col-md-12 col-sm-12 col-xs-24">
     <form action="/results" method="GET">                 
       <div class="title_right">
@@ -24,6 +20,8 @@
           </div>
       </div> 
     </form>
+      <a class="btn btn-success fa fa-user" href="{{URL::to('siswa/create')}}">+</a><br>
+      <a class="btn btn-primary fa fa-history" href="{{URL::to('siswa')}}"></a>
     <div class="x_panel">
       <div class="x_title">
         <h2>Daftar Siswa <small color="blue">Magang</small></h2>

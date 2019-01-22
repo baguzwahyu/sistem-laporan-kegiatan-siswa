@@ -23,7 +23,7 @@
       </div> 
     </form>
     <a class="btn btn-success fa fa-user" href="{{URL::to('pembimbing/create')}}">+</a><br>
-    <a class="btn btn-primary" href="{{URL::to('pembimbing')}}"><=</a>
+    <a class="btn btn-primary fa fa-history" href="{{URL::to('pembimbing')}}"></a>
 
     <div class="x_panel">
       <div class="x_title">
