@@ -51,8 +51,8 @@
                     <form action="{{ route('pembimbing.destroy', $sem->id) }}" method="post">
                         {{ csrf_field() }}
                         <input name="_method" type="hidden" value="DELETE">
-                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                        <a href="{{route('pembimbing.edit', $sem->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
+                        <a href="{{route('pembimbing.edit', $sem->id)}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a>
                     </form>
                 </td>
                 </tr>

@@ -36,18 +36,18 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th>Id</th>
-                          <th>Pembimbing</th>
-                          <th>Nama              </th>
-                          <th>Action          </th>
+                          <th><h4>#Id</h4></th>
+                          <th><h4>Nama  Perusahaan</h4></th>
+                          <th><h4>Pembimbing</h4></th>
+                          <th><h4>Action</h4></th>
                         </tr>
                       </thead>
         <tbody>
             @foreach($perusahaan as $prs)
                 <tr>
                     <td>{{$prs->id}}</td>
-                    <td>{{$prs->pembimbing->nama}}</td>
                     <td>{{$prs->nama}}</td>
+                    <td>{{$prs->pembimbing->nama}}</td>
                     
                     <td>
                     <form action="{{ route('perusahaan.destroy', $prs->id) }}" method="post">

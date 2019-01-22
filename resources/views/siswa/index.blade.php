@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
 @extends('layouts.master')
-@section('title','SISWA')
+@section('title','Siswa')
 @section('content')
 
 <div class="col-md-12 col-sm-12 col-xs-24">
@@ -15,16 +15,16 @@
               <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search for..."  name="query">
                   <span class="input-group-btn">
-           <button class="btn btn-default" type="button">cari</button> 
+           <button class="btn btn-default" type="button">Cari</button> 
           </span>
               </div>
           </div>
       </div> 
     </form>
-    <a class="btn btn-success fa fa-user" href="{{URL::to('siswa/create')}}">+</a>  
+    <a class="btn btn-success" href="{{URL::to('siswa/create')}}">+ Siswa</a>  
     <div class="x_panel">
       <div class="x_title">
-        <h2>Daftar Siswa <small color="blue">Magang</small></h2>
+        <h2>Daftar Siswa <small color="blue">SMK Telekomunikasi DU</small></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -69,8 +69,8 @@
                     <form action="{{ route('siswa.destroy', $sin->id) }}" method="post">
                         {{ csrf_field() }}
                         <input name="_method" type="hidden" value="DELETE">
-                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                        <a href="{{route('siswa.edit', $sin->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash">Delete</i></button>
+                        <a href="{{route('siswa.edit', $sin->id)}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a>
                     </form>
                 </td>
                 </tr>
