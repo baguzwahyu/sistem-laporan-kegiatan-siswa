@@ -8,6 +8,8 @@
 
 <a class="btn btn-success" href="{{URL::to('perusahaan/create')}}">+ Perusahaan</a>
 <div class="col-md-12 col-sm-12 col-xs-24">
+
+                 
                 <div class="x_panel">
                   <div class="x_title">
                   <h2>Daftar Perusahaan <small color="blue">SMK TELEKOMUNIKASI DU</small></h2>
@@ -28,6 +30,7 @@
                         </ul>
                     <div class="clearfix"></div>
                   </div>
+                 
                   <div class="x_content">
 
                     <table class="table table-striped">

@@ -85,7 +85,8 @@
   </div>
 
 @else
-no result founds
+<h2>no result founds</h2><br>
+<a class="btn btn-primary" href="{{URL::to('siswa')}}"><=</a><span><u>Tekan Untuk Kembali</u></span>
 @endif
 @endsection
 @endpush

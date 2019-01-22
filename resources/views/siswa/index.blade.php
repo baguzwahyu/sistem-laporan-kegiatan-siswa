@@ -4,11 +4,14 @@
 @extends('layouts.master')
 @section('title','SISWA')
 @section('content')
-<a class="btn btn-success fa fa-user" href="{{URL::to('siswa/create')}}">+</a>
+
 <div class="col-md-12 col-sm-12 col-xs-24">
-    <form action="/results" method="GET">                 
+   
+    <form action="/results" method="GET">   
+      {{ csrf_field() }} 
+                
       <div class="title_right">
-          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+          <div class="col-md-3 col-sm-3 col-xs-6 form-group pull-right top_search">
               <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search for..."  name="query">
                   <span class="input-group-btn">
@@ -18,6 +21,7 @@
           </div>
       </div> 
     </form>
+    <a class="btn btn-success fa fa-user" href="{{URL::to('siswa/create')}}">+</a>  
     <div class="x_panel">
       <div class="x_title">
         <h2>Daftar Siswa <small color="blue">Magang</small></h2>
