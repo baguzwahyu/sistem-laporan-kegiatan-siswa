@@ -16,7 +16,7 @@
               <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search for..."  name="queri">
                   <span class="input-group-btn">
-           <button class="btn btn-default" type="button">cari</button> 
+           <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button> 
           </span>
               </div>
           </div>
