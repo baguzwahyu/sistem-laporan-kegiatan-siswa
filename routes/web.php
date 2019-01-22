@@ -14,6 +14,8 @@
 Route::get('/pembimbing/cari', 'pembimbingController@cari');
 
 Route::get('/guru/cari','guruController@cari');
+
+
 Route::get('/perusahaan',function(){
 $perusahaan=\App\perusahaan::where('nama','like','%' . request('query').'%')->get();
 return view('/perusahaan/search')->with('perusahaan',$perusahaan)
