@@ -41,6 +41,9 @@ return view('/siswa/search')->with('siswa',$siswa)
                       ->with('query',request('query'));
                     
 });
+Route::get('/admind',function(){
+    return view('auth.admind');
+});
 
 Route::get('/login', function () {
     return view('login.login');
@@ -81,3 +84,7 @@ Route::resource('/perusahaan','PerusahaanController');
 Route::resource('/siswa','SiswaController');
 Route::resource('/pembimbing','PembimbingController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
