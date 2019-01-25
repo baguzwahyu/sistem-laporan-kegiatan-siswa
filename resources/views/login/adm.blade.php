@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
-    <link rel="icon" href="{{URL('img/logo.png')}}" type="image/ico" />
+    <link rel="icon" href="image/telkom.png" type="image/ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>| Login Your Account |</title>
+    <title>| SMK TELKOM DU | Sign in |</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('vendor2/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -19,7 +20,7 @@
     <link href="{{asset('vendor2/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{asset('css2/coming-soon.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css2/coming-soon.min.css')}}" rel="stylesheet">
 
   </head>
 
@@ -27,7 +28,7 @@
   
     <div class="overlay"></div>
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="{{URL('img/red.mp4')}}" type="video/mp4">
+      <source src="img/red.mp4" type="video/mp4">
     </video>
 
     <div class="masthead">
@@ -42,9 +43,9 @@
                 <div id="register" class="animate form registration_form">
                     <section class="login_content">
                       <form>
-                      {{ csrf_field() }}
-                        <div>
-                          <input type="text" class="form-control" placeholder="Username *" required="" />                        
+                        {{ csrf_field() }}
+                        <div >
+                          <input type="text" class="form-control" placeholder="Username *" required="" />                      
                         </div><br>
 
                         <div>
@@ -79,18 +80,18 @@
         </li>
         <li class="list-unstyled-item">
           <a href="#">
-            <i class="fa fa-list-alt"></i>
+            <i class="fa fa-shopping-cart"></i>
           </a>
         </li>
       </ul>
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{{URL('vendor2/jquery/jquery.min.js')}}"></script>
-    <script src="{{URL('vendor2/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url('vendor2/jquery/jquery.min.js')}}"></script>
+    <script src="{{ url('vendor2/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="{{URL('js2/coming-soon.min.js')}}"></script>
+    <script src="{{ url('js2/coming-soon.min.js')}}"></script>
 
   </body>
 
