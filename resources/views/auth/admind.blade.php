@@ -100,11 +100,11 @@
                             </div>
     
                             <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
+                                <div class="col-md-10 ">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Login') }}
                                     </button>
-    
+                                    
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
@@ -124,8 +124,8 @@
     <div class="social-icons">
       <ul class="list-unstyled text-center mb-0">
         <li class="list-unstyled-item">
-          <a href="{{ url('admind')}}">
-            <i class="fa fa-user"></i>
+          <a href="{{ url('login')}}">
+            <i class="fa fa-history"></i>
           </a>
         </li>
         <li class="list-unstyled-item">

@@ -45,6 +45,10 @@ Route::get('/admind',function(){
     return view('auth.admind');
 });
 
+Route::get('/dashboard', function (){
+    return view('dashboard.dashboard');
+});
+
 Route::get('/login', function () {
     return view('login.login');
 });
