@@ -17,7 +17,6 @@
             </div>
         </div>
         <!-- /menu profile quick info -->
-
         <br />
 
         <!-- sidebar menu -->
@@ -26,15 +25,16 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     <li><a href="#"><i class="fa fa-home"></i> HOME</a>
-                                     
+                 @if(auth::user()->admind)            
                     <li><a><i class="fa fa-table"></i>Table <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <li><a href="{{URL('siswa')}}">Siswa</a></li>
                         <li><a href="{{URL('guru')}}">Guru</a></li>
-                        <li><a href="{{URL('pembimbing')}}">pembimbing</a></li>
+                        <li><a href="{{URL('pembimbing')}}">Pembimbing</a></li>
                         <li><a href="{{URL('perusahaan')}}">Perusahaan</a></li>
                         </ul>
                     </li>
+                    @endif
                     <li><a><i class="fa fa-users"></i>Kelompok <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Supplier</a></li>
@@ -61,7 +61,7 @@
                                   <li><a href="projects.html">Projects</a></li>
                                   <li><a href="project_detail.html">Project Detail</a></li>
                                   <li><a href="contacts.html">Contacts</a></li>
-                                  <li><a href="profile.html">Profile</a></li>
+                                  <li><a href="http://smktelkomdu.sch.id/">Profile</a></li>
                                 </ul>
                               </li>
                             </ul>

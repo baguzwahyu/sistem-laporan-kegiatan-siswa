@@ -45,13 +45,13 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>NAMA</th>
-              <th>JURUSAN</th>
-              <th>KELAS</th>
-              <th>GURU</th>
-              <th>PEMBIMBING</th>
-              <th>ACTION</th>
+              <th><h4># Id</h4></th>
+              <th><h4>Nama</h4></th>
+              <th><h4>Jurusan</h4></th>
+              <th><h4>Kelas</h4></th>
+              <th><h4>Guru</h4></th>
+              <th><h4>Pembimbing</h4></th>
+              <th><h4>Action</h4></th>
             </tr>
           </thead>
           <tbody>

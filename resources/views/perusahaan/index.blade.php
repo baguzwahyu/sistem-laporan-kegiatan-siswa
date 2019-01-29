@@ -21,7 +21,7 @@
            <a class="btn btn-success" href="{{URL::to('perusahaan/create')}}">+perusahaan</a> 
                 <div class="x_panel">
                   <div class="x_title">
-                  <h2>Daftar Perusahaan <small color="blue">SMK TELEKOMUNIKASI DU</small></h2>
+                  <h2>Daftar Perusahaan <small color="blue">Smk Telekomunikasi DU</small></h2>
                   <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
@@ -45,10 +45,10 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th>Id</th>
-                          <th>Nama</th>
-                          <th>Pembimbing</th>
-                          <th>Action</th>
+                          <th><h4>Id</h4></th>
+                          <th><h4>Nama</h4></th>
+                          <th><h4>Pembimbing</h4></th>
+                          <th><h4>Action</h4></th>
                         </tr>
                       </thead>
         <tbody>
