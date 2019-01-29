@@ -11,7 +11,7 @@
 <div class="col-md-12 col-sm-12 col-xs-24">
    
     
-    <a class="btn btn-success" href="{{URL::to('siswas/create')}}">+kegiatan</a>  
+    <a class="btn btn-success" href="{{URL::to('kegiatan/create')}}">+kegiatan</a>  
     <div class="x_panel">
       <div class="x_title">
         <h2>Kegiatan <small color="blue">Magang</small></h2>
@@ -49,7 +49,7 @@
 		    <th scope="row">{{$sin->id}}</th>
                     <td>{{$sin->bidang_pekerjaan}}</td>                 
                     <td>{{$sin->uraian_pekerjaan}}</td>
-                    <td>{{$sin->tgl_pelaksanaan}}</td>
+                    <td>{{$sin->updated_at}}</td>
                     <td>
                     <form action="{{ route('kegiatan.destroy', $sin->id) }}" method="post">
                         {{ csrf_field() }}

@@ -17,7 +17,7 @@ class CreateKegiatansTable extends Migration
             $table->increments('id');
             $table->string('bidang_pekerjaan');
             $table->string('uraian_pekerjaan');
-            $table->date('tgl_pelaksanaan');
+           
             $table->timestamps();
         });
     }

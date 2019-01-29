@@ -26,7 +26,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        return view('kegiatan.create');
+        return view('dashboard.siswas.create');
     }
 
     /**
@@ -39,14 +39,14 @@ class KegiatanController extends Controller
     {
         $this->validate($request,[
             'bidang_pekerjaan' => 'required|',
-            'uraian_pekerjaan'=> 'required|',
-            'tgl_pelaksanaan' => 'required'
+            'uraian_pekerjaan'=> 'required|'
+           
         ]);
 
         $kegiatan = new kegiatan([
             'bidang_pekerjaan' =>$request->get('bidang_pekerjaan'),
             'uraian_pekerjaan' =>$request->get('uraian_pekerjaan'),
-            'tanggal' =>$request->get('tangal'),
+           
         ]);
         $kegiatan ->save();
         return redirect('/kegiatan');
