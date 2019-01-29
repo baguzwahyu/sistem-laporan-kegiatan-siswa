@@ -87,7 +87,7 @@ Route::resource('/guru','GuruController');
 Route::resource('/perusahaan','PerusahaanController');
 Route::resource('/siswa','SiswaController');
 Route::resource('/pembimbing','PembimbingController');
-
+Route::resource('/kegiatan','KegiatanController');
 
 Auth::routes();
 
