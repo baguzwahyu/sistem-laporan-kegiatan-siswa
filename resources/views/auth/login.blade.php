@@ -43,7 +43,7 @@
                 <strong> Sistem Laporan Kegiatan Siswa</strong> ! If it has not been registered  <a class="text-white" href="#"> <strong>Sign In!</strong></a></p>
                 <div id="register" class="animate form registration_form">
                     <section class="login_content">
-                      <form>
+                      <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
                         <div >
                           <input type="text" class="form-control" placeholder="Username *" required="" />                      
@@ -58,7 +58,7 @@
                         </div><br>
 
                         <div class="pull-right">
-                          <a class="btn btn-success submit"  href="index.html">Submit</a>
+                          <input type="submit" class="btn btn-success submit" value="Login">
                         </div>
                         
               </div>

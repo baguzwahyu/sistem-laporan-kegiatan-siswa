@@ -25,7 +25,7 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     <li><a href="#"><i class="fa fa-home"></i> HOME</a>
-                 @if(auth::user()->admind)            
+            @if(auth::user()->admind)                
                     <li><a><i class="fa fa-table"></i>Table <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <li><a href="{{URL('siswa')}}">Siswa</a></li>
