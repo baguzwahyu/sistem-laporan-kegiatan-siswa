@@ -14,7 +14,9 @@ class KegiatanController extends Controller
      */
     public function index()
     {
-        //
+        $kegiatan = kegiatan::all();
+
+        return view('dashboard.siswas.kegiatan',compact('kegiatan'));
     }
 
     /**
@@ -24,7 +26,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        //
+        return view('kegiatan.create');
     }
 
     /**
@@ -35,7 +37,19 @@ class KegiatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'bidang_pekerjaan' => 'required|',
+            'uraian_pekerjaan'=> 'required|',
+            'tgl_pelaksanaan' => 'required'
+        ]);
+
+        $kegiatan = new kegiatan([
+            'bidang_pekerjaan' =>$request->get('bidang_pekerjaan'),
+            'uraian_pekerjaan' =>$request->get('uraian_pekerjaan'),
+            'tanggal' =>$request->get('tangal'),
+        ]);
+        $kegiatan ->save();
+        return redirect('/kegiatan');
     }
 
     /**
@@ -69,7 +83,11 @@ class KegiatanController extends Controller
      */
     public function update(Request $request, Kegiatan $kegiatan)
     {
-        //
+        $kegiatan=kegiatan::findOrfail($kegiatan);
+
+        $kegiatan->update($request->all());
+
+        return redirect()->route('dashboard.siswas.kegiatan');
     }
 
     /**
@@ -80,6 +98,10 @@ class KegiatanController extends Controller
      */
     public function destroy(Kegiatan $kegiatan)
     {
-        //
+        $kegiatan = kegiatan::findOrFail($kegiatan);
+
+        $kegiatan->delete();
+        
+        return redirect('/kegiatan');
     }
 }

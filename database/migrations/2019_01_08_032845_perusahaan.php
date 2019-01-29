@@ -19,7 +19,10 @@ class Perusahaan extends Migration
             $table->string('nama');
             $table->timestamps();
 
-            $table->foreign('pembimbing_id')->references('id')->on('pembimbing')->onDelete('cascade');
+            $table->foreign('pembimbing_id')
+            ->references('id')
+            ->on('pembimbing')
+            ->onDelete('cascade');
                   
         });
     }
