@@ -41,53 +41,50 @@ return view('/siswa/search')->with('siswa',$siswa)
                       ->with('query',request('query'));
                     
 });
-Route::get('/admind',function(){
-    return view('auth.admind');
+Route::get('/loginadmin',function(){
+    return view('auth.login');
 });
 
-Route::get('/dashboard', function (){
-    return view('dashboard.dashboard');
-});
+// Route::get('/ss', function (){
+//     return view('dashboard.dashboard');
+// });
 
-Route::get('/login', function () {
-    return view('login.login');
-});
+// Route::get('/dashboard',[
+//         'uses' => 'HomeController@dashboard',
+//         'as' => 'dashboard'
+//     ]);
+
+// Route::get('/login', function () {
+//     return view('login.login');
+// });
+
 Route::get('/master', function () {
     return view('layouts.master');
 });
 
-Route::get('/hello', function () {
-    return view('bro');
+
+Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
+    Route::resource('/guru','GuruController');
+    Route::resource('/perusahaan','PerusahaanController');
+    Route::resource('/siswa','SiswaController');
+    Route::resource('/pembimbing','PembimbingController');
+    Route::resource('/kegiatan','KegiatanController');
+    
 });
 
-Route::get('/smk', function () {
-    echo "smk telkom du";
-}); 
+Route::get('/', function () {
+    return view('welcome');
+});
+// Auth::routes();
 
-Route::get('/BIIS',function() {
-    echo "terserah";
-});
-route::get('/siswa',function(){
-    echo "siswa smk telkom";
-});
+// Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
-Route::get('/pelajar',function() {
-     echo "M. NUZULUL KIROMI";
- });
- Route::get('/sekolah',function(){
-     echo "smk telkom DU";
- });
-Route::get('/kelas', function () {
-    echo"Classroom";
-});
-Route::get('/contact',function() {
-    echo"person";
-});
-Route::resource('/guru','GuruController');
-Route::resource('/perusahaan','PerusahaanController');
-Route::resource('/siswa','SiswaController');
-Route::resource('/pembimbing','PembimbingController');
-Route::resource('/kegiatan','KegiatanController');
+// Route::get('/showKegiatan','index@KegiatanController')->name('kegiatan.index');
+
+// Route::get('/showKegiatan',[
+//     'uses' => 'KegiatanController@index',
+//     'as' => 'kegiatan.create'
+// ]);
 
 Auth::routes();
 

@@ -44,9 +44,7 @@
                     <section class="login_content">
                       <form>
                         {{ csrf_field() }}
-                        <div >
-                          <input type="text" class="form-control" placeholder="Username *" required="" />                      
-                        </div><br>
+                        
 
                         <div>
                           <input type="email" class="form-control" placeholder="Email *" required="" />
