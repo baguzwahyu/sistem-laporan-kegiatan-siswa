@@ -20,8 +20,18 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+
+                    <li><a href="{{url('/loginadmin')}}" onclick="event.preventDevault();
+                    Document.getElementById('logout-form').submit();">
+                    <form action="{{url('login')}}" id="logout-form" method="POST" style="display :none;">
+                      {{ csrf_field() }}
+                    </form>
+                    <i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    
+                   </li>
+                  
                   </ul>
+
                 </li>
 
                 <li role="presentation" class="dropdown">

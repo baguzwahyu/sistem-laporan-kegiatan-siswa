@@ -29,16 +29,16 @@
             @if(auth::user()->admind)                
                     <li><a><i class="fa fa-table"></i>Table <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                        <li><a href="{{URL('siswa')}}">Siswa</a></li>
-                        <li><a href="{{URL('guru')}}">Guru</a></li>
-                        <li><a href="{{URL('pembimbing')}}">pembimbing</a></li>
-                        <li><a href="{{URL('perusahaan')}}">Perusahaan</a></li>
+                        <li><a href="{{URL('admin/siswa')}}">Siswa</a></li>
+                        <li><a href="{{URL('admin/guru')}}">Guru</a></li>
+                        <li><a href="{{URL('admin/pembimbing')}}">pembimbing</a></li>
+                        <li><a href="{{URL('admin/perusahaan')}}">Perusahaan</a></li>
                         </ul>
                     </li>
                     @endif
                     <li><a><i class="fa fa-users"></i>Kelompok <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">Supplier</a></li>
+                            <li><a href="#">MAGANG</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-cogs"></i>Settings <span class="fa fa-chevron-down"></span></a>
