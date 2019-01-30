@@ -26,7 +26,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        return view('kegiatan.create');
+        return view('dashboard.siswas.create');
     }
 
     /**
@@ -39,55 +39,42 @@ class KegiatanController extends Controller
     {
         $this->validate($request,[
             'bidang_pekerjaan' => 'required|',
-            'uraian_pekerjaan'=> 'required|',
-            'tgl_pelaksanaan' => 'required'
+            'uraian_pekerjaan'=> 'required|'
+           
         ]);
 
         $kegiatan = new kegiatan([
             'bidang_pekerjaan' =>$request->get('bidang_pekerjaan'),
             'uraian_pekerjaan' =>$request->get('uraian_pekerjaan'),
-            'tanggal' =>$request->get('tangal'),
+           
         ]);
         $kegiatan ->save();
         return redirect('/kegiatan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Kegiatan $kegiatan)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Kegiatan $kegiatan)
+    
+    public function edit($es)
     {
-        //
+        $kegiatan = kegiatan::findOrFail($es);
+
+        return view('dashboard.siswas.edit',compact('kegiatan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Kegiatan $kegiatan)
+    
+     
+    public function update(Request $request,$kegiatan)
     {
         $kegiatan=kegiatan::findOrfail($kegiatan);
 
         $kegiatan->update($request->all());
 
-        return redirect()->route('dashboard.siswas.kegiatan');
+        return redirect('/kegiatan');
     }
 
     /**

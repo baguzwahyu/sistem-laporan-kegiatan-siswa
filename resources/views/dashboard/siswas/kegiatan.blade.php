@@ -7,11 +7,8 @@
 
 
 
- 
-<div class="col-md-12 col-sm-12 col-xs-24">
-   
-    
-    <a class="btn btn-success" href="{{URL::to('siswas/create')}}">+kegiatan</a>  
+<div class="col-md-12 col-sm-12 col-xs-24">     
+<a class="btn btn-success" href="{{URL::to('kegiatan/create')}}">+kegiatan</a>
     <div class="x_panel">
       <div class="x_title">
         <h2>Kegiatan <small color="blue">Magang</small></h2>
@@ -23,7 +20,7 @@
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Settings 1</a>
               </li>
-              <li><a href="#">Settings 2</a>
+              <li><a href="#">Settings 2</a>  
               </li>
             </ul>
           </li>
@@ -37,10 +34,11 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>BIDANG PEKERJAAN</th>
-              <th>URAIAN PEKERJAAN</th>
-              <th>TANGGAL PELAKSANAAN</th>
+              <th>No</th>
+              <th>Bidang Pekerjaan</th>
+              <th>Uraian Pekerjaan</th>
+              <th>Tgl Pelaksanaan</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -49,12 +47,13 @@
 		    <th scope="row">{{$sin->id}}</th>
                     <td>{{$sin->bidang_pekerjaan}}</td>                 
                     <td>{{$sin->uraian_pekerjaan}}</td>
-                    <td>{{$sin->tgl_pelaksanaan}}</td>
+                    <td>{{$sin->created_at->toFormattedDateString() }}</td>
                     <td>
                     <form action="{{ route('kegiatan.destroy', $sin->id) }}" method="post">
                         {{ csrf_field() }}
                         <input name="_method" type="hidden" value="DELETE">
                         <button class="btn btn-danger" type="submit"><i class="fa fa-trash">Delete</i></button>
+                        <a href="{{route('kegiatan.edit', $sin->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i>Edit</a>
                     </form>
                 </td>
                 </tr>
