@@ -49,7 +49,7 @@ class KegiatanController extends Controller
            
         ]);
         $kegiatan ->save();
-        return redirect('/kegiatan');
+        return redirect('admin/kegiatan');
     }
 
     
@@ -74,7 +74,7 @@ class KegiatanController extends Controller
 
         $kegiatan->update($request->all());
 
-        return redirect('/kegiatan');
+        return redirect('admin/kegiatan');
     }
 
     /**
@@ -83,12 +83,12 @@ class KegiatanController extends Controller
      * @param  \App\Kegiatan  $kegiatan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kegiatan $kegiatan)
+    public function destroy($kegiatan)
     {
         $kegiatan = kegiatan::findOrFail($kegiatan);
 
         $kegiatan->delete();
         
-        return redirect('/kegiatan');
+        return redirect('admin/kegiatan');
     }
 }
