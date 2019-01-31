@@ -23,7 +23,7 @@
 
                     <li><a href="{{url('/')}}" onclick="event.preventDevault();
                     Document.getElementById('logout-form').submit();">
-                    <form action="{{url('login')}}" id="logout-form" method="POST" style="display :none;">
+                    <form action="{{url('/home')}}" id="logout-form" method="POST" style="display :none;">
                       {{ csrf_field() }}
                     </form>
                     <i class="fa fa-sign-out pull-right"></i> Log Out</a>
