@@ -35,14 +35,14 @@ class GuruController extends Controller
             'mapel' =>$request->get('mapel'),
         ]);
         $guru ->save();
-        return redirect('/guru');
+        return redirect('/admin/guru');
 
-        $user = new user([
-            'nama' =>$request->get('nama'),
-            'mapel' =>$request->get('mapel'),
-        ]);
-        $user ->save();
-        return redirect('/user');
+        // $user = new user([
+        //     'nama' =>$request->get('nama'),
+        //     'mapel' =>$request->get('mapel'),
+        // ]);
+        // $user ->save();
+        // return redirect('/user');
     }
 
     

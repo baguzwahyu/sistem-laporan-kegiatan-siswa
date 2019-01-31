@@ -21,7 +21,7 @@
                     </li>
                     <li><a href="javascript:;">Help</a></li>
 
-                    <li><a href="{{url('/loginadmin')}}" onclick="event.preventDevault();
+                    <li><a href="{{url('/')}}" onclick="event.preventDevault();
                     Document.getElementById('logout-form').submit();">
                     <form action="{{url('login')}}" id="logout-form" method="POST" style="display :none;">
                       {{ csrf_field() }}

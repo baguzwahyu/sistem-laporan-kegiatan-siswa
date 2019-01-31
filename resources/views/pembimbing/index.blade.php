@@ -18,7 +18,7 @@
           </div>
       </div> 
     </form>
-    <a class="btn btn-success" href="{{URL::to('pembimbing/create')}}">+ Pembimbing</a>
+    <a class="btn btn-success" href="{{URL::to('admin/pembimbing/create')}}">+ Pembimbing</a>
     <div class="x_panel">
       <div class="x_title">
         <h2>Daftar Pembimbing <small color="blue">SMK TELEKOMUNIKASI DU</small></h2>
@@ -63,7 +63,7 @@
                         {{ csrf_field() }}
                         <input name="_method" type="hidden" value="DELETE">
                         <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
-                        <a href="{{route('pembimbing.edit', $sem->id)}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a>
+                        <a href="{{route('admin/pembimbing.edit', $sem->id)}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a>
                     </form>
                 </td>
                 </tr>
