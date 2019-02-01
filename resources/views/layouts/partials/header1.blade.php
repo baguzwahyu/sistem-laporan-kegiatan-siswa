@@ -28,7 +28,7 @@
                     </form>
                     <i class="fa fa-sign-out pull-right"></i> Log Out</a>
                     
-                   </li>
+                   </li>     
                   
                   </ul>
 
