@@ -68,7 +68,7 @@
       
                 <div class="form-group">
                   <div class="col-md-9 col-md-offset-3">
-                  <a class="btn btn-primary" href="{{url('admin/pembimbing')}}">Cancel</a>
+                  <a class="btn btn-primary" href="{{url('pembimbing')}}">Cancel</a>
                     <button type="submit" value="save" class="btn btn-success">save</button>
                   </div>
                 </div>

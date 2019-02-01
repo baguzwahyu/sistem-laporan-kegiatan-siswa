@@ -41,9 +41,7 @@ return view('/siswa/search')->with('siswa',$siswa)
                       ->with('query',request('query'));
                     
 });
-Route::get('/loginadmin',function(){
-    return view('auth.login');
-});
+
 
 // Route::get('/ss', function (){
 //     return view('dashboard.dashboard');
@@ -62,18 +60,22 @@ Route::get('/master', function () {
     return view('layouts.master');
 });
 
-
+Route::get('/loginadmin',function(){
+    return view('auth.login');
+});
 Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
+    
     Route::resource('/guru','GuruController');
     Route::resource('/perusahaan','PerusahaanController');
     Route::resource('/siswa','SiswaController');
     Route::resource('/pembimbing','PembimbingController');
     Route::resource('/kegiatan','KegiatanController');
+  
     
 });
-
 Route::get('/', function () {
     return view('welcome');
+
 });
 // Auth::routes();
 
@@ -85,7 +87,7 @@ Route::get('/', function () {
 //     'uses' => 'KegiatanController@index',
 //     'as' => 'kegiatan.create'
 // ]);
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
+       

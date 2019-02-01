@@ -49,45 +49,32 @@ class KegiatanController extends Controller
            
         ]);
         $kegiatan ->save();
-        return redirect('/kegiatan');
+        return redirect('admin/kegiatan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Kegiatan $kegiatan)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Kegiatan $kegiatan)
+    
+    public function edit($es)
     {
-        //
+        $kegiatan = kegiatan::findOrFail($es);
+
+        return view('dashboard.siswas.edit',compact('kegiatan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Kegiatan $kegiatan)
+    
+     
+    public function update(Request $request,$kegiatan)
     {
         $kegiatan=kegiatan::findOrfail($kegiatan);
 
         $kegiatan->update($request->all());
 
-        return redirect()->route('dashboard.siswas.kegiatan');
+        return redirect('admin/kegiatan');
     }
 
     /**
@@ -96,12 +83,12 @@ class KegiatanController extends Controller
      * @param  \App\Kegiatan  $kegiatan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kegiatan $kegiatan)
+    public function destroy($kegiatan)
     {
         $kegiatan = kegiatan::findOrFail($kegiatan);
 
         $kegiatan->delete();
         
-        return redirect('/kegiatan');
+        return redirect('admin/kegiatan');
     }
 }

@@ -17,7 +17,6 @@
             </div>
         </div>
         <!-- /menu profile quick info -->
-
         <br />
 
         <!-- sidebar menu -->
@@ -25,7 +24,7 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                    <li><a href="{{url('home')}}"><i class="fa fa-home"></i> HOME</a>
+                    <li><a href="{{url('dashboard')}}"><i class="fa fa-home"></i> HOME</a>
             @if(auth::user()->admind)                
                     <li><a><i class="fa fa-table"></i>Table <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
@@ -62,7 +61,7 @@
                                   <li><a href="projects.html">Projects</a></li>
                                   <li><a href="project_detail.html">Project Detail</a></li>
                                   <li><a href="contacts.html">Contacts</a></li>
-                                  <li><a href="profile.html">Profile</a></li>
+                                  <li><a href="http://smktelkomdu.sch.id/">Profile</a></li>
                                 </ul>
                               </li>
                             </ul>

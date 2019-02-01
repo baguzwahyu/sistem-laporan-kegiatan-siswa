@@ -13,11 +13,10 @@ class CreateKegiatansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kegiatans', function (Blueprint $table) {
+        Schema::create('kegiatan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('bidang_pekerjaan');
-            $table->string('uraian_pekerjaan');
-           
+            $table->text('uraian_pekerjaan');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateKegiatansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kegiatans');
+        Schema::dropIfExists('kegiatan');
     }
 }

@@ -21,10 +21,11 @@ class UserTableSeeder extends Seeder
 
         \App\User::create([
             'name' => 'Arya Firman',
-            'email' => 'arya@gmail.com',
+            'email' => 'aryafirman40@gmail.com',
             'admind' => 1,
             'password' =>bcrypt('qwerty23'),
             'group_id' =>5
         ]);
     }
 }
+

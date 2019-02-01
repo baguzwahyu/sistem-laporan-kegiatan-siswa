@@ -23,7 +23,7 @@
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Settings 1</a>
               </li>
-              <li><a href="#">Settings 2</a>
+              <li><a href="#">Settings 2</a>  
               </li>
             </ul>
           </li>
@@ -37,10 +37,11 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>BIDANG PEKERJAAN</th>
-              <th>URAIAN PEKERJAAN</th>
-              <th>TANGGAL PELAKSANAAN</th>
+              <th>No</th>
+              <th>Bidang Pekerjaan</th>
+              <th>Uraian Pekerjaan</th>
+              <th>Tgl Pelaksanaan</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
