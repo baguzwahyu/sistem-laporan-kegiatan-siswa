@@ -8,7 +8,11 @@ class Guru extends Model
 {
     protected $table = 'guru';
 
-    protected $fillable = ['id_guru','nama','mapel'];
+    protected $fillable = ['id_guru','nama','mapel','email','password'];
+
+    protected $hidden = [
+              'email', 'password'
+    ];
 
 
     public function siswa()

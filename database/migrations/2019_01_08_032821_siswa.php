@@ -20,6 +20,8 @@ class Siswa extends Migration
             $table->string('kelas');
             $table->integer('guru_id')-> unsigned();
             $table->integer('pembimbing_id')->unsigned();
+            $table->string('email')->unique();
+            $table->string('password');
             $table->timestamps();
 
             $table->foreign('guru_id')

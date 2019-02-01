@@ -8,8 +8,11 @@ class Siswa extends Model
 {
     protected $table =  'siswa';
 
-    protected $fillable = ['id','nama','jurusan','kelas','guru_id','pembimbing_id'];
+    protected $fillable = ['id','nama','jurusan','kelas','guru_id','pembimbing_id','email', 'password'];
 
+    protected $hidden = [
+              'email', 'password'
+];
 
 public function pembimbing()
 {

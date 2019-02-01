@@ -18,6 +18,8 @@ class Pembimbing extends Migration
             $table->string('nama');
             $table->string('telephone');
             $table->string('bagian');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->timestamps();
         });
 
