@@ -15,7 +15,8 @@
           <div class="tile-stats">
             <div class="icon"><i class="fa fa-pencil"></i></div>
             <div class="count">179</div>
-            <h3>kegiatan</h3>
+            <h3>Report</h3>
+            <p>Lorem ipsum psdea itgum rixt.</p>
          </div>
         </div>
       </a>
@@ -26,6 +27,7 @@
             <div class="icon"><i class="fa fa-book"></i></div>
             <div class="count">179</div>
             <h3>Tugas Magang</h3>
+            <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
