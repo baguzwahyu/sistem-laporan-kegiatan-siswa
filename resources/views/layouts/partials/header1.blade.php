@@ -21,17 +21,12 @@
                     </li>
                     <li><a href="javascript:;">Help</a></li>
 
-                    <li>
-                      <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                        <i class="fa fa-sign-out pull-right"></i>
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                    <li><a href="{{url('/')}}" onclick="event.preventDevault();
+                    Document.getElementById('logout-form').submit();">
+                    <form action="{{url('/home')}}" id="logout-form" method="POST" style="display :none;">
+                      {{ csrf_field() }}
+                    </form>
+                    <i class="fa fa-sign-out pull-right"></i> Log Out</a>
                     
                    </li>
                   

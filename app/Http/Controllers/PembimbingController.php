@@ -36,7 +36,7 @@ class PembimbingController extends Controller
         ]);
 
         $pembimbing->save();
-        return redirect('pembimbing');
+        return redirect('admin/pembimbing');
     }
 
     public function show(Pembimbing $pembimbing)
@@ -56,13 +56,13 @@ class PembimbingController extends Controller
 
         $pembimbing->update($request->all());
 
-        return redirect()->route('pembimbing.index');
+        return redirect('admin/pembimbing');
     }
 
     public function destroy(Pembimbing $pembimbing)
     {
         $pembimbing->delete();
 
-        return redirect('/pembimbing/');
+        return redirect('admin/pembimbing');
     }
 }
