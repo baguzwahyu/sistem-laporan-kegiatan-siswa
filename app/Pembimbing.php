@@ -8,8 +8,13 @@ class Pembimbing extends Model
 {
     protected $table =  'pembimbing';
 
-    protected $fillable = ['id','nama','telephone','bagian'];
+    protected $fillable = ['id','nama','telephone','bagian','email', 'password'];
     
+    protected $hidden = [
+              'email', 'password'
+];
+
+
     public function siswa()
     {
         return $this->hasMany('App\Siswa');
