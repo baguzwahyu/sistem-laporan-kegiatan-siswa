@@ -42,10 +42,10 @@ class SiswaController extends Controller
             'email'         =>'required|email|unique:siswa',
             'password'      =>'required|min:6|confirmed'
         ]);
-        $siswa = new siswa([
+        $siswa = new Siswa([
             'nama'          =>$request->get('nama'),
             'jurusan'       =>$request->get('jurusan'),
-            'kelas '        =>$request->get('kelas'),
+            'class'        =>$request->get('kelas'),
             'guru_id'       =>$request->get('guru_id'),
             'pembimbing_id' =>$request->get('pembimbing_id'),
             'email'         =>$request->get('email'),
