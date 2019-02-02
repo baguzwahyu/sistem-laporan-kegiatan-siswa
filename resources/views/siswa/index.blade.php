@@ -60,7 +60,7 @@
 		    <th scope="row">{{$sin->id}}</th>
                     <td>{{$sin->nama}}</td>                 
                     <td>{{$sin->jurusan}}</td>
-                    <td>{{$sin->kelas}}</td>
+                    <td>{{$sin->class}}</td>
                     <td>{{$sin->guru->nama}}</td>
                     <td>{{$sin->pembimbing->nama}}</td>
                     <td>

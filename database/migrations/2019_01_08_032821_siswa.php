@@ -17,7 +17,7 @@ class Siswa extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->string('jurusan');
-            $table->string('kelas');
+            $table->string('class');
             $table->integer('guru_id')-> unsigned();
             $table->integer('pembimbing_id')->unsigned();
             $table->string('email')->unique();
