@@ -26,13 +26,17 @@ class GuruController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'nama' => 'required|',
-            'mapel'=> 'required|'
+            'nama'          => 'required|',
+            'mapel'         => 'required|',
+            'email'         =>'required|email|unique:guru',
+            'password'      =>'required|min:6|confirmed'
         ]);
 
         $guru = new Guru([
-            'nama' =>$request->get('nama'),
-            'mapel' =>$request->get('mapel'),
+            'nama'          =>$request->get('nama'),
+            'mapel'         =>$request->get('mapel'),
+            'email'         =>$request->get('email'),
+            'password'      =>bcrypt($request->password)
         ]);
         $guru ->save();
         return redirect('admin/guru');

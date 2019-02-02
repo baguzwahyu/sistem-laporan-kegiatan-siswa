@@ -57,12 +57,44 @@
               <span class="fa fa-book form-control-feedback right" aria-hidden="true"></span>
             </div>
           </div>
+
+          <div class="form-group">
+                  <label  for="email" class="control-label col-md-3 col-sm-3 col-xs-12">E-mail</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" value="{{ old('email') }}" name="email">
+                    @if ($errors->has('email'))
+                         <span class="invalid-feedback" role="alert">
+                             <strong>{{ $errors->first('email') }}</strong>
+                         </span>
+                     @endif
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label  for="password" class="control-label col-md-3 col-sm-3 col-xs-12">Password</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password"  name="password">
+                    @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label  for="password_confirm" class="control-label col-md-3 col-sm-3 col-xs-12">Confirm Password</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="password" class="form-control" id="password_confirm" name="password_confirmation">
+  
+                  </div>
+                </div>
        
           <div class="ln_solid"></div>
 
           <div class="form-group">
             <div class="col-md-9 col-md-offset-3">
-            <a class="btn btn-primary" href="{{url('guru')}}">Cancel</a>
+            <a class="btn btn-primary" href="{{url('admin/guru')}}">Cancel</a>
               <button type="submit" value="save" class="btn btn-success">save</button>
             </div>
           </div>

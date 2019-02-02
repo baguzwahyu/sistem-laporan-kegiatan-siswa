@@ -49,6 +49,7 @@
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
+
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-3">telephone</label>
                   <div class="col-md-9 col-sm-9 col-xs-9">
@@ -56,6 +57,7 @@
                     <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
+
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-3">bagian</label>
                   <div class="col-md-9 col-sm-9 col-xs-9">
@@ -63,12 +65,44 @@
                     <span class="fa fa-book form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
+
+                <div class="form-group">
+                  <label  for="email" class="control-label col-md-3 col-sm-3 col-xs-3">E-mail</label>
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" value="{{ old('email') }}" name="email">
+                    @if ($errors->has('email'))
+                         <span class="invalid-feedback" role="alert">
+                             <strong>{{ $errors->first('email') }}</strong>
+                         </span>
+                     @endif
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label  for="password" class="control-label col-md-3 col-sm-3 col-xs-3">Password</label>
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password"  name="password">
+                    @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label  for="password_confirm" class="control-label col-md-3 col-sm-3 col-xs-3">Confirm Password</label>
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input type="password" class="form-control" id="password_confirm" name="password_confirmation">
+  
+                  </div>
+                </div>
              
                 <div class="ln_solid"></div>
       
                 <div class="form-group">
                   <div class="col-md-9 col-md-offset-3">
-                  <a class="btn btn-primary" href="{{url('pembimbing')}}">Cancel</a>
+                  <a class="btn btn-primary" href="{{url('admin/pembimbing')}}">Cancel</a>
                     <button type="submit" value="save" class="btn btn-success">save</button>
                   </div>
                 </div>

@@ -34,22 +34,26 @@ class SiswaController extends Controller
     {
                 
         $this->Validate($request,[
-            'nama'=>'required|',
-            'jurusan'=>'required|',
-            'kelas'=>'required|',
-            'guru_id'=>'required',
-            'pembimbing_id'=>'required'
+            'nama'          =>'required',
+            'jurusan'       =>'required',
+            'kelas'         =>'required',
+            'guru_id'       =>'required',
+            'pembimbing_id' =>'required',
+            'email'         =>'required|email|unique:siswa',
+            'password'      =>'required|min:6|confirmed'
         ]);
         $siswa = new siswa([
-            'nama'=>$request->get('nama'),
-            'jurusan'=>$request->get('jurusan'),
-            'kelas'=>$request->get('kelas'),
-            'guru_id'=>$request->get('guru_id'),
-            'pembimbing_id'=>$request->get('pembimbing_id'),
+            'nama'          =>$request->get('nama'),
+            'jurusan'       =>$request->get('jurusan'),
+            'kelas '        =>$request->get('kelas'),
+            'guru_id'       =>$request->get('guru_id'),
+            'pembimbing_id' =>$request->get('pembimbing_id'),
+            'email'         =>$request->get('email'),
+            'password'      =>bcrypt($request->password)
         ]);
 
         $siswa->save();
-        return redirect('siswa');
+        return redirect('admin/siswa');
     }
 
     /**
@@ -88,28 +92,28 @@ class SiswaController extends Controller
     {
        
         $this->Validate($request,[
-            'nama'=>'required|',
-            'jurusan'=>'required|',
-            'kelas'=>'required|',
-            'guru_id'=>'required',
-            'pembimbing_id'=>'required'
+            'nama'          =>'required|',
+            'jurusan'       =>'required|',
+            'kelas'         =>'required|',
+            'guru_id'       =>'required',
+            'pembimbing_id' =>'required'
         ]);
         $siswa = new siswa([
-            'nama'=>$request->get('nama'),
-            'jurusan'=>$request->get('jurusan'),
-            'kelas'=>$request->get('kelas'),
-            'guru_id'=>$request->get('guru_id'),
-            'pembimbing_id'=>$request->get('pembimbing_id'),
+            'nama'          =>$request->get('nama'),
+            'jurusan'       =>$request->get('jurusan'),
+            'kelas'         =>$request->get('kelas'),
+            'guru_id'       =>$request->get('guru_id'),
+            'pembimbing_id' =>$request->get('pembimbing_id'),
         ]);
 
         $siswa->save();
-        return redirect('siswa');
+        return redirect('admin/siswa');
     }
 
     
     public function destroy(siswa $siswa)
     {
         $siswa->delete();
-        return redirect('/siswa/');
+        return redirect('admin/siswa');
     }
 }

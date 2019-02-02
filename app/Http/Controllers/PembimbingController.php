@@ -26,13 +26,17 @@ class PembimbingController extends Controller
         $this->Validate($request,[
             'nama'          =>'required|',
             'telephone'     =>'required|',
-            'bagian'        =>'required'
+            'bagian'        =>'required',
+            'email'         =>'required|email|unique:pembimbing',
+            'password'      =>'required|min:6|confirmed'
         ]);
         
         $pembimbing = new Pembimbing([
             'nama'          =>$request->get('nama'),
             'telephone'     =>$request->get('telephone'),
-            'bagian'        =>$request->get('bagian')
+            'bagian'        =>$request->get('bagian'),
+            'email'         =>$request->get('email'),
+            'password'      =>bcrypt($request->password)
         ]);
 
         $pembimbing->save();
