@@ -19,7 +19,7 @@
           </div>
       </div> 
     </form>
-    <a class="btn btn-success" href="{{URL::to('siswa/create')}}">+ Siswa</a>  
+    <a class="btn btn-success" href="{{URL::to('admin/siswa/create')}}">+ Siswa</a>  
     <div class="x_panel">
       <div class="x_title">
         <h2>Daftar Siswa <small color="blue">SMK Telekomunikasi DU</small></h2>
