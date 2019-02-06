@@ -117,22 +117,9 @@ class PerusahaanController extends Controller
         $perusahaan = Perusahaan::findOrFail($perusahaan);
         $perusahaan->delete();
 
-        return redirect('admin/perusahaan');
+        return redirect('admin/perusahaan/');
     }
 
-    // public function cari(Request $request)
-	// {
-	// 	// menangkap data pencarian
-	// 	$cari = $request->cari;
- 
-    // 		// mengambil data dari table pegawai sesuai pencarian data
-	// 	$perusahaan = DB::table('perusahaan')
-    //     ->where('nama','like',"%".$cari."%")
-    //     ->paginate();
- 
-    // 		// mengirim data pegawai ke view index
-	// 	return view('index',['perusahaan' => $perusahaan]);
- 
-	// }
+   
 
 }

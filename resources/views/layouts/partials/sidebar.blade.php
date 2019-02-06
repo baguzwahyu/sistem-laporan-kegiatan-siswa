@@ -13,7 +13,7 @@
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Admin</h2>
+                <h2>{{ Auth::user()->name }}</h2>
             </div>
         </div>
         <!-- /menu profile quick info -->
@@ -24,7 +24,7 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                    <li><a href="{{url('dashboard')}}"><i class="fa fa-home"></i> HOME</a>
+                    <li><a href="{{url('home')}}"><i class="fa fa-home"></i> HOME</a>
             @if(auth::user()->admind)                
                     <li><a><i class="fa fa-table"></i>Table <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">

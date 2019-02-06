@@ -45,7 +45,7 @@ class SiswaController extends Controller
         $siswa = new Siswa([
             'nama'          =>$request->get('nama'),
             'jurusan'       =>$request->get('jurusan'),
-            'class'        =>$request->get('kelas'),
+            'kelas'         =>$request->get('kelas'),
             'guru_id'       =>$request->get('guru_id'),
             'pembimbing_id' =>$request->get('pembimbing_id'),
             'email'         =>$request->get('email'),
