@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
+                
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -66,8 +67,8 @@
 
                             <div class="col-md-6">
                                 <select id="grup"  class="form-control{{ $errors->has('Grup Id') ? ' is-invalid' : '' }}" name="group_id" value="{{ old('group_id') }}" required autofocus>
-                                    @foreach ($group as $grp)
-                                    <option value="{{$grp->id}}">{{$grp->group_code}}</option>
+                                    @foreach ($groups as $grp)
+                                    <option value="{{$groups->id}}">{{$groups->nama}}</option>
                                         @endforeach
                                 </select>
                                 @if ($errors->has('name'))
