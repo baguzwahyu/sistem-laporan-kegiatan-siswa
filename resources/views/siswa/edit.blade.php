@@ -38,29 +38,29 @@
               <br />
              
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">nama</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">nama</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                   <input type="text" class="form-control"  value= "{{$siswa->nama }}" name="nama">
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">jurusan</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">jurusan</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control"  value="{{$siswa->jurusan }}" name="jurusan">
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">kelas</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">kelas</label>
+                  <div class="col-md-6 col-sm-9 col-xs-12">
                     <input type="text" class="form-control"  value="{{$siswa->class }}" name="kelas">
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">guru</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">guru</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                    
                 <select class="form-control" name="guru_id" >
                   @foreach ($guru as $row)
@@ -68,11 +68,11 @@
                   @endforeach  
                   
                 </select>
-                  </div>
-                </div>
+               </div>
+             </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">Pembimbing</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Pembimbing</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <select class="form-control" name="pembimbing_id" >
                      @foreach ($pembimbing as $post)
                     <option value="{{ $post->id }}">{{ $post->nama }}</option>   
@@ -80,16 +80,16 @@
                       
                      
                   </select>
-                  </div>
                 </div>
               </div>
+            </div>
           </div> 
                 <div class="ln_solid"></div>
       
                 <div class="form-group">
                   <div class="col-md-9 col-md-offset-3">
-                    <a class="btn btn-primary" href="{{url('siswa')}}">Cancel</a>
-                    <input type="submit" value="save" name="save" class="btn btn-success">
+                    <button class="btn btn-primary" href="{{url('admin/siswa')}}">Cancel</button>
+                    <button type="submit" value="save" class="btn btn-success">Save changes</button>
                   </div>
                 </div>
              

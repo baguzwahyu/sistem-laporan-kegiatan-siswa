@@ -20,7 +20,7 @@
                 </div>
             </div> 
           </form>   
-    <a class="btn btn-success" href="{{URL::to('admin/guru/create')}}">+ Guru</a>
+          <a class="btn btn-success" href="{{URL::to('admin/guru/create')}}">+ Guru</a>
                 <div class="x_panel">
                   <div class="x_title">
                   <h2>Daftar Guru <small color="blue">SMK Telekomunikasi DU </small></h2>
