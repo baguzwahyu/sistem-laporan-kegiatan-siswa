@@ -45,30 +45,30 @@
               
              
                 <div class="form-group" >
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">nama</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">nama</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" id="nama" name="nama">
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">jurusan</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">jurusan</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" id="jurusan" name="jurusan">
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">kelas</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">kelas</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" id="kelas" name="kelas">
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
                
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-3">guru</label>
-                <div class="col-md-9 col-sm-9 col-xs-9">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">guru</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <select class="form-control" name="guru_id" >
                     @foreach ($gurus as $guru)
                   <option value="{{$guru->id}}">{{$guru->nama}}</option>
@@ -78,8 +78,8 @@
                 </div>
               </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-3">pembimbing</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">pembimbing</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <select class="form-control" name="pembimbing_id" >
                           @foreach ($pembimbings as $pembimbing)
                       <option value="{{$pembimbing->id}}">{{$pembimbing->nama}}</option>
@@ -89,8 +89,8 @@
           </div> 
 
           <div class="form-group">
-                  <label  for="email" class="control-label col-md-3 col-sm-3 col-xs-3">E-mail</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label  for="email" class="control-label col-md-3 col-sm-3 col-xs-12">E-mail</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" value="{{ old('email') }}" name="email">
                     @if ($errors->has('email'))
                          <span class="invalid-feedback" role="alert">
@@ -101,8 +101,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label  for="password" class="control-label col-md-3 col-sm-3 col-xs-3">Password</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label  for="password" class="control-label col-md-3 col-sm-3 col-xs-12">Password</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password"  name="password">
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
@@ -113,8 +113,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label  for="password_confirm" class="control-label col-md-3 col-sm-3 col-xs-3">Confirm Password</label>
-                  <div class="col-md-9 col-sm-9 col-xs-9">
+                  <label  for="password_confirm" class="control-label col-md-3 col-sm-3 col-xs-12">Confirm Password</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="password" class="form-control" id="password_confirm" name="password_confirmation">
   
                   </div>

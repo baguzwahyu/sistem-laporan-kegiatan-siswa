@@ -90,23 +90,10 @@ class SiswaController extends Controller
      */
     public function update(Request $request,$id)
     {
-       
-        $this->Validate($request,[
-            'nama'          =>'required|',
-            'jurusan'       =>'required|',
-            'kelas'         =>'required|',
-            'guru_id'       =>'required',
-            'pembimbing_id' =>'required'
-        ]);
-        $siswa = new siswa([
-            'nama'          =>$request->get('nama'),
-            'jurusan'       =>$request->get('jurusan'),
-            'kelas'         =>$request->get('kelas'),
-            'guru_id'       =>$request->get('guru_id'),
-            'pembimbing_id' =>$request->get('pembimbing_id'),
-        ]);
+        $siswa=siswa::findOrfail($id);
 
-        $siswa->save();
+        $siswa->update($request->all());
+
         return redirect('admin/siswa');
     }
 

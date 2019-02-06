@@ -51,7 +51,7 @@ class PerusahaanController extends Controller
         ]);
 
         $perusahaan->save();
-        return redirect('perusahaan');
+        return redirect('admin/perusahaan');
     }
 
     /**
@@ -103,7 +103,7 @@ class PerusahaanController extends Controller
         $perusahaan = Perusahaan::findOrfail($id);
         $perusahaan->update($request->all());
         $perusahaan->save();
-        return redirect()->route('perusahaan.index');
+        return redirect('admin/perusahaan');
     }
 
     /**
@@ -117,7 +117,7 @@ class PerusahaanController extends Controller
         $perusahaan = Perusahaan::findOrFail($perusahaan);
         $perusahaan->delete();
 
-        return redirect('/perusahaan/');
+        return redirect('admin/perusahaan');
     }
 
     // public function cari(Request $request)
