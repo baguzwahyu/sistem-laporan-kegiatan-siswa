@@ -36,7 +36,7 @@ class SiswaController extends Controller
         $this->Validate($request,[
             'nama'          =>'required',
             'jurusan'       =>'required',
-            'kelas'         =>'required',
+            'class'         =>'required',
             'guru_id'       =>'required',
             'pembimbing_id' =>'required',
             'email'         =>'required|email|unique:siswa',
@@ -45,7 +45,7 @@ class SiswaController extends Controller
         $siswa = new Siswa([
             'nama'          =>$request->get('nama'),
             'jurusan'       =>$request->get('jurusan'),
-            'class'        =>$request->get('kelas'),
+            'class'        =>$request->get('class'),
             'guru_id'       =>$request->get('guru_id'),
             'pembimbing_id' =>$request->get('pembimbing_id'),
             'email'         =>$request->get('email'),

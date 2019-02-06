@@ -61,7 +61,7 @@
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-3">kelas</label>
                   <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" class="form-control" name="kelas" id="kelas">
+                    <input type="text" class="form-control" name="class" id="kelas">
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>

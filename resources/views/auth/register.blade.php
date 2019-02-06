@@ -62,6 +62,23 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="grup" class="col-md-4 col-form-label text-md-right">{{ __('Grup Id') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="grup"  class="form-control{{ $errors->has('Grup Id') ? ' is-invalid' : '' }}" name="grup_id" value="{{ old('grup_id') }}" required autofocus>
+                                    @foreach ($groups as $grp)
+                                    <option value="{{$groups->id}}">{{$groups->nama}}</option>
+                                        @endforeach
+                                </select>
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
