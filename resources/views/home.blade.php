@@ -16,7 +16,7 @@
           <div class="tile-stats">
             <div class="icon"><i class="fa fa-pencil"></i></div>
             <div class="count">179</div>
-            <h3>Report</h3>
+            <h3>Kegiatan</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
          </div>
         </div>
