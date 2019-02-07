@@ -35,11 +35,13 @@
                         </ul>
                     </li>
                     @endif
+                    @if(auth::user()->group_id=='1' || auth::user()->group_id=='2')
                     <li><a><i class="fa fa-users"></i>Kelompok <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">MAGANG</a></li>
                         </ul>
                     </li>
+                    @endif
                     <li><a><i class="fa fa-cogs"></i>Settings <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Role Managment</a></li>
