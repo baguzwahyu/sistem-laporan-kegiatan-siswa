@@ -69,7 +69,7 @@
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
-                                    @endif 
+                                    @endif
                                 </div>
                             </div>
     

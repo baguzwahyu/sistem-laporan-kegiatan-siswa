@@ -25,24 +25,24 @@
 
 
         <div class="form-group">
-          <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama</label>
-          <div class="col-md-9 col-sm-9 col-xs-9">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
           <input type="text" class="form-control" name="nama" value="{{$pembimbing->nama}}">
             <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
         </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3 col-sm-3 col-xs-3">telephone</label>
-          <div class="col-md-9 col-sm-9 col-xs-9">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">telephone</label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
             <input type="text" class="form-control"  name="telephone" value="{{ $pembimbing->telephone }}">
             <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
           </div>          
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3 col-sm-3 col-xs-3">bagian</label>
-          <div class="col-md-9 col-sm-9 col-xs-9">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">bagian</label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
             <input type="text" class="form-control" name="bagian" value="{{ $pembimbing->bagian }}">
             <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
           </div>
@@ -52,8 +52,8 @@
 
         <div class="form-group">
           <div class="col-md-9 col-md-offset-3">
-          <a class="btn btn-primary" href="{{url('pembimbing')}}">Cancel</a>
-            <button type="submit" value="save" class="btn btn-success">save</button>
+          <button class="btn btn-primary" href="{{url('pembimbing')}}">Cancel</button>
+            <button type="submit" value="save" class="btn btn-success">Save changes</button>
           </div>
         </div>
     </div>

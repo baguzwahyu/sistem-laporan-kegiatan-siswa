@@ -74,7 +74,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     
 });
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 // Auth::routes();
 
