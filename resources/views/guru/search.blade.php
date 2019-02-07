@@ -22,8 +22,8 @@
           </div>
       </div> 
     </form>
-    <a class="btn btn-success fa fa-user" href="{{URL::to('guru/create')}}">+</a><br>
-    <a class="btn btn-primary fa fa-history" href="{{URL::to('guru')}}"></a>
+    <a class="btn btn-success fa fa-user" href="{{URL::to('admin/guru/create')}}">+</a><br>
+    <a class="btn btn-primary fa fa-history" href="{{URL::to('admin/guru')}}"></a>
 
     <div class="x_panel">
       <div class="x_title">
