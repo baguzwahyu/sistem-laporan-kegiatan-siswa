@@ -3,13 +3,13 @@
 <html lang="en">
 
   <head>
-    <link rel="icon" href="image/telkom.png" type="image/ico" />
+    <link rel="icon" href="img/logo.png" type="image/ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>| SMK TELKOM DU | Sign in |</title>
+    <title>| SMK TELKOM DU | Login </title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('vendor2/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -39,7 +39,7 @@
             <div class="masthead-content text-white py-5 py-md-0">
               <h1 class="mb-3">Welcome !</h1>
               <p class="mb-5">Pleas login your name and your password in
-                <strong> Sistem Laporan Kegiatan Siswa</strong> ! If it has not been registered  <a class="text-white" href="#">Sign In!</a></p>
+                <strong> Sistem Laporan Kegiatan Siswa</strong> ! If it has not been registered  <a class="text-white" href="register">Sign In!</a></p>
                 <div id="login" class="animate form registration_form">
                    
                         <form method="POST" action="{{ route('login') }}">
