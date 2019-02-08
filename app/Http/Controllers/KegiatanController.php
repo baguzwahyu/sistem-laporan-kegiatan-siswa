@@ -57,7 +57,7 @@ class KegiatanController extends Controller
     {
         //
     }
-
+ 
     
     public function edit($es)
     {
