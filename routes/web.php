@@ -76,6 +76,9 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 // Auth::routes();
 
 // Route::get('/dashboard', 'HomeController@index')->name('dashboard');
