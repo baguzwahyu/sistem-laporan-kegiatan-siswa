@@ -60,7 +60,9 @@ Route::get('/master', function () {
     return view('layouts.master');
 });
 
-
+Route::get('/loginadmin',function(){
+    return view('auth.login');
+});
 Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     
     Route::get('/dashboard',function(){
@@ -76,6 +78,9 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     
 });
 Route::get('/', function () {
+    return view('auth.login');
+});
+Route::get('/welcome', function () {
     return view('welcome');
 });
 // Auth::routes();

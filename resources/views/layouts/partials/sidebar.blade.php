@@ -43,7 +43,6 @@
                         </ul>
                     </li>
                     @endif
-                    
                     @if(auth::user()->group_id=='1' || auth::user()->group_id=='2')
                     <li><a><i class="fa fa-users"></i>Kelompok <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">

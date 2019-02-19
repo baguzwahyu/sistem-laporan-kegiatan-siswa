@@ -15,13 +15,13 @@
       <div class="x_title">
         <h2>Kegiatan <small color="blue">Magang</small></h2>
         <ul class="nav navbar-right panel_toolbox">
-        <a class="btn btn-success" href="{{URL::to('admin/kegiatan/create')}}">+ kegiatan</a>
+        <a class="btn btn-success" href="{{URL::to('admin/kegiatan/create')}}"><p class="glyphicon glyphicon-pencil"> Kegiatan</p></a>
         </ul>
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
 
-        <table class="table table-striped">
+        <table class="table table-striped jambo_table bulk_action">
           <thead>
             <tr>
               <th>No</th>
@@ -29,6 +29,7 @@
               <th>Uraian Pekerjaan</th>
               <th>Tgl Pelaksanaan</th>
               <th>Action</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -42,9 +43,12 @@
                     <form action="{{ route('kegiatan.destroy', $sin->id) }}" method="post">
                         {{ csrf_field() }}
                         <input name="_method" type="hidden" value="DELETE">
-                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
-                        <a href="{{route('kegiatan.edit', $sin->id)}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a>
+                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                        <a href="{{route('kegiatan.edit', $sin->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                     </form>
+                </td>
+                <td>
+                <a href="#">view</a>
                 </td>
                 </tr>
             @endforeach

@@ -32,14 +32,14 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(jkl/images/bg-01.jpg);">
+				<div class="login100-form-title" style="background-image: url(jkl/images/bg-02.jpg);">
 					<span class="login100-form-title-1">
 						Sign In
 					</span>
 					<span class="text-white">Sistem Laporan Kegiatan Siswa</span>
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="{{ route('register') }}"  >
+				<form class="login100-form validate-form" method="POST" action="{{ route('register') }}" >
                 @csrf
 					<div class="wrap-input100 validate-input m-b-26">
 						<span for="name" class="label-input100 text-white">Name</span>
@@ -50,7 +50,7 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-						
+						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-26">
@@ -62,7 +62,7 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-						
+						<span class="focus-input100"></span>
                     </div>
                     
 					<div class="wrap-input100 validate-input m-b-26">
@@ -74,17 +74,17 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-						
+						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-26">
 						<span for="password-confirm" class="label-input100 text-white">Password</span>
 						<input id="password-confirm" type="password" class="input100" name="password_confirmation"  placeholder="Password Confirmation *" required>
 						<span class="focus-input100"></span>
 					</div>
-					
+
 					<div class="wrap-input100 validate-input m-b-18">
 						<span class="label-input100 text-white">Group id</span>
-						<div class="">
+						<div>
                                 <select id="grup"  class="input100{{ $errors->has('Grup Id') ? ' is-invalid' : '' }}" name="group_id" value="{{ old('group_id') }}" required autofocus>
                                     @foreach ($group as $grp)
                                     <option value="{{$grp->id}}">{{$grp->group_code}}</option>
@@ -101,7 +101,7 @@
                            
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">
-							<p class="text-white">Sudah punya akun ? <a class="text-white" href="{{url('login')}}"><u>Login</u></a></p>
+							<p class="text-white">Sudah punya akun ? <a class="text-white" href="{{url('login')}}">Login</a></p>
 						</div>
 					</div>
 					<div class="container-login100-form-btn">
