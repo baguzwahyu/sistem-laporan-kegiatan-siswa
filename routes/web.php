@@ -60,13 +60,11 @@ Route::get('/master', function () {
     return view('layouts.master');
 });
 
-Route::get('/loginadmin',function(){
-    return view('auth.login');
-});
+
 Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     
-    Route::get('/dashboard',function(){
-        return view('dashboard.siswas.dashboard');
+    Route::get('/homeAll',function(){
+        return view('dashboard.all.homeAll');
     });
 
     Route::resource('/guru','GuruController');
@@ -78,7 +76,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     
 });
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 Route::get('/welcome', function () {
     return view('welcome');

@@ -24,10 +24,10 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                        <li><a href="{{url('/home')}}"><i class="fa fa-home"></i> HOME</a>
+                        <li><a href="{{url('admin/homeAll')}}"><i class="fa fa-home"></i> HOME</a>
                     @if(auth::user()->group_id=='5')
                     {{-- home siswa --}}
-                    <li><a href="{{url('admin/dashboard')}}"><i class="fa fa-pencil"></i> KEGIATAN</a>
+                    <li><a href="{{url('home')}}"><i class="fa fa-pencil"></i> KEGIATAN</a>
                     {{-- @elseif(auth::user()->group_id=='1' || auth::user()->group_id=='2')
                     <li><a href="{{url('home')}}"><i class="fa fa-home"></i> HOME</a> --}}
                     
@@ -43,6 +43,7 @@
                         </ul>
                     </li>
                     @endif
+                    
                     @if(auth::user()->group_id=='1' || auth::user()->group_id=='2')
                     <li><a><i class="fa fa-users"></i>Kelompok <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
