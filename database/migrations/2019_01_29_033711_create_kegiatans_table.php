@@ -17,7 +17,7 @@ class CreateKegiatansTable extends Migration
             $table->increments('id');
             $table->string('bidang_pekerjaan');
             $table->text('uraian_pekerjaan');
-            $table->boolean('status');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
