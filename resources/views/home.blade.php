@@ -2,65 +2,147 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
 @extends('layouts.master')
+@section('title','home')
 @section('content')
+    
+<div class="clearfix"></div>
 
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>PROFILE SCHOOL</h2>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Settings 1</a>
+              </li>
+              <li><a href="#">Settings 2</a>
+              </li>
+            </ul>
+          </li>
+          <li><a class="close-link"><i class="fa fa-close"></i></a>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
 
-{{-- role="main" --}}
-
- 
- <div class="row top_tiles">
-
-  
-  <a href="{{url('admin/kegiatan')}}">
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="glyphicon glyphicon-edit"></i></div>
-            <div class="count">84</div>
-            <h3>Report</h3>
-            <p>Melaporkan kegiatan keseharian prakerin.</p>
-         </div>
-        </div>
-      </a>
-
-        
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-book"></i></div>
-            <div class="count">79</div>
-            <h3>Tugas Magang</h3>
-            <p>Lorem ipsum psdea itgum rixt.</p>
+        <div class="col-md-6 col-sm-16 col-xs-12">
+          <div class="product-image">
+            <img src="{{ url('img/telkomdu.png')}}" alt="..." />
+          </div>
+          <div class="product_gallery">
+            <a>
+              <img src="{{url('img/tlkm.jpg')}}" alt="..." />
+            </a>
+            <a>
+              <img src="{{ url('img/pondok2.png')}}" alt="..." />
+            </a>
+            <a>
+              <img src="{{ url('img/prakerin.jpg')}}" alt="..." />
+            </a>
+            <a>
+            <img src="{{ url('img/logo-osis.png')}}" alt="..." />
+            </a>
           </div>
         </div>
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="glyphicon glyphicon-sort-by-attributes"></i></div>
-            <div class="count">204</div>
-            <h3>New Sign ups</h3>
-            <p>Lorem ipsum psdea itgum rixt.</p>
+
+        <div class="col-md-5 col-sm-5 col-xs-12" style="border:0px solid #e5e5e5;">
+
+          <h3 class="prod_title">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+
+          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
+          <br />
+
+          
+          <br />
+
+          <div class="">
+            <h2>Size <small>Please select one</small></h2>
+            <ul class="list-inline prod_size">
+              <li>
+                <button type="button" class="btn btn-default btn-xs">Small</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-default btn-xs">Medium</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-default btn-xs">Large</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-default btn-xs">Xtra-Large</button>
+              </li>
+            </ul>
           </div>
+          <br />
+
+          <div class="">
+            <div class="product_price">
+              <h1 class="price">Ksh80.00</h1>
+              <span class="price-tax">Ex Tax: Ksh80.00</span>
+              <br>
+            </div>
+          </div>
+
+          <div class="">
+            <button type="button" class="btn btn-default btn-lg">Add to Cart</button>
+            <button type="button" class="btn btn-default btn-lg">Add to Wishlist</button>
+          </div>
+
+          <div class="product_social">
+            <ul class="list-inline">
+              <li><a href="#"><i class="fa fa-facebook-square"></i></a>
+              </li>
+              <li><a href="#"><i class="fa fa-twitter-square"></i></a>
+              </li>
+              <li><a href="#"><i class="fa fa-envelope-square"></i></a>
+              </li>
+              <li><a href="#"><i class="fa fa-rss-square"></i></a>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
-            <div class="count">143</div>
-            <h3>New Sign ups</h3>
-            <p>Lorem ipsum psdea itgum rixt.</p>
-          </div>
-        </div>
 
+        <div class="col-md-12">
 
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-check-square-o"></i></div>
-            <div class="count">211</div>
-            <h3>New Sign ups</h3>
-            <p>Lorem ipsum psdea itgum rixt.</p>
+          <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Home</a>
+              </li>
+              <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Profile</a>
+              </li>
+              <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Profile</a>
+              </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+              <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
+                  synth. Cosby sweater eu banh mi, qui irure terr.</p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+                  booth letterpress, commodo enim craft beer mlkshk aliquip</p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                <p>xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui
+                  photo booth letterpress, commodo enim craft beer mlkshk </p>
+              </div>
+            </div>
           </div>
+
         </div>
-        
- </div>
-   
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
 @endsection
 @endpush
