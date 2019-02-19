@@ -53,46 +53,19 @@
 
         <div class="col-md-5 col-sm-5 col-xs-12" style="border:0px solid #e5e5e5;">
 
-          <h3 class="prod_title">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
-
-          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
-          <br />
-
+          <h3 class="prod_title">Visi&Misi SMK Telkom DU </h3>
+          <h4>Visi</h4>
+          <p>Menjadi Sekolah Menengah Kejuruan berstandar mutu Nasional/ Internasional yang mampu bersaing di tingkat regional maupun global berlandaskankan nilai-nilai keislaman.</p>
+         <h4>Misi</h4>
+           <p> 1. Menyelenggarakan pendidikan menengah kejuruan terpadu dengan pendidikan pondok pesantren dalam rangka mencetak sumber daya manusia yang beriman dan bertaqwa, profesional, kompeten, mandiri dan berkepribadian islami.</p>
+           <p> 2. Meningkatkan mutu pendidikan berbasis pesantren/keagamaan sesuai dengan tuntutan masyarakat dan perkembangan ilmu pengetahuan dan teknologi. </p> 
+          <p>  3. Melaksanakan pendidikan dan pelatihan dengan mengacu pada standar mutu nasional/internasional. </p>
+           <p> 4.  Meningkatkan kerjasama dengan dunia usaha dan industri untuk menjamin adanya Link and Match dalam penyelenggaraan pendidikan dan latihan (diklat).</p> 
+           <p> 5. Meningkatkan daya serap lulusan di dunia usaha dan industri atau melanjutkan ke perguruan tinggi yang relevan. </p>
           
           <br />
 
-          <div class="">
-            <h2>Size <small>Please select one</small></h2>
-            <ul class="list-inline prod_size">
-              <li>
-                <button type="button" class="btn btn-default btn-xs">Small</button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-default btn-xs">Medium</button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-default btn-xs">Large</button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-default btn-xs">Xtra-Large</button>
-              </li>
-            </ul>
-          </div>
-          <br />
-
-          <div class="">
-            <div class="product_price">
-              <h1 class="price">Ksh80.00</h1>
-              <span class="price-tax">Ex Tax: Ksh80.00</span>
-              <br>
-            </div>
-          </div>
-
-          <div class="">
-            <button type="button" class="btn btn-default btn-lg">Add to Cart</button>
-            <button type="button" class="btn btn-default btn-lg">Add to Wishlist</button>
-          </div>
-
+          
           <div class="product_social">
             <ul class="list-inline">
               <li><a href="#"><i class="fa fa-facebook-square"></i></a>
