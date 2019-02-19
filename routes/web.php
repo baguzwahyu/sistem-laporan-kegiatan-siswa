@@ -63,8 +63,8 @@ Route::get('/master', function () {
 
 Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     
-    Route::get('/homeAll',function(){
-        return view('dashboard.all.homeAll');
+    Route::get('/dashboard',function(){
+        return view('dashboard.siswas.dashboard');
     });
 
     Route::resource('/guru','GuruController');
