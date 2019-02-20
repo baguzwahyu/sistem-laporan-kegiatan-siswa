@@ -15,8 +15,12 @@ class KegiatanController extends Controller
     public function index()
     {
         $kegiatan = kegiatan::all();
-
         return view('dashboard.siswas.kegiatan',compact('kegiatan'));
+    }
+    public function index_pembimbing()
+    {
+        $kegiatan = kegiatan::all();
+        return view('dashboard.pembimbing.kegiatan',compact('kegiatan'));
     }
 
     /**
@@ -90,5 +94,27 @@ class KegiatanController extends Controller
         $kegiatan->delete();
         
         return redirect('admin/kegiatan');
+    }
+
+    public function admin($id)
+    {
+        $user = kegiatan::find($id);
+
+        $user->status = 1;
+        $user->save();
+
+        // session::flash('Success','Berhasil Menyetujui Kegiatan');
+        return redirect()->back();
+    }
+
+    public function not_admin($id)
+    {
+        $user = kegiatan::find($id);
+
+        $user->status = 0;
+        $user->save();
+
+        // session::flash('succes','Berhasil Menggagalkan Persetujuan');
+        return redirect()->back();
     }
 }

@@ -29,8 +29,11 @@
                     {{-- home siswa --}}
                     <li><a href="{{url('admin/kegiatan')}}"><i class="fa fa-pencil"></i> KEGIATAN</a>
                     {{-- @elseif(auth::user()->group_id=='1' || auth::user()->group_id=='2')
-                    <li><a href="{{url('home')}}"><i class="fa fa-home"></i> HOME</a> --}}
-                    
+                    <li><a href="{{url('home')}}"><i class="fa fa-home"></i> HOME</a> --}}         
+                        @endif
+
+                        @if (auth::user()->group_id=='4')
+                        <li><a href="{{url('admin/pembimbing')}}"><i class="fa fa-book"></i> KEGIATAN</a>
                         @endif
                         
                             @if(auth::user()->admind)                

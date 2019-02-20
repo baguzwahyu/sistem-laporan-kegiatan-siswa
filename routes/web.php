@@ -72,8 +72,16 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::resource('/siswa','SiswaController');
     Route::resource('/pembimbing','PembimbingController');
     Route::resource('/kegiatan','KegiatanController');
-  
-    
+
+    route::get('/kegiatan/admin/{id}',[
+        'uses'  => 'KegiatanController@admin',
+        'as'    =>  'kegiatan.admin'
+    ]);
+    route::get('/kegiatan/not_admin/{id}',[
+        'uses'  => 'KegiatanController@not_admin',
+        'as'    =>  'kegiatan.not.admin'
+    ]);
+    route::get('/pembimbing','KegiatanController@index_pembimbing');
 });
 Route::get('/', function () {
     return view('welcome');
