@@ -38,13 +38,15 @@ class GuruController extends Controller
             'email'         =>$request->get('email'),
             'password'      =>bcrypt($request->password)
         ]);
-        $guru ->save();
-        return redirect('admin/guru');
-
-        $user = new user([
-            'nama' =>$request->get('nama'),
-            'mapel' =>$request->get('mapel'),
+       
+        $user = User::create([
+            'name' =>       $request->nama,
+            'email' =>      $request->email,
+            'password'=>   bcrypt($request->password),
+            'group_id'=> 3,
         ]);
+        $user->save();
+
         $user ->save();
         return redirect('admin/user');
     }
