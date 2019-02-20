@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Siswa;
+use App\User;
 use App\Guru;
 use App\Pembimbing;
 use Validator;
@@ -51,6 +52,13 @@ class SiswaController extends Controller
             'email'         =>$request->get('email'),
             'password'      =>bcrypt($request->password)
         ]);
+        $user = User::create([
+            'name' =>       $request->nama,
+            'email' =>      $request->email,
+            'password'=>   bcrypt($request->password),
+            'group_id'=> 5,
+        ]);
+        $user->save();
 
         $siswa->save();
         return redirect('admin/siswa');
