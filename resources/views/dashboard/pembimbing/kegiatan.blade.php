@@ -28,7 +28,6 @@
               <th>Bidang Pekerjaan</th>
               <th>Uraian Pekerjaan</th>
               <th>Tgl Pelaksanaan</th>
-              <th>Action</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -39,14 +38,7 @@
                     <td>{{$sin->bidang_pekerjaan}}</td>                 
                     <td>{{$sin->uraian_pekerjaan}}</td>
                     <td>{{ $sin->created_at->toFormattedDateString() }}</td>
-                    <td>
-                    <form action="{{ route('kegiatan.destroy', $sin->id) }}" method="post">
-                        {{ csrf_field() }}
-                        <input name="_method" type="hidden" value="DELETE">
-                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                        <a href="{{route('kegiatan.edit', $sin->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                    </form>
-                </td>
+                   
                 <td>
               @if ($sin->status=='1')
                 <a href="{{ route('kegiatan.not.admin',['id'=> $sin->id])}}" class="btn btn-xs btn-danger">batalkan</a>

@@ -33,7 +33,7 @@
                         @endif
 
                         @if (auth::user()->group_id=='4')
-                        <li><a href="{{url('admin/pembimbing')}}"><i class="fa fa-book"></i> KEGIATAN</a>
+                        <li><a href="{{url('admin/index_pembimbing')}}"><i class="fa fa-book"></i> KEGIATAN</a>
                         @endif
                         
                             @if(auth::user()->admind)                

@@ -81,7 +81,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
         'uses'  => 'KegiatanController@not_admin',
         'as'    =>  'kegiatan.not.admin'
     ]);
-    route::get('/pembimbing','KegiatanController@index_pembimbing');
+    route::get('/index_pembimbing','KegiatanController@index_pembimbing');
 });
 Route::get('/', function () {
     return view('welcome');
