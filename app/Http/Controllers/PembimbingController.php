@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pembimbing;
+use App\User;
 use Validator;
 use Illuminate\Http\Request;
 
