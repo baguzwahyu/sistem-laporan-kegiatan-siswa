@@ -48,7 +48,11 @@
                     </form>
                 </td>
                 <td>
-                <a href="#">view</a>
+               @if ($sin->status=='1')
+                   <img src="{{ url('img/centang.png')}}" >
+               @else
+               <img src="{{url('img/x.png')}}">
+               @endif
                 </td>
                 </tr>
             @endforeach
