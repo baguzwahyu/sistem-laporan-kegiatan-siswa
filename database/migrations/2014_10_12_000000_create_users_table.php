@@ -27,6 +27,10 @@ class CreateUsersTable extends Migration
             $table->foreign('group_id')
             ->references('id')->on('groups')
             ->onDelete('cascade');
+
+            // $table->foreign('name')
+            // ->references('id')->on('groups')
+            // ->onDelete('cascade');
         });
     }
 
