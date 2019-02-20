@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Guru;
+use App\User;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -36,17 +37,19 @@ class GuruController extends Controller
             'nama'          =>$request->get('nama'),
             'mapel'         =>$request->get('mapel'),
             'email'         =>$request->get('email'),
-            'password'      =>bcrypt($request->password)
+            'password'      =>bcrypt($request->password),
         ]);
+       
+        $user = User::create([
+            'name' =>       $request->nama,
+            'email' =>      $request->email,
+            'password'=>   bcrypt($request->password),
+            'group_id'=> 3,
+        ]);
+        
+        $user ->save();
         $guru ->save();
         return redirect('admin/guru');
-
-        $user = new user([
-            'nama' =>$request->get('nama'),
-            'mapel' =>$request->get('mapel'),
-        ]);
-        $user ->save();
-        return redirect('admin/user');
     }
 
     

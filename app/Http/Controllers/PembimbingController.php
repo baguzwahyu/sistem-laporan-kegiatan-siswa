@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pembimbing;
+use App\User;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -38,6 +39,14 @@ class PembimbingController extends Controller
             'email'         =>$request->get('email'),
             'password'      =>bcrypt($request->password)
         ]);
+
+        $user = User::create([
+            'name' =>       $request->nama,
+            'email' =>      $request->email,
+            'password'=>   bcrypt($request->password),
+            'group_id'=> 4,
+        ]);
+        $user->save();
 
         $pembimbing->save();
         return redirect('admin/pembimbing');
