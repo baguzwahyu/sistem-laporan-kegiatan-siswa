@@ -18,7 +18,7 @@
           </div>
       </div> 
     </form>
-    <a class="btn btn-success" href="{{URL::to('admin/pembimbing/create')}}">+ Pembimbing</a>
+    <a class="btn btn-success" href="{{URL::to('admin/pembimbing/create')}}"><p class="glyphicon glyphicon-pencil"> Pembimbing</p></a>
     <div class="x_panel">
       <div class="x_title">
         <h2>Daftar Pembimbing <small color="blue">Smk Telekomunikasi DU</small></h2>
@@ -41,7 +41,7 @@
       </div>
       <div class="x_content">
 
-        <table class="table table-striped">
+        <table class="table table-striped jambo_table bulk_action">
           <thead>
             <tr>
               <th><h4># Id</h4></th>
