@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('admind')->default(0);
             $table->string('password');
+            $table->string('alamat');
+            $table->string('photo')->default('demo');
             $table->integer('group_id')->unsigned(); 
             $table->rememberToken();
             $table->timestamps();
@@ -28,9 +30,7 @@ class CreateUsersTable extends Migration
             ->references('id')->on('groups')
             ->onDelete('cascade');
 
-            // $table->foreign('name')
-            // ->references('id')->on('groups')
-            // ->onDelete('cascade');
+          
         });
     }
 

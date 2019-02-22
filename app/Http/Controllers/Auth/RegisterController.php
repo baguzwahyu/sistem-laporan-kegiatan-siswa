@@ -53,8 +53,19 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            
+            
             // 'group_id' => ['required', 'integer'],
         ]);
+
+        $user = User::create([
+            'name' =>       $request->nama,
+            'email' =>      $request->email,
+            'password'=>   bcrypt($request->password),
+            'group_id'=> $request->group_id,
+            'photo' =>'img/user.png',
+        ]);
+        $user->save();
     }
 
     /**
@@ -70,6 +81,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'group_id' => $data['group_id'],
+           
+            
         ]);
     }
 

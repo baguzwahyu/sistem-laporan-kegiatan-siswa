@@ -17,6 +17,8 @@ class Guru extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->string('mapel');
+            $table->string('alamat');
+            $table->string('photo')->default('demo');
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();

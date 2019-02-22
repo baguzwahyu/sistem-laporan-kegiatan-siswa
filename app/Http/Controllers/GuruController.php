@@ -45,6 +45,8 @@ class GuruController extends Controller
             'email' =>      $request->email,
             'password'=>   bcrypt($request->password),
             'group_id'=> 3,
+            'photo' =>'img/user.png',
+            'alamat' => $request->alamat,
         ]);
         
         $user ->save();

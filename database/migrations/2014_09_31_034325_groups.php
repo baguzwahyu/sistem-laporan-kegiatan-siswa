@@ -28,6 +28,7 @@ class Groups extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('groups');
     }
 }
+

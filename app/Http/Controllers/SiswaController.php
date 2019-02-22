@@ -57,6 +57,8 @@ class SiswaController extends Controller
             'email' =>      $request->email,
             'password'=>   bcrypt($request->password),
             'group_id'=> 5,
+            'photo' =>'img/user.png',
+            'alamat'   => $request->alamat,
         ]);
         $user->save();
 

@@ -107,6 +107,9 @@
     <script src="{{URL('vendors/moment/min/moment.min.js')}}"></script>
     <script src="{{URL('vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 
+    <script src="{{ url('vendors/raphael/raphael.min.js')}}"></script>
+    <script src="{{ url('vendors/morris.js/morris.min.js')}}"></script>
+
     <!-- Custom Theme Scripts -->
     <script src="{{URL('build/js/custom.min.js')}}"></script>
 
