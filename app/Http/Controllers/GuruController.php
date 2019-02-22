@@ -30,9 +30,7 @@ class GuruController extends Controller
             'nama'          => 'required|',
             'mapel'         => 'required|',
             'email'         =>'required|email|unique:guru',
-            'password'      =>'required|min:6|confirmed',
-            'photo'         => 'required|'    ,
-            'alamat'        =>     'required|'
+            'password'      =>'required|min:6|confirmed'
         ]);
 
         $guru = new Guru([
@@ -40,8 +38,8 @@ class GuruController extends Controller
             'mapel'         =>$request->get('mapel'),
             'email'         =>$request->get('email'),
             'password'      =>bcrypt($request->password),
-            'photo' =>'img/avatar.jpg',
-            'alamat'   => $request->alamat,
+            'photo' =>'img/user.png',
+            'alamat' => $request->alamat,
         ]);
        
         $user = User::create([
@@ -49,8 +47,8 @@ class GuruController extends Controller
             'email' =>      $request->email,
             'password'=>   bcrypt($request->password),
             'group_id'=> 3,
-            'photo' =>'img/avatar.jpg',
-            'alamat'   => $request->alamat,
+            'photo' =>'img/user.png',
+            'alamat' => $request->alamat,
         ]);
         
         $user ->save();

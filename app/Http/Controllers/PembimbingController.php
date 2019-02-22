@@ -38,8 +38,8 @@ class PembimbingController extends Controller
             'bagian'        =>$request->get('bagian'),
             'email'         =>$request->get('email'),
             'password'      =>bcrypt($request->password),
-            'photo' =>'img/avatar.jpg',
-            'alamat'   => $request->alamat,
+            'photo' =>'img/user.png',
+            'alamat' => $request->alamat,
         ]);
 
         $user = User::create([
@@ -47,8 +47,8 @@ class PembimbingController extends Controller
             'email' =>      $request->email,
             'password'=>   bcrypt($request->password),
             'group_id'=> 4,
-            'photo' =>'img/avatar.jpg',
-            'alamat'   => $request->alamat,
+            'photo' =>'img/user.png',
+            'alamat' => $request->alamat,
         ]);
         $user->save();
 
