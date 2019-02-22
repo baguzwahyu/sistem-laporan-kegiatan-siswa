@@ -46,6 +46,7 @@
             <tr>
               <th><h4># Id</h4></th>
               <th><h4>Nama</h4></th>
+              <th><h4>Alamat</h4></th>
               <th><h4>Telephone</h4></th>
               <th><h4>Bagian</h4></th>
               <th><h4>Action</h4></th>
@@ -55,7 +56,8 @@
             @foreach($pembimbing as $key => $sem)
                 <tr>
 		    <th scope="row">{{$sem->id}}</th>
-                    <td>{{$sem->nama}}</td>                 
+                    <td>{{$sem->nama}}</td>
+                    <td>{{$sem->alamat}}</td>                 
                     <td>{{$sem->telephone}}</td>
                     <td>{{$sem->bagian}}</td>
                     <td>

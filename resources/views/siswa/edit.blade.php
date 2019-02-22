@@ -45,6 +45,14 @@
                   </div>
                 </div>
                 <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="form-control" name="alamat" value="{{$siswa->alamat}}">
+                    <span class="fa fa-map form-control-feedback right" aria-hidden="true"></span>
+                </div>
+                </div>
+        
+                <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12">jurusan</label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control"  value="{{$siswa->jurusan }}" name="jurusan">

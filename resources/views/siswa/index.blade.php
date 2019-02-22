@@ -47,6 +47,7 @@
             <tr>
               <th><h4># Id</h4></th>
               <th><h4>Nama</h4></th>
+              <th><h4>Alamat</h4></th>
               <th><h4>Jurusan</h4></th>
               <th><h4>Kelas</h4></th>
               <th><h4>Guru</h4></th>
@@ -58,7 +59,8 @@
             @foreach($siswa as $key => $sin)
                 <tr>
 		    <th scope="row">{{$sin->id}}</th>
-                    <td>{{$sin->nama}}</td>                 
+                    <td>{{$sin->nama}}</td>
+                    <td>{{$sin->alamat}}</td>                 
                     <td>{{$sin->jurusan}}</td>
                     <td>{{$sin->kelas}}</td>
                     <td>{{$sin->guru->nama}}</td>

@@ -50,7 +50,9 @@ class SiswaController extends Controller
             'guru_id'       =>$request->get('guru_id'),
             'pembimbing_id' =>$request->get('pembimbing_id'),
             'email'         =>$request->get('email'),
-            'password'      =>bcrypt($request->password)
+            'password'      =>bcrypt($request->password),
+            'photo' =>'img/user.png',
+            'alamat'   => $request->alamat,
         ]);
        
         $user = User::create([
