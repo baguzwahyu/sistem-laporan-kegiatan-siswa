@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Kegiatan;
+use App\User;
 use Illuminate\Http\Request;
 
 class KegiatanController extends Controller
@@ -14,7 +15,7 @@ class KegiatanController extends Controller
      */
     public function index()
     {
-        $kegiatan = kegiatan::all();
+        $kegiatan = kegiatan::with('user')->get();
         return view('dashboard.siswas.kegiatan',compact('kegiatan'));
     }
     public function index_pembimbing()
@@ -50,6 +51,7 @@ class KegiatanController extends Controller
         $kegiatan = new kegiatan([
             'bidang_pekerjaan' =>$request->get('bidang_pekerjaan'),
             'uraian_pekerjaan' =>$request->get('uraian_pekerjaan'),
+            'user_id'          =>$request->get('user_id'),
            
         ]);
         $kegiatan ->save();
@@ -57,9 +59,11 @@ class KegiatanController extends Controller
     }
 
     
-    public function show(Kegiatan $kegiatan)
+    public function show($es)
     {
-        //
+        $kegiatan = kegiatan::findOrFail($es);
+
+        return view('dashboard.pembimbing.view',compact('kegiatan'));
     }
  
     

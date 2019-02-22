@@ -25,27 +25,28 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>Bidang Pekerjaan</th>
-              <th>Uraian Pekerjaan</th>
+              <th>Nama</th>
               <th>Tgl Pelaksanaan</th>
-              <th>Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             @foreach($kegiatan as $key => $sin)
                 <tr>
 		    <th scope="row">{{$sin->id}}</th>
-                    <td>{{$sin->bidang_pekerjaan}}</td>                 
-                    <td>{{$sin->uraian_pekerjaan}}</td>
+                    <td>{{$sin->user->name}}</td>   
                     <td>{{ $sin->created_at->toFormattedDateString() }}</td>
                    
-                <td>
+                   <td>
+                   <a href="{{route('kegiatan.show',$sin->id)}}" class="btn btn-success">view</a>
+                   </td>
+                <!-- <td>
               @if ($sin->status=='1')
                 <a href="{{ route('kegiatan.not.admin',['id'=> $sin->id])}}" class="btn btn-xs btn-danger">batalkan</a>
                 @else
                 <a href="{{ route('kegiatan.admin',['id'=> $sin->id])}}" class="btn btn-xs btn-success">setujui</a>
               @endif
-                </td>
+                </td> -->
                 </tr>
             @endforeach
           </tbody>

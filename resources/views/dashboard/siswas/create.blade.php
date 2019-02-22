@@ -40,7 +40,17 @@
       </div>
       <div class="x_content">
         <br />
-        
+
+       
+              <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ Auth::user()->id }}" readonly>
+
+        <div class="form-group" > 
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" id="nama" name="nama" value="{{ Auth::user()->name }}" readonly>
+              <span class="fa fa-pencil form-control-feedback right" aria-hidden="true"></span>
+            </div>
+          </div> 
        
           <div class="form-group" >
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Bidang Pekerjaan</label>

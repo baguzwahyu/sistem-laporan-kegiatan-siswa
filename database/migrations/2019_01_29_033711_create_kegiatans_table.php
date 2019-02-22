@@ -18,7 +18,13 @@ class CreateKegiatansTable extends Migration
             $table->string('bidang_pekerjaan');
             $table->text('uraian_pekerjaan');
             $table->boolean('status')->default(0);
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('user_id')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade');
+
         });
     }
 
