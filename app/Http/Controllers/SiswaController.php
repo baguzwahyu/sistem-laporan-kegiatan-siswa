@@ -54,6 +54,7 @@ class SiswaController extends Controller
             'photo' =>'img/user.png',
             'alamat'   => $request->alamat,
         ]);
+       
         $user = User::create([
             'name' =>       $request->nama,
             'email' =>      $request->email,
@@ -63,6 +64,7 @@ class SiswaController extends Controller
             'alamat'   => $request->alamat,
         ]);
         $user->save();
+
 
         $siswa->save();
         return redirect('admin/siswa');
