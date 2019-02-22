@@ -8,7 +8,7 @@ class Pembimbing extends Model
 {
     protected $table =  'pembimbing';
 
-    protected $fillable = ['id','nama','telephone','bagian','email', 'password'];
+    protected $fillable = ['id','nama','telephone','bagian','email', 'password','photo','alamat'];
     
     protected $hidden = [
               'email', 'password'

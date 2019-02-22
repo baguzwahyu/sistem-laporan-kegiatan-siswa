@@ -48,6 +48,7 @@
                         <tr>
                           <th><h4># Id</h4></th>
                           <th><h4>Nama</h4></th>
+                          <th><h4>Alamat</h4></th>
                           <th><h4>Mata Pelajaran</h4></th>
                           <th><h4>Action</h4></th>
                         </tr>
@@ -57,6 +58,7 @@
                 <tr>
                     <td>{{$row->id}}</td>
                     <td>{{$row->nama}}</td>
+                    <td>{{$row->alamat}}</td>
                     <td>{{$row->mapel}}</td>
                     <td>
                         <form action="{{ route('guru.destroy', $row->id) }}" method="post">
