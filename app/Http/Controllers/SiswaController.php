@@ -52,13 +52,15 @@ class SiswaController extends Controller
             'email'         =>$request->get('email'),
             'password'      =>bcrypt($request->password)
         ]);
+       
         $user = User::create([
             'name' =>       $request->nama,
             'email' =>      $request->email,
             'password'=>   bcrypt($request->password),
-            'group_id'=> 5,
+            'group_id'=> 4,
         ]);
         $user->save();
+
 
         $siswa->save();
         return redirect('admin/siswa');
