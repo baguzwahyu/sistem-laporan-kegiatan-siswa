@@ -122,3 +122,11 @@ class KegiatanController extends Controller
         return redirect()->back();
     }
 }
+
+
+// INSERT INTO `groups` (`id`, `group_code`, `group_description`) VALUES 
+// (NULL, 'webmaster', 'super webmaster'),
+// (NULL, 'admin', 'super administrator'),
+// (NULL, 'guru', 'login for guru'),
+// (NULL, 'pembimbig', 'login for pembimbing'),
+// (NULL, 'siswa', 'login for siswa');

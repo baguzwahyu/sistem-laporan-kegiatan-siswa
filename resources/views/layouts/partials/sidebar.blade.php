@@ -1,15 +1,20 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
-        <div class="navbar nav_title" style="border: 0;">
+        {{-- <div class="navbar nav_title" style="border: 0;">
             <a href="{{url('/')}}" class="site_title"><i class="fa fa-paw"></i> <span>{{config('app.name')}}</span></a>
-        </div>
+        </div> --}}
 
         <div class="clearfix" color="red"></div>
 
         <!-- menu profile quick info -->
         <div class="profile">
             <div class="profile_pic">
-                <img src="{{ url('img/logo.png')}}" alt="..." class="img-circle profile_img">
+                @if (Auth::user()->photo!='demo')
+                <a href="{{ url('admin/profile')}}">  <img src="{{ url(Auth::user()->photo)}}"  class="img-circle profile_img">  </a>
+                @else
+                <a href="{{ url('admin/profile')}}">  <img src="{{url('img/userall.png')}}"  class="img-circle profile_img">  </a> 
+                @endif
+              
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
