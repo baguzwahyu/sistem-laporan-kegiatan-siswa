@@ -50,19 +50,33 @@
                   <li><i class="fa fa-map-marker user-profile-icon"></i> {{ auth::user()->alamat}}
                   </li>
 
+                  @if (auth::user()->group_id=='1'||auth::user()->group_id=='2')
                   <li>
-                    <i class="fa fa-briefcase user-profile-icon"></i> {{ auth::user()->group_id }}
-                  </li>
-
+                    <i class="fa fa-briefcase user-profile-icon"></i> Administrator
+                  </li>    
+                  @elseif(auth::user()->group_id=='3')
+                  <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> Guru
+                  </li>    
+                  @elseif(auth::user()->group_id=='4')
+                  <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> Pembimbing
+                  </li>    
+                  @else
+                  <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> Siswa
+                  </li>    
+                  @endif
                   <li class="m-top-xs">
                     <i class="fa fa-external-link user-profile-icon"></i>
                     <a href="http://www.kimlabs.com/profile/" target="_blank">{{ auth::user()->email }}</a>
                   </li>
                 </ul>
 
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                 {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                   Edit profile
-                <br /></button>
+                </button> --}}
+                <a href="{{route('edit.user', auth::user()->id)}}" class="btn btn-warning"><i class="fa fa-edit" data-target="#exampleModal"></i>Edit</a> <br />
                 <form class="form-horizontal form-label-left" method="POST" action="{{route('user.update',auth::user()->id)}}" >
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">

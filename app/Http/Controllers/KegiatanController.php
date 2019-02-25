@@ -122,6 +122,11 @@ class KegiatanController extends Controller
         return redirect()->back();
     }
 
+    public function edit_user(Request $request, User $user)
+    {
+        return view('user.edit',compact('User','$user'));
+    }
+
     public function update_user(Request $request,$id)
     {
        
@@ -136,33 +141,24 @@ class KegiatanController extends Controller
         public function store_user(Request $request)
         {
                     
-            // $this->Validate($request,[
-            //     'name'          =>'required',
-            //     'email'         =>'required|email|unique:siswa',
-            //     'password'      =>'required|min:6|confirmed'
-            // ]);
-            // $user = new User([
-            //     'name'          =>$request->get('name'),
-            //     'email'         =>$request->get('email'),
-            //     'password'      =>bcrypt($request->password),
-            //     'photo' =>'img/user.png',
-            //     'alamat' => $request->alamat
-            // ]);
+            $this->Validate($request,[
+                'name'          =>'required',
+                'email'         =>'required|email|unique:siswa',
+                'password'      =>'required|min:6|confirmed'
+            ]);
+            $user = new User([
+                'name'          =>$request->get('name'),
+                'email'         =>$request->get('email'),
+                'password'      =>bcrypt($request->password),
+                'photo' =>'img/user.png',
+                'alamat' => $request->alamat
+            ]);
 
-            if(Input::post())
-        {
-            $email = Input::post('email');
-            $password = Input::post('password');
-            $photo = Input::post('photo');
-            $alamat = Input::post('alamat');
-            return "Email: " . $email . " and Password: " . $password . " photo: " . $photo . " alamat: " . $alamat;
-        }else{
-            return View::make('admin/profile');
-        }
            
-            // $user->save();
+           
+            $user->save();
     
-            // return redirect('admin/profile');
+            return redirect('admin/profile');
         }
 
 }

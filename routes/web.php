@@ -81,6 +81,10 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
         'uses'  => 'KegiatanController@not_admin',
         'as'    =>  'kegiatan.not.admin'
     ]);
+    route::get('/kegiatan/edit_user/{id}',[
+        'uses'  => 'KegiatanController@edit_user',
+        'as'    =>  'edit_user'
+    ]);
     route::post('/user/update/{id}',[
         'uses'  => 'KegiatanController@update_user',
         'as'    =>  'user.update'
