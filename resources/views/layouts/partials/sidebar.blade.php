@@ -12,7 +12,7 @@
                 @if (Auth::user()->photo!='demo')
                 <a href="{{ url('admin/profile')}}">  <img src="{{ url(Auth::user()->photo)}}"  class="img-circle profile_img">  </a>
                 @else
-                <a href="{{ url('admin/profile')}}">  <img src="{{url('img/userall.png')}}"  class="img-circle profile_img">  </a> 
+                <a href="{{ url('admin/profile')}}">  <img src="{{url('img/avatar.jpg')}}"  class="img-circle profile_img">  </a> 
                 @endif
               
             </div>

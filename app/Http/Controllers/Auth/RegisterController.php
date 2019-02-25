@@ -64,6 +64,7 @@ class RegisterController extends Controller
             'password'=>   bcrypt($request->password),
             'group_id'=> $request->group_id,
             'photo' =>'img/user.png',
+            'alamat' => $request->alamat,
         ]);
         $user->save();
     }
@@ -81,6 +82,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'group_id' => $data['group_id'],
+            'alamat' => $data['alamat'],
            
             
         ]);

@@ -52,7 +52,7 @@ class SiswaController extends Controller
             'email'         =>$request->get('email'),
             'password'      =>bcrypt($request->password),
             'photo' =>'img/user.png',
-            'alamat' => $request->alamat,
+            'alamat' => $request->alamat
         ]);
        
         $user = User::create([

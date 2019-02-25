@@ -121,6 +121,39 @@ class KegiatanController extends Controller
         // session::flash('succes','Berhasil Menggagalkan Persetujuan');
         return redirect()->back();
     }
+
+    public function update_user(Request $request,$id)
+    {
+       
+        $user=User::findOrfail($id);
+
+        $user->update($request->all());
+
+        return redirect('admin/profile');
+
+        }
+
+        public function store_user(Request $request)
+        {
+                    
+            $this->Validate($request,[
+                'name'          =>'required',
+                'email'         =>'required|email|unique:siswa',
+                'password'      =>'required|min:6|confirmed'
+            ]);
+            $user = new User([
+                'name'          =>$request->get('name'),
+                'email'         =>$request->get('email'),
+                'password'      =>bcrypt($request->password),
+                'photo' =>'img/user.png',
+                'alamat' => $request->alamat
+            ]);
+           
+            $user->save();
+    
+            return redirect('admin/profile');
+        }
+
 }
 
 
