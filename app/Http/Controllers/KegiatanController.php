@@ -141,24 +141,24 @@ class KegiatanController extends Controller
         public function store_user(Request $request)
         {
                     
-            $this->Validate($request,[
-                'name'          =>'required',
-                'email'         =>'required|email|unique:siswa',
-                'password'      =>'required|min:6|confirmed'
+            return Validator::make($data, [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:6', 'confirmed'],
+                
+                
+                // 'group_id' => ['required', 'integer'],
             ]);
-            $user = new User([
-                'name'          =>$request->get('name'),
-                'email'         =>$request->get('email'),
-                'password'      =>bcrypt($request->password),
-                'photo' =>'img/user.png',
-                'alamat' => $request->alamat
-            ]);
-
-           
-           
-            $user->save();
     
-            return redirect('admin/profile');
+            $user = User::create([
+                'name' =>       $request->nama,
+                'email' =>      $request->email,
+                'password'=>   bcrypt($request->password),
+                'group_id'=> $request->group_id,
+                'photo' =>'img/user.png',
+                'alamat' => $request->alamat,
+            ]);
+            $user->save();
         }
 
 }
