@@ -47,15 +47,16 @@
                 <h3>{{auth::user()->name}}</h3>
 
                 <ul class="list-unstyled user_data">
+
+                <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> {{ auth::user()->group_id }}
+                  </li>
+                  
                   <li><i class="fa fa-map-marker user-profile-icon"></i> {{ auth::user()->alamat}}
                   </li>
 
-                  <li>
-                    <i class="fa fa-briefcase user-profile-icon"></i> {{ auth::user()->group_id }}
-                  </li>
-
                   <li class="m-top-xs">
-                    <i class="fa fa-external-link user-profile-icon"></i>
+                    <i class="fa fa-envelope user-profile-icon"></i>
                     <a href="http://www.kimlabs.com/profile/" target="_blank">{{ auth::user()->email }}</a>
                   </li>
                 </ul>
@@ -63,7 +64,7 @@
                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                   Edit profile
                 <br /></button>
-              <form action="{{ route('register') }}" method="POST">
+              <form action="{{ route('user.update',auth::user()->id) }}" method="POST">
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -118,9 +119,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- start of user-activity-graph -->
-                <div id="graph_bar" style="width:100%; height:280px;"></div>
-                <!-- end of user-activity-graph -->
+                
 
                 <div class="" role="tabpanel" data-example-id="togglable-tabs">
                   <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">

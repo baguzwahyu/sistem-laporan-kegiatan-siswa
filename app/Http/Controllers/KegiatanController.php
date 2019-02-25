@@ -122,7 +122,7 @@ class KegiatanController extends Controller
         return redirect()->back();
     }
 
-    public function update_user(Request $request,$id)
+    public function update_user(Request $request)
     {
        
         $user=User::findOrfail($id);
