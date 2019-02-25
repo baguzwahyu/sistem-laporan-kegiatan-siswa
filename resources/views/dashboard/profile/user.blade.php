@@ -48,25 +48,39 @@
 
                 <ul class="list-unstyled user_data">
 
-                <li>
-                    <i class="fa fa-briefcase user-profile-icon"></i> {{ auth::user()->group_id }}
-                  </li>
-                  
-                  <li><i class="fa fa-map-marker user-profile-icon"></i> {{ auth::user()->alamat}}
-                  </li>
-
+                  @if (auth::user()->group_id=='1'||auth::user()->group_id=='2')
+                  <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> Administrator
+                  </li>    
+                  @elseif(auth::user()->group_id=='3')
+                  <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> Guru
+                  </li>    
+                  @elseif(auth::user()->group_id=='4')
+                  <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> Pembimbing
+                  </li>    
+                  @else
+                  <li>
+                    <i class="fa fa-briefcase user-profile-icon"></i> Siswa
+                  </li>    
+                  @endif
                   <li class="m-top-xs">
                     <i class="fa fa-envelope user-profile-icon"></i>
                     <a href="http://www.kimlabs.com/profile/" target="_blank">{{ auth::user()->email }}</a>
                   </li>
                 </ul>
 
+                <form class="form-horizontal form-label-left" method="POST" action="{{route('user.update',auth::user()->id)}}" >
+                  @csrf
+                  <input type="hidden" name="_method" value="PATCH">
+                  
                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                   Edit profile
-                <br /></button>
-              <form action="{{ route('user.update',auth::user()->id) }}" method="POST">
-                @csrf
-                <input type="hidden" name="_method" value="PATCH">
+                </button>
+               
+              
+               
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -115,11 +129,11 @@
                   <div class="col-md-6">
                     <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
                       <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                      <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                      <span></span> <b class="caret"></b>
                     </div>
                   </div>
                 </div>
-                
+               
 
                 <div class="" role="tabpanel" data-example-id="togglable-tabs">
                   <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">

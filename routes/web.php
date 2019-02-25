@@ -81,6 +81,10 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
         'uses'  => 'KegiatanController@not_admin',
         'as'    =>  'kegiatan.not.admin'
     ]);
+    // route::get('/kegiatan/edit_user/{id}',[
+    //     'uses'  => 'KegiatanController@edit_user',
+    //     'as'    =>  'edit_user'
+    // ]);
     route::post('/user/update/{id}',[
         'uses'  => 'KegiatanController@update_user',
         'as'    =>  'user.update'
@@ -93,6 +97,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     route::get('/index_pembimbing','KegiatanController@index_pembimbing');
 
     route::get('/profile','HomeController@profile_user');
+    route::get('/edit_user','KegiatanController@edit_user');
    
     
 });

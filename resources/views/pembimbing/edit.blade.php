@@ -1,4 +1,5 @@
 @extends('layouts.master') @section('title','Pembimbing') @section('content')
+
 <form class="form-horizontal form-label-left" method="POST" action="{{route('pembimbing.update', $pembimbing ->id)}}" >
     {{ csrf_field()}}
   <input type="hidden" name="_method" value="PATCH">
