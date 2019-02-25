@@ -54,6 +54,18 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-26">
+						<span for="alamat" class="label-input100 text-white">Alamat</span>
+						<input id="alamat" type="text" class="input100{{ $errors->has('alamat') ? ' is-invalid' : '' }}" name="alamat" value="{{ old('alamat') }}" placeholder="ALAMAT *" required autofocus>
+
+                                @if ($errors->has('alamat'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('alamat') }}</strong>
+                                    </span>
+                                @endif
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-26">
 						<span for="email" class="label-input100 text-white">Email</span>
 						<input id="email" type="email" class="input100{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email Address *" required>
 

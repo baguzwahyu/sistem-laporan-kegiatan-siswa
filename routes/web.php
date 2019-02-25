@@ -81,10 +81,22 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
         'uses'  => 'KegiatanController@not_admin',
         'as'    =>  'kegiatan.not.admin'
     ]);
+    route::post('/user/update/{id}',[
+        'uses'  => 'KegiatanController@update_user',
+        'as'    =>  'user.update'
+    ]);
+
+    route::post('/user/store/{id}',[
+        'uses'  => 'KegiatanController@store_user',
+        'as'    =>  'user.store'
+    ]);
     route::get('/index_pembimbing','KegiatanController@index_pembimbing');
 
     route::get('/profile','HomeController@profile_user');
+   
+    
 });
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -25,7 +25,7 @@ class PembimbingController extends Controller
     public function store(Request $request)
     {
         $this->Validate($request,[
-            'nama'          =>'required|',
+            'namea'          =>'required|',
             'telephone'     =>'required|',
             'bagian'        =>'required',
             'email'         =>'required|email|unique:pembimbing',
