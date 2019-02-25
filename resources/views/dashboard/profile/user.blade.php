@@ -63,7 +63,7 @@
                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                   Edit profile
                 <br /></button>
-              <form action="{{ route('register') }}" method="POST">
+                <form class="form-horizontal form-label-left" method="POST" action="{{route('user.update',auth::user()->id)}}" >
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -114,12 +114,12 @@
                   <div class="col-md-6">
                     <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
                       <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                      <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                      <span></span> <b class="caret"></b>
                     </div>
                   </div>
                 </div>
                 <!-- start of user-activity-graph -->
-                <div id="graph_bar" style="width:100%; height:280px;"></div>
+                {{-- <div id="graph_bar" style="width:100%; height:280px;"></div> --}}
                 <!-- end of user-activity-graph -->
 
                 <div class="" role="tabpanel" data-example-id="togglable-tabs">

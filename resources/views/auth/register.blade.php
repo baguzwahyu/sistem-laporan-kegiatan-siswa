@@ -45,6 +45,8 @@
 						<span for="name" class="label-input100 text-white">Name</span>
 						<input id="name" type="text" class="input100{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Your Name *" required autofocus>
 
+
+						
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
