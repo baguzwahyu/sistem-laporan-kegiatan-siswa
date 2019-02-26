@@ -45,9 +45,11 @@
                     <table class="table table-striped jambo_table bulk_action">
                       <thead>
                         <tr>
-                          <th><h4>Id</h4></th>
+                          <th><h4># Id</h4></th>
                           <th><h4>Nama</h4></th>
-                          <th><h4>Pembimbing</h4></th>
+                          <th><h4>Alamat</h4></th>
+                          <th><h4>No.Telp</h4></th>
+                          <th><h4>E-mail</h4></th>
                           <th><h4>Action</h4></th>
                         </tr>
                       </thead>
@@ -56,7 +58,9 @@
                 <tr>
                     <td>{{$prs->id}}</td>
                     <td>{{$prs->nama}}</td>
-                    <td>{{$prs->pembimbing->nama}}</td>
+                    <td>{{$prs->alamat}}</td>
+                    <td>{{$prs->telephone}}</td>
+                    <td>{{$prs->email}}</td>
                     
                     <td>
                     <form action="{{ route('perusahaan.destroy', $prs->id) }}" method="post">

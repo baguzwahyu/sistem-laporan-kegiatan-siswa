@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Pembimbing extends Migration
+class Perusahaan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,16 @@ class Pembimbing extends Migration
      */
     public function up()
     {
-        Schema::create('pembimbing', function (Blueprint $table) {
+        Schema::create('perusahaan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-            $table->string('telephone');
-            $table->string('bagian');
-            $table->integer('perusahaan_id')->unsigned();
             $table->string('alamat');
-            $table->string('photo')->default('demo');
+            $table->string('telephone');
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('logo')->default('test');
             $table->timestamps();
-
-            $table->foreign('perusahaan_id')
-            ->references('id')
-            ->on('perusahaan')
-            ->onDelete('cascade');
+                  
         });
-
     }
 
     /**
@@ -40,6 +32,6 @@ class Pembimbing extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pembimbing');
+        Schema::dropIfExists('perusahaan');
     }
 }

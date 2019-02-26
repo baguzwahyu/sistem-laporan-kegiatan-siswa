@@ -48,6 +48,7 @@
               <th><h4>Nama</h4></th>
               <th><h4>Alamat</h4></th>
               <th><h4>Telephone</h4></th>
+              <th><h4>Nama Perusahan</h4></th>
               <th><h4>Bagian</h4></th>
               <th><h4>Action</h4></th>
             </tr>
@@ -59,6 +60,7 @@
                     <td>{{$sem->nama}}</td>
                     <td>{{$sem->alamat}}</td>                 
                     <td>{{$sem->telephone}}</td>
+                    <td>{{$sem->perusahaan->nama}}</td>
                     <td>{{$sem->bagian}}</td>
                     <td>
                     <form action="{{ route('pembimbing.destroy', $sem->id) }}" method="post">

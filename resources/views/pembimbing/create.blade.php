@@ -43,7 +43,7 @@
               
              
                 <div class="form-group" >
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">nama</label>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" id="nama" name="nama">
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="form-group" >
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">alamat</label>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat</label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" id="alamat" name="alamat">
                     <span class="fa fa-map form-control-feedback right" aria-hidden="true"></span>
@@ -59,12 +59,23 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">telephone</label>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Telephone</label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" id="telephone" name="telephone">
                     <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
+
+                <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Nama Perusahaan</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" name="perusahaan_id" >
+                          @foreach ($perusahaans as $row)
+                        <option value="{{$row->id}}">{{$row->nama}}</option>
+                          @endforeach                         
+                      </select>
+                      </div>
+                      </div>
 
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12">bagian</label>

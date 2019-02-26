@@ -29,16 +29,16 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                        <li><a href="{{url('home')}}"><i class="fa fa-home"></i> HOME</a>
+                        <li><a href="{{url('home')}}"><img src="{{ asset('img/home4.png')}}">   HOME</a>
                     @if(auth::user()->group_id=='5')
                     {{-- home siswa --}}
-                    <li><a href="{{url('admin/kegiatan')}}"><i class="fa fa-pencil"></i> KEGIATAN</a>
+                    <li><a href="{{url('admin/kegiatan')}}"><img src="{{ asset('img/pencil.png')}}"> KEGIATAN</a>
                     {{-- @elseif(auth::user()->group_id=='1' || auth::user()->group_id=='2')
                     <li><a href="{{url('home')}}"><i class="fa fa-home"></i> HOME</a> --}}         
                         @endif
 
                         @if (auth::user()->group_id=='4')
-                        <li><a href="{{url('admin/index_pembimbing')}}"><i class="fa fa-book"></i> KEGIATAN</a>
+                        <li><a href="{{url('admin/index_pembimbing')}}"><img src="{{ asset('img/book1.png')}}">   KEGIATAN</a>
                         @endif
                         
                             @if(auth::user()->admind)                
@@ -46,8 +46,8 @@
                         <ul class="nav child_menu">
                         <li><a href="{{URL('admin/siswa')}}">Siswa</a></li>
                         <li><a href="{{URL('admin/guru')}}">Guru</a></li>
-                        <li><a href="{{URL('admin/pembimbing')}}">pembimbing</a></li>
                         <li><a href="{{URL('admin/perusahaan')}}">Perusahaan</a></li>
+                        <li><a href="{{URL('admin/pembimbing')}}">Pembimbing</a></li>
                         </ul>
                     </li>
                     @endif

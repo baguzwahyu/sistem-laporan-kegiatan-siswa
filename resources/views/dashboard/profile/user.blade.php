@@ -47,8 +47,6 @@
                 <h3>{{auth::user()->name}}</h3>
 
                 <ul class="list-unstyled user_data">
-                  <li><i class="fa fa-map-marker user-profile-icon"></i> {{ auth::user()->alamat}}
-                  </li>
 
                   @if (auth::user()->group_id=='1'||auth::user()->group_id=='2')
                   <li>
@@ -68,7 +66,7 @@
                   </li>    
                   @endif
                   <li class="m-top-xs">
-                    <i class="fa fa-external-link user-profile-icon"></i>
+                    <i class="fa fa-envelope user-profile-icon"></i>
                     <a href="http://www.kimlabs.com/profile/" target="_blank">{{ auth::user()->email }}</a>
                   </li>
                 </ul>

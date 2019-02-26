@@ -50,6 +50,17 @@
         </div>
 
         <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Perusahaan</label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          <select class="form-control" name="perusahaan_id" >
+                      @foreach ($perusahaan as $post)
+                     <option value="{{ $post->id }}">{{ $post->nama }}</option>   
+                      @endforeach
+                   </select>
+          </div>          
+        </div>
+
+        <div class="form-group">
           <label class="control-label col-md-3 col-sm-3 col-xs-12">bagian</label>
           <div class="col-md-6 col-sm-6 col-xs-12">
             <input type="text" class="form-control" name="bagian" value="{{ $pembimbing->bagian }}">

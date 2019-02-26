@@ -48,16 +48,28 @@
                       </div>
                     </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pembimbing</label>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Alamat</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select class="form-control" name="pembimbing_id" >
-                          @foreach ($pembimbings as $row)
-                        <option value="{{$row->id}}">{{$row->nama}}</option>
-                          @endforeach                         
-                      </select>
+                          <input type="text" name="alamat" id="alamat" class="form-control">
                       </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Telephone</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="telephone" id="telephone" class="form-control">
                       </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >email</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="email" id="email" class="form-control">
+                      </div>
+                    </div>
+
+                      
 
               <div class="ln_solid"></div>
                 <div class="form-group">

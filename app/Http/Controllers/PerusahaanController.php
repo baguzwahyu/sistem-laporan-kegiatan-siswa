@@ -16,7 +16,7 @@ class PerusahaanController extends Controller
      */
     public function index()
     {
-        $perusahaan = perusahaan::with('pembimbing')->get();
+        $perusahaan = Perusahaan::all();
 
         return view('perusahaan.index', compact('perusahaan'));
     }
@@ -28,8 +28,7 @@ class PerusahaanController extends Controller
      */
     public function create()
     {
-        $pembimbings = pembimbing::all();
-        return view('perusahaan.create', compact('pembimbings'));
+        return view('perusahaan.create');
     }
 
     /**
@@ -41,13 +40,18 @@ class PerusahaanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'pembimbing_id' => 'required',
-            'nama'  => 'required'
+            'nama'      => 'required',
+            'alamat'    => 'required',
+            'telephone' => 'required',
+            'email'     => 'required|email|unique:perusahaan',
         ]);
 
         $perusahaan = new Perusahaan([
-            'pembimbing_id'=>$request->get('pembimbing_id'),
-            'nama'=>$request->get('nama')
+            'nama'      =>$request->get('nama'),
+            'alamat'    =>$request->alamat,
+            'telephone' =>$request->get('telephone'),
+            'email'     =>$request->get('email'),
+            'logo'      =>'img/user.png',
         ]);
 
         $perusahaan->save();
@@ -73,12 +77,9 @@ class PerusahaanController extends Controller
      */
     public function edit($id)
     {
-        $perusahaan = perusahaan::find($id);
-
-        return view('perusahaan.edit')->with('perusahaan', $perusahaan)
-                                 ->with('pembimbing', Pembimbing::all());
-                                 
-       
+        $perusahaan = perusahaan::findOrfail($id);
+        
+        return view('perusahaan.edit',compact('perusahaan'));
     }
 
     /**
@@ -90,19 +91,10 @@ class PerusahaanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'pembimbing_id' => 'required',
-            'nama'  => 'required'
-        ]);
+        $perusahaan = perusahaan::findOrfail($id);
 
-        $perusahaan = new Perusahaan([
-            'pembimbing_id'=>$request->get('pembimbing_id'),
-            'nama'=>$request->get('nama')
-        ]);
-
-        $perusahaan = Perusahaan::findOrfail($id);
         $perusahaan->update($request->all());
-        $perusahaan->save();
+
         return redirect('admin/perusahaan');
     }
 
@@ -114,10 +106,9 @@ class PerusahaanController extends Controller
      */
     public function destroy($perusahaan)
     {
-        $perusahaan = Perusahaan::findOrFail($perusahaan);
         $perusahaan->delete();
 
-        return redirect('admin/perusahaan/');
+        return redirect('admin/perusahaan');
     }
 
    
