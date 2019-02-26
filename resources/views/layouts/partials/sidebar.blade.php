@@ -42,7 +42,7 @@
                         @endif
                         
                             @if(auth::user()->admind)                
-                    <li><a><i class="fa fa-table"></i>Table <span class="fa fa-chevron-down"></span></a>
+                    <li><a> <img src="{{ asset('img/tables.png')}}">Table <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <li><a href="{{URL('admin/siswa')}}">Siswa</a></li>
                         <li><a href="{{URL('admin/guru')}}">Guru</a></li>
@@ -53,7 +53,7 @@
                     @endif
                     
                     @if(auth::user()->group_id=='1' || auth::user()->group_id=='2')
-                    <li><a><i class="fa fa-users"></i>Kelompok <span class="fa fa-chevron-down"></span></a>
+                    <li><a><img src="{{ asset('img/user1.png')}}">  Kelompok  <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">MAGANG</a></li>
                         </ul>
