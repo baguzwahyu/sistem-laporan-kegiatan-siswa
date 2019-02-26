@@ -168,5 +168,5 @@ class KegiatanController extends Controller
 // (NULL, 'webmaster', 'super webmaster'),
 // (NULL, 'admin', 'super administrator'),
 // (NULL, 'guru', 'login for guru'),
-// (NULL, 'pembimbig', 'login for pembimbing'),
+// (NULL, 'pembimbing', 'login for pembimbing'),
 // (NULL, 'siswa', 'login for siswa');

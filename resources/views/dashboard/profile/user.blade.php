@@ -65,6 +65,12 @@
                     <i class="fa fa-briefcase user-profile-icon"></i> Siswa
                   </li>    
                   @endif
+
+                   <li class="m-top-xs">
+                  <i class="fa fa-map-marker user-profile-icon"></i>
+                    <a href="http://www.kimlabs.com/profile/" target="_blank"> {{ auth::user()->alamat }}</a>
+                  </li>
+                  
                   <li class="m-top-xs">
                     <i class="fa fa-envelope user-profile-icon"></i>
                     <a href="http://www.kimlabs.com/profile/" target="_blank">{{ auth::user()->email }}</a>
