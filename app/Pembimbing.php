@@ -8,7 +8,7 @@ class Pembimbing extends Model
 {
     protected $table =  'pembimbing';
 
-    protected $fillable = ['id','nama','telephone','bagian','email', 'password','photo','alamat'];
+    protected $fillable = ['id','nama','telephone','bagian','perusahaan_id','email', 'password','photo','alamat'];
     
     protected $hidden = [
               'email', 'password'
@@ -22,7 +22,7 @@ class Pembimbing extends Model
 
     public function perusahaan()
     {
-        return $this->hasMany('App\Perusahaan');
+        return $this->belongsTo('App\Perusahaan');
     }
 }
 

@@ -42,15 +42,9 @@
         <br />
 
        
-              <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ Auth::user()->id }}" readonly>
-
-        <div class="form-group" > 
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="text" class="form-control" id="nama" name="nama" value="{{ Auth::user()->name }}" readonly>
-              <span class="fa fa-pencil form-control-feedback right" aria-hidden="true"></span>
-            </div>
-          </div> 
+         <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ Auth::user()->id }}" readonly>
+           <input type="hidden" class="form-control" id="nama" name="nama" value="{{ Auth::user()->name }}" readonly>
+             
        
           <div class="form-group" >
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Bidang Pekerjaan</label>
@@ -74,7 +68,7 @@
           <div class="form-group">
             <div class="col-md-9 col-md-offset-3">
             <a class="btn btn-primary" href="{{url('admin/kegiatan')}}">Cancel</a>
-              <button type="submit" value="save" class="btn btn-success">save</button>
+              <button type="submit" value="save" class="btn btn-success">Add It</button>
             </div>
           </div>
       </div>

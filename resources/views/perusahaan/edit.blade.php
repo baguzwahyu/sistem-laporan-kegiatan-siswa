@@ -33,16 +33,28 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-3 col-sm-3 col-xs-12">pembimbing</label>
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat</label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-          <select class="form-control" name="pembimbing_id" >
-                      @foreach ($pembimbing as $post)
-                     <option value="{{ $post->id }}">{{ $post->nama }}</option>   
-                      @endforeach
-                   </select>
-          </div>          
+          <input type="text" class="form-control" name="alamat" value="{{$perusahaan->alamat}}">
+            <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
         </div>
 
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">Telephone</label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          <input type="text" class="form-control" name="telephone" value="{{$perusahaan->telephone}}">
+            <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">E-mail</label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          <input type="text" class="form-control" name="email" value="{{$perusahaan->email}}">
+            <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+        </div>
+        </div>
         
         <div class="ln_solid"></div>
 
