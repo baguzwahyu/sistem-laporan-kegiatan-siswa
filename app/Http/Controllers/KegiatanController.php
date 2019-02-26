@@ -122,15 +122,17 @@ class KegiatanController extends Controller
         return redirect()->back();
     }
 
-    public function edit_user(Request $request, User $user)
+    public function edit_user($id)
     {
-        return view('user.edit',compact('User','$user'));
+        $user = User::find($id);
+
+        return view('dashboard.profile.user');
     }
 
-    public function update_user(Request $request,$id)
+    public function update_user(Request $request)
     {
        
-        $user=User::findOrfail($id);
+        $user=User::find($id);
 
         $user->update($request->all());
 
@@ -141,14 +143,14 @@ class KegiatanController extends Controller
         public function store_user(Request $request)
         {
                     
-            return Validator::make($data, [
-                'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:6', 'confirmed'],
+            // return Validator::make($data, [
+            //     'name' => ['required', 'string', 'max:255'],
+            //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            //     'password' => ['required', 'string', 'min:6', 'confirmed'],
                 
                 
-                // 'group_id' => ['required', 'integer'],
-            ]);
+                
+            // ]);
     
             $user = User::create([
                 'name' =>       $request->nama,

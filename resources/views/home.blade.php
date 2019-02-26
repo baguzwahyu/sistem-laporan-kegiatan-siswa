@@ -31,7 +31,7 @@
       </div>
       <div class="x_content">
 
-        <div class="col-md-6 col-sm-16 col-xs-12">
+        <div class="col-md-4 col-sm-8 col-xs-8">
           <div class="product-image">
             <img src="{{ url('img/logo.png')}}" alt="..." />
           </div>
@@ -45,12 +45,10 @@
             <a>
               <img src="{{ url('img/prakerin.jpg')}}" alt="..." />
             </a>
-            <a>
-            <img src="{{ url('img/logo-osis.png')}}" alt="..." />
-            </a>
+          
           </div>
         </div>
-
+        
           <h3 class="prod_title">Visi&Misi SMK Telkom DU </h3>
           <h4>Visi</h4>
           <p>Menjadi Sekolah Menengah Kejuruan berstandar mutu Nasional/ Internasional yang mampu bersaing di tingkat regional maupun global berlandaskankan nilai-nilai keislaman.</p>
@@ -60,19 +58,21 @@
           <p>  3. Melaksanakan pendidikan dan pelatihan dengan mengacu pada standar mutu nasional/internasional. </p>
            <p> 4.  Meningkatkan kerjasama dengan dunia usaha dan industri untuk menjamin adanya Link and Match dalam penyelenggaraan pendidikan dan latihan (diklat).</p> 
            <p> 5. Meningkatkan daya serap lulusan di dunia usaha dan industri atau melanjutkan ke perguruan tinggi yang relevan. </p>
+           <br>
           
-          <br />
 
           
           <div class="product_social">
+              <div class="pull-right">
             <ul class="list-inline">
-              <li><a href="#"><i class="fa fa-facebook-square"></i></a>
+                <h4>HUBUNGI KAMI :</h4>
+              <li><a href="#"><img src="{{ url('img/fb.png')}}"></i></a>
               </li>
-              <li><a href="#"><i class="fa fa-twitter-square"></i></a>
+              <li><a href="#"><img src="{{ url('img/twt.png')}}"></a>
               </li>
-              <li><a href="#"><i class="fa fa-envelope-square"></i></a>
+              <li><a href="#"><img src="{{ url('img/gmail.png')}}"></a>
               </li>
-              <li><a href="#"><i class="fa fa-rss-square"></i></a>
+              <li><a href="#"><img src="{{ url('img/wa.png')}}"></a>
               </li>
             </ul>
           </div>
