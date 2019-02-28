@@ -72,6 +72,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::resource('/siswa','SiswaController');
     Route::resource('/pembimbing','PembimbingController');
     Route::resource('/kegiatan','KegiatanController');
+    Route::resource('/kelompok','KelompokController');
 
     route::get('/kegiatan/admin/{id}',[
         'uses'  => 'KegiatanController@admin',
