@@ -72,7 +72,20 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::resource('/siswa','SiswaController');
     Route::resource('/pembimbing','PembimbingController');
     Route::resource('/kegiatan','KegiatanController');
-    Route::resource('/kelompok','KelompokController');
+   
+
+    route::get('/index/admin/{id}',[
+        'uses'  => 'UserController@index',
+        'as'    =>  'index.user'
+    ]);
+
+    Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
+    
+    route::post('/store/admin/{id}',[
+        'uses'  => 'UserController@store',
+        'as'    =>  'store.user'
+    ]);
 
     route::get('/kegiatan/admin/{id}',[
         'uses'  => 'KegiatanController@admin',
@@ -82,14 +95,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
         'uses'  => 'KegiatanController@not_admin',
         'as'    =>  'kegiatan.not.admin'
     ]);
-    route::get('/user/edit_user/{id}',[
-        'uses'  => 'KegiatanController@edit_user',
-        'as'    =>  'edit_user'
-    ]);
-    route::post('/user/update/{id}',[
-        'uses'  => 'KegiatanController@update_user',
-        'as'    =>  'user.update'
-    ]);
+    
 
     // route::post('/user/store/{id}',[
     //     'uses'  => 'KegiatanController@store_user',
@@ -97,10 +103,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     // ]);
     route::get('/index_pembimbing','KegiatanController@index_pembimbing');
 
-    route::get('/profile','HomeController@profile_user');
-    
-   
-    
+  
 });
 
 Route::get('/', function () {

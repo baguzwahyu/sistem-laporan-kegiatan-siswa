@@ -122,46 +122,16 @@ class KegiatanController extends Controller
         return redirect()->back();
     }
 
-    public function edit_user($id)
-    {
-        $user = User::find($id);
+   
 
-        return view('dashboard.profile.user');
-    }
-
-    public function update_user(Request $request)
-    {
-       
-        $user=User::find($id);
-
-        $user->update($request->all());
-
-        return redirect('admin/profile');
-
-        }
-
-        public function store_user(Request $request)
-        {
-                    
-            // return Validator::make($data, [
-            //     'name' => ['required', 'string', 'max:255'],
-            //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            //     'password' => ['required', 'string', 'min:6', 'confirmed'],
-                
-                
-                
-            // ]);
+        // public function destroy($id)
+        // {   
+        //     $user = users::findOrFail($id);
     
-            $user = User::create([
-                'name' =>       $request->nama,
-                'email' =>      $request->email,
-                'password'=>   bcrypt($request->password),
-                'group_id'=> $request->group_id,
-                'photo' =>'img/user.png',
-                'alamat' => $request->alamat,
-            ]);
-            $user->save();
-        }
+        //     $user->delete();
+            
+        //     return redirect('admin/edit');
+        // }
 
 }
 
