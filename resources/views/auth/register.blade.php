@@ -104,6 +104,7 @@
                                     <option value="{{$grp->id}}">{{$grp->group_code}}</option>
                                         @endforeach
                                 </select>
+								
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>

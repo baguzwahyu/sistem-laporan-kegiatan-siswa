@@ -60,6 +60,8 @@
            <p> 5. Meningkatkan daya serap lulusan di dunia usaha dan industri atau melanjutkan ke perguruan tinggi yang relevan. </p>
            <br>
           
+
+          
           <div class="product_social">
               <div class="pull-right">
             <ul class="list-inline">
