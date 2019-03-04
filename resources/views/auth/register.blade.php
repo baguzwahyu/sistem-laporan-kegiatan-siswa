@@ -52,7 +52,7 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-						{{-- mugo mugo berhasil --}}
+						
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-26">

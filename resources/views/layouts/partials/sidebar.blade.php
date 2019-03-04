@@ -10,9 +10,9 @@
         <div class="profile">
             <div class="profile_pic">
                 @if (Auth::user()->photo!='demo')
-                <a href="{{ url('admin/profile')}}">  <img src="{{ url(Auth::user()->photo)}}"  class="img-circle profile_img">  </a>
+                <a href="{{ url('admin/index/admin/{id}')}}">  <img src="{{ url(Auth::user()->photo)}}"  class="img-circle profile_img">  </a>
                 @else
-                <a href="{{ url('admin/profile')}}">  <img src="{{url('img/avatar.jpg')}}"  class="img-circle profile_img">  </a> 
+                <a href="{{ url('admin/index/admin/{id}')}}">  <img src="{{url('img/avatar.jpg')}}"  class="img-circle profile_img">  </a> 
                 @endif
               
             </div>
@@ -42,7 +42,7 @@
                         @endif
                         
                             @if(auth::user()->admind)                
-                    <li><a> <img src="{{ asset('img/tables.png')}}">Table <span class="fa fa-chevron-down"></span></a>
+                    <li><a> <img src="{{ asset('img/tables.png')}}">   TABLE <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <li><a href="{{URL('admin/siswa')}}">Siswa</a></li>
                         <li><a href="{{URL('admin/guru')}}">Guru</a></li>
@@ -53,7 +53,7 @@
                     @endif
                     
                     @if(auth::user()->group_id=='1' || auth::user()->group_id=='2')
-                    <li><a><img src="{{ asset('img/user1.png')}}">  Kelompok  <span class="fa fa-chevron-down"></span></a>
+                    <li><a><img src="{{ asset('img/user1.png')}}">  KELOMPOK  <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">MAGANG</a></li>
                         </ul>

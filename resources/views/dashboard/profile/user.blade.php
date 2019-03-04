@@ -77,11 +77,17 @@
                   </li>
                 </ul>
 
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
-                  Edit profile
-                </button>
+                {{-- <a href="{{route('user.edit')}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a> --}}
+
+                <form action="{{ route('users.edit',auth::user()->id)}}" method="get">
+                  {{ csrf_field() }}
+                  {{ method_field('patch') }}
+                  <input name="_method" type="hidden" value="{{auth::user()->id}}">
+                  <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>edit</button>
+                 
+              </form>
                
-                <form class="form-horizontal form-label-left" method="POST" action="{{route('user.update',auth::user()->id)}}">
+                <form class="form-horizontal form-label-left" method="POST" action="{{route('users.update',auth::user()->id)}}">
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -113,10 +119,7 @@
 
                           </div>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" value="save" class="btn btn-primary">Save changes</button>
-                      </div>
+                    
                     </div>
                   </div>
                 </div>

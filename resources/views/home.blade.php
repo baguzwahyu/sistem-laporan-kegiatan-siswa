@@ -40,7 +40,7 @@
               <img src="{{url('img/tlkm.jpg')}}" alt="..." />
             </a>
             <a>
-              <img src="{{ url('img/avg.png')}}" alt="..." />
+              <img src="{{ url('img/pondok2.png')}}" alt="..." />
             </a>
             <a>
               <img src="{{ url('img/prakerin.jpg')}}" alt="..." />
