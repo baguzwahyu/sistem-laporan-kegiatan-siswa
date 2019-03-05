@@ -78,7 +78,7 @@
                       </div>
 
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">bagian</label>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Divisi</label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" class="form-control" id="bagian" name="bagian">
                     <span class="fa fa-book form-control-feedback right" aria-hidden="true"></span>

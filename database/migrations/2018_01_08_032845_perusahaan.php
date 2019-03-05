@@ -20,7 +20,7 @@ class Perusahaan extends Migration
             $table->string('telephone');
             $table->string('email')->unique();
             $table->string('logo')->default('test');
-            $table->timestamps();
+            $table->timestamps(); 
                   
         });
     }

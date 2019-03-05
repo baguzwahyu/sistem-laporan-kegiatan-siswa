@@ -109,7 +109,7 @@
     <div class="social-icons">
       <ul class="list-unstyled text-center mb-0">
         <li class="list-unstyled-item">
-          <a href="https://smktelkomdu.sch.id/" target="_blank">
+          <a href="{{ url('/')}}">
             <i class="fa fa-home"></i>
           </a>
         </li>
