@@ -178,7 +178,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #ebeeef;
+  background: #eef5f0;
 }
 
 
@@ -247,7 +247,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 43px 88px 93px 190px;
-  background-color: rgba(0, 67, 149, 0.8);
+  background-color: rgba(126, 231, 20, 0.8);
 }
 
 
@@ -257,7 +257,7 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 1px solid #b2b2b2;
+  border-bottom: 1px solid #0e0d0d;
 }
 
 .label-input100 {
@@ -278,7 +278,7 @@ iframe {
 .input100 {
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: rgb(230, 207, 0);
+  color: rgb(54, 50, 50);
   line-height: 1.2;
 
   display: block;
@@ -403,7 +403,7 @@ input.input100 {
   padding: 0 20px;
   min-width: 160px;
   height: 50px;
-  background-color: #f39e00;
+  background-color: #3726b8;
   border-radius: 25px;
 
   font-family: Poppins-Regular;
@@ -418,7 +418,7 @@ input.input100 {
 }
 
 .login100-form-btn:hover {
-  background-color: #333333;
+  background-color: #ec1212;
 }
 
 
