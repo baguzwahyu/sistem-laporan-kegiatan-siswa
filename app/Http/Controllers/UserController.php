@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request;
 use app\User;
 use Validator;
 use DB;
-use Illuminate\Http\Request;
+
 
 class UserController extends Controller
 {
@@ -16,7 +18,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = User::all();
+        $user = Auth::User();
         return view('dashboard.profile.user', compact('user'));
     }
 
@@ -28,18 +30,10 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-        $user = Auth::User();
-
-        $data = $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'alamat' => 'required',
-        ]);
-
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->alamat = $data['alamat'];
-
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        $user->name = Request::input('name');
+        $user->email = Request::input('email');
         $user->save();
         
                 return redirect('dashboard.user.edit'.Auth::user()->id)->with('flash', 'User has been updated!!'); 
