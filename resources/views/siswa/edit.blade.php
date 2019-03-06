@@ -66,30 +66,8 @@
                     <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">guru</label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                   
-                <select class="form-control" name="guru_id" >
-                  @foreach ($guru as $row)
-                <option value="{{ $row->id }}">{{ $row->nama }}</option>    
-                  @endforeach  
-                  
-                </select>
-               </div>
-             </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Pembimbing</label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <select class="form-control" name="pembimbing_id" >
-                     @foreach ($pembimbing as $post)
-                    <option value="{{ $post->id }}">{{ $post->nama }}</option>   
-                     @endforeach
-                      
-                     
-                  </select>
-                </div>
-              </div>
+               
+                
             </div>
           </div> 
                 <div class="ln_solid"></div>

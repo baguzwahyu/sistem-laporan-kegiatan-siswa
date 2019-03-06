@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
 @extends('layouts.master')
-@section('title','home')
+@section('title','Home')
 @section('content')
     
 <div class="clearfix"></div>

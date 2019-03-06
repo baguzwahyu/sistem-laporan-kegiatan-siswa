@@ -15,7 +15,18 @@ class CreateKelompoksTable extends Migration
     {
         Schema::create('kelompoks', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nama_kelompok');
+            $table->integer('guru_id')-> unsigned();
+            $table->integer('pembimbing_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('guru_id')
+                  ->references('id')->on('guru')
+                  ->onDelete('cascade');
+                  
+            $table->foreign('pembimbing_id')
+                  ->references('id')->on('pembimbing')
+                  ->onDelete('cascade');
         });
     }
 

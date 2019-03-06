@@ -15,9 +15,9 @@ class Pembimbing extends Model
 ];
 
 
-    public function siswa()
+    public function kelompok()
     {
-        return $this->hasMany('App\Siswa');
+        return $this->hasMany('App\Kelompok');
     }
 
     public function perusahaan()

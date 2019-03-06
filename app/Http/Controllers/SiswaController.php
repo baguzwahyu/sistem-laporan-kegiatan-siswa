@@ -15,19 +15,16 @@ class SiswaController extends Controller
     
     public function index()
     {
-        $siswa = siswa::with('guru')->get();
-        $siswa = siswa::with('pembimbing')->get();
+        $siswa = Siswa::all();
 
-        return view('siswa.index',compact('siswa') );
+        return view('siswa.index', compact('siswa'));
     }
        
 
     
     public function create()
     {
-        $gurus = guru::all();
-        $pembimbings = pembimbing::all();
-        return view('siswa.create', compact('gurus','pembimbings'));
+        return view('siswa.create');
     }
 
     
@@ -38,8 +35,6 @@ class SiswaController extends Controller
             'nama'          =>'required',
             'jurusan'       =>'required',
             'kelas'         =>'required',
-            'guru_id'       =>'required',
-            'pembimbing_id' =>'required',
             'email'         =>'required|email|unique:siswa',
             'password'      =>'required|min:6|confirmed'
         ]);
@@ -47,8 +42,6 @@ class SiswaController extends Controller
             'nama'          =>$request->get('nama'),
             'jurusan'       =>$request->get('jurusan'),
             'kelas'         =>$request->get('kelas'),
-            'guru_id'       =>$request->get('guru_id'),
-            'pembimbing_id' =>$request->get('pembimbing_id'),
             'email'         =>$request->get('email'),
             'password'      =>bcrypt($request->password),
             'photo' =>'img/user.png',
@@ -84,15 +77,9 @@ class SiswaController extends Controller
    
     public function edit($id)
     {
-        $siswa = siswa::find($id);
-
-        return view('siswa.edit')->with('siswa', $siswa)
-                                 ->with('pembimbing', Pembimbing::all())
-                                 ->with('guru', Guru::all());
-       
+        $siswa = siswa::findOrfail($id);
         
-       
-       
+        return view('siswa.edit',compact('siswa'));
     }
 
     /**

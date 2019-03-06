@@ -50,8 +50,6 @@
               <th><h4>Alamat</h4></th>
               <th><h4>Jurusan</h4></th>
               <th><h4>Kelas</h4></th>
-              <th><h4>Guru</h4></th>
-              <th><h4>Pembimbing</h4></th>
               <th><h4>Action</h4></th>
             </tr>
           </thead>
@@ -63,8 +61,6 @@
                     <td>{{$sin->alamat}}</td>                 
                     <td>{{$sin->jurusan}}</td>
                     <td>{{$sin->kelas}}</td>
-                    <td>{{$sin->guru->nama}}</td>
-                    <td>{{$sin->pembimbing->nama}}</td>
                     <td>
                     <form action="{{ route('siswa.destroy', $sin->id) }}" method="post">
                         {{ csrf_field() }}

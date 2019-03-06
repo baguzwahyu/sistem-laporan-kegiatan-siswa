@@ -75,27 +75,6 @@
                   </div>
                 </div>
                
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12">Guru</label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <select class="form-control" name="guru_id" >
-                    @foreach ($gurus as $guru)
-                  <option value="{{$guru->id}}">{{$guru->nama}}</option>
-                    @endforeach
-                    
-                </select>
-                </div>
-              </div>
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Pembimbing</label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-                    <select class="form-control" name="pembimbing_id" >
-                          @foreach ($pembimbings as $pembimbing)
-                      <option value="{{$pembimbing->id}}">{{$pembimbing->nama}}</option>
-                          @endforeach
-                    </select>
-              </div>
-          </div> 
 
           <div class="form-group">
                   <label  for="email" class="control-label col-md-3 col-sm-3 col-xs-12">E-mail</label>
