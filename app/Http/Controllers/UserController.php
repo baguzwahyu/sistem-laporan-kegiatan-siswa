@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use app\User;
 use Validator;
 use DB;
@@ -22,21 +22,25 @@ class UserController extends Controller
         return view('dashboard.profile.user', compact('user'));
     }
 
-    public function edit(User $user)
+    public function edit($id)
     {
-        $user = Auth::User();
+        $user=Auth::User();
+        $user = user::find($id);
+
+        
         return view('dashboard.profile.edit', compact('user'));
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        $id = Auth::user()->id;
-        $user = User::find($id);
-        $user->name = Request::input('name');
-        $user->email = Request::input('email');
-        $user->save();
+        User::find($id)->update($request->all());
+        // $user= Auth::User();
+        // $user=user::findOrfail($user);
+
+        // $user->update($request->all());
+
         
-                return redirect('dashboard.user.edit'.Auth::user()->id)->with('flash', 'User has been updated!!'); 
+         return redirect('admin/index/user')->with('flash', 'User has been updated!!'); 
                 
             
 
@@ -55,7 +59,7 @@ class UserController extends Controller
             ]);
     
             $user = User::create([
-                'name' =>       $request->nama,
+                'name' =>       $request->name,
                 'email' =>      $request->email,
                 'password'=>   bcrypt($request->password),
                 'group_id'=> $request->group_id,
@@ -64,5 +68,9 @@ class UserController extends Controller
             ]);
             $user->save();
             return redirect('admin/user')->with('succes','User has been slain');
+        }
+
+        public function photo_upd(Request $request){
+
         }
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Guru;
 use App\User;
 use Validator;
@@ -66,8 +66,10 @@ class GuruController extends Controller
     public function edit($id)
     {
         $guru = guru::findOrFail($id);
+       
 
-        return view('guru.edit',compact('guru'));
+        return view('guru.edit')->with('guru',$guru)
+                                ->with('user',auth::user());
     }
 
     
