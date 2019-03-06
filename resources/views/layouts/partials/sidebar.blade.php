@@ -55,7 +55,7 @@
                     @if(auth::user()->group_id=='1' || auth::user()->group_id=='2')
                     <li><a><img src="{{ asset('img/user1.png')}}">  KELOMPOK  <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">MAGANG</a></li>
+                            <li><a href="{{url('admin/kelompok')}}">MAGANG</a></li>
                         </ul>
                     </li>
                     @endif

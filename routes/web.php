@@ -42,6 +42,9 @@ return view('/siswa/search')->with('siswa',$siswa)
                     
 });
 
+                        
+   
+
 
 // Route::get('/ss', function (){
 //     return view('dashboard.dashboard');
@@ -72,6 +75,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::resource('/siswa','SiswaController');
     Route::resource('/pembimbing','PembimbingController');
     Route::resource('/kegiatan','KegiatanController');
+    Route::resource('/kelompok','KelompokController');
    
 
     route::get('/index/admin/{id}',[
