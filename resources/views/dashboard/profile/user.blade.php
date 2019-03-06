@@ -78,14 +78,89 @@
                 </ul>
 
                 {{-- <a href="{{route('user.edit')}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a> --}}
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Edit Profile <span><img src="{{ asset('img/user_edit.png')}}" alt=""></span>
+</button>
 
-                <form action="{{ route('users.edit',auth::user()->id)}}" method="get">
-                  {{ csrf_field() }}
-                  {{ method_field('patch') }}
-                  <input name="_method" type="hidden" value="{{auth::user()->id}}">
-                  <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>edit</button>
-                 
-              </form>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form class="form-horizontal form-label-left" method="POST" action="{{route('users.update', auth::user()->id)}}" >
+          {{ csrf_field()}}
+          {{ method_field('patch') }}
+          <div class="form-group hidden">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="_method" value="PATCH">
+        </div>
+       <div class="col-md-12 col-sm-24 col-xs-24">
+          <div class="x_panel">
+            <div class="x_title">
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">setting 1</a></li>
+                      <li><a href="#">setting 2</a></li>
+                    </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content"></div>
+              <br />
+      
+      
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ auth::user()->name }}"required autofocus>
+              </div>
+              </div>
+      
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="alamat" type="text" class="form-control{{ $errors->has('alamat') ? ' is-invalid' : '' }}" name="alamat" value="{{ auth::user()->alamat }}"required autofocus>
+              </div>
+              </div>
+      
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">email</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ auth::user()->email }}"required>
+                </div>          
+              </div>
+      
+              
+              <div class="ln_solid"></div>
+      
+              <div class="form-group">
+                <div class="col-md-9 col-md-offset-3">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" value="save" class="btn btn-success">save changes</button>
+                </div>
+              </div>
+          </div>
+       </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+               
                
                 <form class="form-horizontal form-label-left" method="POST" action="{{route('users.update',auth::user()->id)}}">
                 @csrf

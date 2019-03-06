@@ -74,15 +74,15 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::resource('/kegiatan','KegiatanController');
    
 
-    route::get('/index/admin/{id}',[
+    route::get('/index/user',[
         'uses'  => 'UserController@index',
         'as'    =>  'index.user'
     ]);
-
-    Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+    Route::get('/updatephoto','UserController@photo_upd');
+    Route::get('edit/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
 Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
     
-    route::post('/store/admin/{id}',[
+    route::post('/store/admin',[
         'uses'  => 'UserController@store',
         'as'    =>  'store.user'
     ]);
