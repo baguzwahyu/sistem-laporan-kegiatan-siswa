@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Image;
 use app\User;
 use Validator;
 use DB;
@@ -18,8 +19,12 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = Auth::User();
-        return view('dashboard.profile.user', compact('user'));
+        return view('dashboard.profile.user', array(auth::user()));
+    }
+
+    public function photo()
+    {
+        return view('dashboard.profile.user', array(auth::user()));
     }
 
     public function edit($id)
@@ -72,5 +77,16 @@ class UserController extends Controller
 
         public function photo_upd(Request $request){
 
+            if($request->hasFile('photo')){
+                $photo = $request->file('photo');
+                $filename = time() . '.' . $photo->getClientOriginalExtension();
+                Image::make($photo)->save(public_path( $filename));
+
+                $user= Auth::user();
+                $user -> photo= $filename;
+                $user->save();
+                
+            }
+            return view('dashboard.profile.user', array(auth::user()));
         }
 }

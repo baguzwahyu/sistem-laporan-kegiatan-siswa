@@ -38,6 +38,38 @@
                     <!-- Current avatar -->
                     @if (Auth::user()->photo!='demo')
                     <img class="img-responsive avatar-view" src="{{ url(auth::user()->photo) }}"  title="Change the avatar">
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Change Photo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="{{ route('update_photo')}}" method="POST" enctype="multipart/form-data">
+                              @csrf
+                              <img class="img-responsive avatar-view" src="{{ url(auth::user()->photo) }}"  title="Change the avatar">
+                              <br>
+                            <input type="file" name="photo" >
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            
+                             
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                            <input type="submit" class="pull-right btn btn-sm btn-primary">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                    
+                   
                     @else
                     <img class="img-responsive avatar-view" src="{{ url('img/avatar.jpg') }}"  title="Change the avatar">
                     @endif
@@ -79,13 +111,18 @@
 
                 {{-- <a href="{{route('user.edit')}}" class="btn btn-warning"><i class="fa fa-edit">Edit</i></a> --}}
                 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
   Edit Profile <span><img src="{{ asset('img/user_edit.png')}}" alt=""></span>
 </button>
 
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Change Photo
+  </button>
+
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

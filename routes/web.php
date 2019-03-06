@@ -78,7 +78,8 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
         'uses'  => 'UserController@index',
         'as'    =>  'index.user'
     ]);
-    Route::get('/updatephoto','UserController@photo_upd');
+    Route::get('photo', ['as'=>'photo','uses'=>'UserController@photo']);
+    Route::post('update/photo', ['as'=>'update_photo','uses'=>'UserController@photo_upd']);
     Route::get('edit/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
 Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
     
