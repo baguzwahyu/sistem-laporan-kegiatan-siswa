@@ -10,7 +10,7 @@
  <link href="{{ asset('vendors/cropper/dist/cropper.min.css')}}" rel="stylesheet">
                     
 
- <form class="form-horizontal form-label-left" method="POST" action="{{route('kelompok.update', $kelompok ->id)}}" >
+ <form class="form-horizontal form-label-left" method="POST" action="{{route('view_update', $kelompok ->id)}}" >
   {{ csrf_field()}}
 <input type="hidden" name="_method" value="PATCH">
         <div class="col-md-12 col-sm-24 col-xs-24">
@@ -78,15 +78,18 @@
            </tr>
          </thead>
          <tbody>
-           
-           <tr>
+        @foreach ($collection as $item)
+              <tr>
                    <td>1</td>
                    <td>M Nuzulul Kiromi</td>
                    <td>XI RPL 1</td>
                    <td>Rekayasa Perangkat Lunak</td>
                    <td>Gedangan, Sidoarjo</td>
                </tr>
-               <tr>
+               @endforeach
+
+
+               {{-- <tr>
                    <td>2</td>
                    <td>Hisyam Rifqi</td>
                    <td>XI RPL 1</td>
@@ -106,7 +109,7 @@
                    <td>XI RPL 1</td>
                    <td>Rekayasa Perangkat Lunak</td>
                    <td>Jombang</td>
-               </tr>
+               </tr> --}}
 
 
          </tbody>
@@ -115,5 +118,6 @@
      </div>
    </div>
  </div>
+ </form>
  @endsection
  

@@ -23,7 +23,8 @@ class CreateKelompoksTable extends Migration
             $table->foreign('guru_id')
                   ->references('id')->on('guru')
                   ->onDelete('cascade');
-                  
+
+          
             $table->foreign('pembimbing_id')
                   ->references('id')->on('pembimbing')
                   ->onDelete('cascade');

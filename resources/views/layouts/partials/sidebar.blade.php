@@ -29,20 +29,20 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                        <li><a href="{{url('home')}}"><img src="{{ asset('img/home4.png')}}">   HOME</a>
+                        <li><a href="{{url('home')}}"><img src="{{ asset('img/home4.png')}}">   Home</a>
                     @if(auth::user()->group_id=='5')
                     {{-- home siswa --}}
-                    <li><a href="{{url('admin/kegiatan')}}"><img src="{{ asset('img/pencil.png')}}"> KEGIATAN</a>
+                    <li><a href="{{url('admin/kegiatan')}}"><img src="{{ asset('img/pencil.png')}}"> kegiatan</a>
                     {{-- @elseif(auth::user()->group_id=='1' || auth::user()->group_id=='2')
                     <li><a href="{{url('home')}}"><i class="fa fa-home"></i> HOME</a> --}}         
                         @endif
 
                         @if (auth::user()->group_id=='4')
-                        <li><a href="{{url('admin/index_pembimbing')}}"><img src="{{ asset('img/book1.png')}}">   KEGIATAN</a>
+                        <li><a href="{{url('admin/index_pembimbing')}}"><img src="{{ asset('img/book1.png')}}">   Kegiatan</a>
                         @endif
                         
                             @if(auth::user()->admind)                
-                    <li><a> <img src="{{ asset('img/tables.png')}}">   TABLE <span class="fa fa-chevron-down"></span></a>
+                    <li><a> <img src="{{ asset('img/tables.png')}}">   Table <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <li><a href="{{URL('admin/siswa')}}">Siswa</a></li>
                         <li><a href="{{URL('admin/guru')}}">Guru</a></li>
@@ -53,9 +53,9 @@
                     @endif
                     
                     @if(auth::user()->group_id=='1' || auth::user()->group_id=='2')
-                    <li><a><img src="{{ asset('img/user1.png')}}">  KELOMPOK  <span class="fa fa-chevron-down"></span></a>
+                    <li><a><img src="{{ asset('img/user1.png')}}">Kelompok<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{url('admin/kelompok')}}">MAGANG</a></li>
+                            <li><a href="{{url('admin/kelompok')}}">Magang</a></li>
                         </ul>
                     </li>
                     @endif

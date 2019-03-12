@@ -21,5 +21,9 @@ class Kelompok extends Model
     {
     return $this->belongsTo('App\Guru');
     }
-    
+
+    public function anggotakelompok()
+    {
+    return $this->hasMany('App\AnggotaKelompok');
+    }
 }

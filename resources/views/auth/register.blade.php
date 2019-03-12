@@ -51,8 +51,8 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                                @endif
-						
+								@endif
+								<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-26">
@@ -75,10 +75,10 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                @endif
-						
-                    </div>
-                    
+								@endif
+								<span class="focus-input100"></span>
+						</div>
+					
 					<div class="wrap-input100 validate-input m-b-26">
 						<span for="password" class="label-input100 text-white">Password</span>
 						<input id="password" type="password" class="input100{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password *" required>
@@ -88,21 +88,23 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-						
+								<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-26">
 						<span for="password-confirm" class="label-input100 text-white">Password</span>
 						<input id="password-confirm" type="password" class="input100" name="password_confirmation"  placeholder="Password Confirmation *" required>
 						<span class="focus-input100"></span>
 					</div>
-					
+
 					<div class="wrap-input100 validate-input m-b-18">
-						<span class="label-input100 text-white">Group id</span>
+						{{-- <span class="label-input100 text-white" for="group_id">{{ __('Group_id') }}</span> --}}
+						<label for="grup" class="col-md-4 col-form-label text-md-right">{{ __('Grup Id') }}</label>
+
 						<div class="">
-                                <select id="grup"  class="input100{{ $errors->has('Grup Id') ? ' is-invalid' : '' }}" name="group_id" value="{{ old('group_id') }}" required autofocus>
-                                    @foreach ($group as $grp)
-                                    <option value="{{$grp->id}}">{{$grp->group_code}}</option>
-                                        @endforeach
+                                <select id="grup"  class="form-control{{ $errors->has('Group Id') ? ' is-invalid' : '' }}" name="group_id" value="{{ old('group_id') }}" required autofocus>
+                                   @foreach ($group as $asd)
+								   <option value="{{$asd->id}}">{{$asd->group_code}}</option> 
+								   @endforeach
                                 </select>
 								
                                 @if ($errors->has('name'))
@@ -113,6 +115,8 @@
                     </div>
 						<span class="focus-input100"></span>
 					</div>
+					
+					{{-- <option value="{{$grp->id}}">{{$grp->group_code}}</option> --}}
                            
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">

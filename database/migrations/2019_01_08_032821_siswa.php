@@ -18,21 +18,11 @@ class Siswa extends Migration
             $table->string('nama');
             $table->string('jurusan');
             $table->string('kelas');
-            $table->integer('guru_id')-> unsigned();
-            $table->integer('pembimbing_id')->unsigned();
             $table->string('email')->unique();
             $table->string('alamat');
             $table->string('photo')->default('demo');
             $table->string('password');
             $table->timestamps();
-
-            $table->foreign('guru_id')
-                  ->references('id')->on('guru')
-                  ->onDelete('cascade');
-                  
-            $table->foreign('pembimbing_id')
-                  ->references('id')->on('pembimbing')
-                  ->onDelete('cascade');
                   
         });
     }
