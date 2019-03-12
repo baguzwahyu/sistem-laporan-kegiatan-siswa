@@ -18,7 +18,7 @@
             <div class="x_title">
               <h2>Detail Kelompok</h2>
               <ul class="nav navbar-right panel_toolbox">
-              <a class="btn btn-success" href="#"><p class="glyphicon glyphicon">Tambahkan Anggota</p></a>
+              <a class="btn btn-success" href="#"><p class="glyphicon glyphicon">+ Anggota</p></a>
               </ul>
               <div class="clearfix"></div>
             </div>
