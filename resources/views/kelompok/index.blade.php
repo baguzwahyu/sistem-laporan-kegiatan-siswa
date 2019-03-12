@@ -54,7 +54,7 @@
                     </form>
                     </td>
                     <td>
-                         <a href="{{route('kelompok.show',$sin->id)}}" class="btn btn-primary">view</a>
+                         <a href="{{route('view_kelompok',$sin->id)}}" class="btn btn-success">view</a>
                    </td>
                 </tr>
             @endforeach

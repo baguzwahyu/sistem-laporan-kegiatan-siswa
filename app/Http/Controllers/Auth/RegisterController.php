@@ -53,16 +53,17 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'group_id' => ['required','integer','group_id','unsigned:users'],
             
             
-            // 'group_id' => ['required', 'integer'],
+            //  'group_id' => ['required', 'integer'],
         ]);
 
         $user = User::create([
             'name' =>       $request->nama,
             'email' =>      $request->email,
             'password'=>   bcrypt($request->password),
-            'group_id'=> $request->group_id,
+            'group_id'=>    $request->group_id,
             'photo' =>'img/user.png',
             'alamat' => $request->alamat,
         ]);
@@ -92,7 +93,6 @@ class RegisterController extends Controller
     public function showRegistrationform(){
 
         $group = Group::all();
-        return view('auth.register', compact('group'));
+        return view('auth.register',compact('group'));
     }
 }
-// wkwkwkwwwk

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Group;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
 class RegisterController extends Controller
 {
     /*
@@ -52,7 +52,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'group_id' => ['required','integer','group_id','unsigned:users'],
+            
         ]);
     }
 
@@ -69,6 +69,15 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'group_id' => $data['group_id'],
+            'alamat'=>    $data['alamat'],
+            'photo' =>'img/user.png',
+            
         ]);
+    }
+
+    public function showRegistrationform(){
+
+        $group = Group::all();
+        return view('auth.register',compact('group'));
     }
 }

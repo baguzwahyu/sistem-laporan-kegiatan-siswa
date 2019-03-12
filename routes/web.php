@@ -77,7 +77,9 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::resource('/kegiatan','KegiatanController');
     Route::resource('/kelompok','KelompokController');
    
-
+    Route::get('view/kelompok/{id}',['as'=>'view_kelompok','uses'=>'KelompokController@view_kelompok']);
+    Route::patch('view/update/{id}',['as'=>'view_update','uses'=>'KelompokController@view_update']);
+    Route::get('create/kelompok/{id}',['as'=>'create_kelompok','uses'=>'KelompokController@create_kelompok']);
     route::get('/index/user',[
         'uses'  => 'UserController@index',
         'as'    =>  'index.user'
@@ -90,6 +92,11 @@ Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserCon
     route::post('/store/admin',[
         'uses'  => 'UserController@store',
         'as'    =>  'store.user'
+    ]);
+
+    route::get('/view/anggota/kelompok',[
+        'uses'  =>  'KelompokController@AnggotaKelompok',
+        'as'    =>  'anggota.kelompok'
     ]);
 
     route::get('/kegiatan/admin/{id}',[
