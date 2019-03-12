@@ -230,7 +230,7 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(54,84,99,0.7);
+  background-color: rgba(0,46,102,.8);
 }
 
 
@@ -247,7 +247,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 43px 88px 93px 190px;
-  background-color: rgba(126, 231, 20, 0.8);
+  background-color:rgba(0, 46, 102, 0.8);
 }
 
 
@@ -311,7 +311,7 @@ iframe {
   -moz-transition: all 0.6s;
   transition: all 0.6s;
 
-  background: #57b846;
+  background: rgba(0,46,102,.8);
 }
 
 
