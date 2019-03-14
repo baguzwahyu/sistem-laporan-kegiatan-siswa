@@ -78,7 +78,6 @@
            </tr>
          </thead>
          <tbody>
-        @foreach ($collection as $item)
               <tr>
                    <td>1</td>
                    <td>M Nuzulul Kiromi</td>
@@ -86,10 +85,9 @@
                    <td>Rekayasa Perangkat Lunak</td>
                    <td>Gedangan, Sidoarjo</td>
                </tr>
-               @endforeach
 
 
-               {{-- <tr>
+                <tr>
                    <td>2</td>
                    <td>Hisyam Rifqi</td>
                    <td>XI RPL 1</td>
@@ -109,7 +107,7 @@
                    <td>XI RPL 1</td>
                    <td>Rekayasa Perangkat Lunak</td>
                    <td>Jombang</td>
-               </tr> --}}
+               </tr> 
 
 
          </tbody>
