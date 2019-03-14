@@ -18,6 +18,7 @@ class AnggotaKelompok extends Migration
             $table->increments('id');
             $table->integer('id_kelompok')->unsigned();
             $table->integer('id_siswa')->unsigned();
+            $table->timestamps();
             
             $table->foreign('id_kelompok')
             ->references('id')->on('kelompoks')
