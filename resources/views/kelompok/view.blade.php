@@ -68,7 +68,7 @@
      <div class="x_content">
 
        <table class="table table-bordered jambo_table">
-         <thead>
+         <thead> 
            <tr>
              <th><h4>No</h4></th>
              <th><h4>Anggota Kelompok</h4></th>
@@ -78,44 +78,22 @@
            </tr>
          </thead>
          <tbody>
-        
+            {{-- @foreach ($kelompok as $asd)
               <tr>
-                   <td>1</td>
-                   <td>M Nuzulul Kiromi</td>
-                   <td>XI RPL 1</td>
-                   <td>Rekayasa Perangkat Lunak</td>
-                   <td>Gedangan, Sidoarjo</td>
+              <td>{{$asd->id}}</td>
+              <td>{{$asd->siswa->nama}}</td>
+              <td>{{$asd->siswa->alamat}}</td>
+              <td>{{$asd->siswa->kelas}}</td>
+              <td>{{$asd->siswa->jurusan}}</td>
                </tr>
-        
-               <tr>
-                   <td>2</td>
-                   <td>Hisyam Rifqi</td>
-                   <td>XI RPL 1</td>
-                   <td>Rekayasa Perangkat Lunak</td>
-                   <td>Tulung Agung</td>
-               </tr>
-               <tr>
-                   <td>3</td>
-                   <td>Arya Firman</td>
-                   <td>XI RPL 1</td>
-                   <td>Rekayasa Perangkat Lunak</td>
-                   <td>Sidoarjo</td>
-               </tr>
-               <tr>
-                   <td>4</td>
-                   <td>Irgi Fahrias</td>
-                   <td>XI RPL 1</td>
-                   <td>Rekayasa Perangkat Lunak</td>
-                   <td>Jombang</td>
-               </tr> 
-
-
+               @endforeach --}}
+               
          </tbody>
        </table>
      </div>
      </div>
    </div>
  </div>
- </form>
+
  @endsection
  
