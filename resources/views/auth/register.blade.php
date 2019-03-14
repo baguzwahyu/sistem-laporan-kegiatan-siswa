@@ -42,7 +42,7 @@
 				<form class="login100-form validate-form" method="POST" action="{{ route('register') }}"  >
                 @csrf
 					<div class="wrap-input100 validate-input m-b-26">
-						<span for="name" class="label-input100 text-white">Name</span>
+						<span for="name" class="label-input100 text-white">Nama</span>
 						<input id="name" type="text" class="input100{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Your Name *" required autofocus>
 
 
@@ -57,7 +57,7 @@
 
 					<div class="wrap-input100 validate-input m-b-26">
 						<span for="alamat" class="label-input100 text-white">Alamat</span>
-						<input id="alamat" type="text" class="input100{{ $errors->has('alamat') ? ' is-invalid' : '' }}" name="alamat" value="{{ old('alamat') }}" placeholder="ALAMAT *" required autofocus>
+						<input id="alamat" type="text" class="input100{{ $errors->has('alamat') ? ' is-invalid' : '' }}" name="alamat" value="{{ old('alamat') }}" placeholder="Address *" required autofocus>
 
                                 @if ($errors->has('alamat'))
                                     <span class="invalid-feedback" role="alert">
@@ -98,7 +98,7 @@
 
 					<div class="wrap-input100 validate-input m-b-18">
 						{{-- <span class="label-input100 text-white" for="group_id">{{ __('Group_id') }}</span> --}}
-						<label for="grup" class="col-md-4 col-form-label text-md-right">{{ __('Grup Id') }}</label>
+						<span for="grup" class="label-input100 text-white">Jabatan</span>
 
 						<div class="">
                                 <select id="grup"  class="form-control{{ $errors->has('Group Id') ? ' is-invalid' : '' }}" name="group_id" value="{{ old('group_id') }}" required autofocus>
