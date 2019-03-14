@@ -18,7 +18,7 @@
             <div class="x_title">
               <h2>Detail Kelompok</h2>
               <ul class="nav navbar-right panel_toolbox">
-              <a class="btn btn-success" href="#"><p class="glyphicon glyphicon">+ Anggota</p></a>
+              <a class="btn btn-success" href="{{URL::to('admin/create/anggota/kelompok')}}/{{$kelompok->id}}"><p class="glyphicon glyphicon">Tambahkan Anggota</p></a>
               </ul>
               <div class="clearfix"></div>
             </div>
@@ -78,6 +78,7 @@
            </tr>
          </thead>
          <tbody>
+        
               <tr>
                    <td>1</td>
                    <td>M Nuzulul Kiromi</td>
@@ -85,9 +86,8 @@
                    <td>Rekayasa Perangkat Lunak</td>
                    <td>Gedangan, Sidoarjo</td>
                </tr>
-
-
-                <tr>
+        
+               <tr>
                    <td>2</td>
                    <td>Hisyam Rifqi</td>
                    <td>XI RPL 1</td>

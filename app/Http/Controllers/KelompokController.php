@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Kelompok;
+use App\Siswa;
 use App\Guru;
 use App\Pembimbing;
 use Validator;
 use DB;
+use App\AnggotaKelompok;
 use Illuminate\Http\Request;
 
 class KelompokController extends Controller
@@ -19,6 +21,19 @@ class KelompokController extends Controller
 
         return view('kelompok.index',compact('kelompok') );
     }
+
+    public function view_kelompok($id)
+    {
+        
+
+        $kelompok = Kelompok::find($id);
+
+
+        return view('kelompok.view')->with('kelompok', $kelompok)
+                                 ->with('pembimbing', Pembimbing::all())
+                                 ->with('guru', Guru::all());
+    }
+
    
     public function create()
     {
@@ -27,12 +42,6 @@ class KelompokController extends Controller
         return view('kelompok.create', compact('gurus','pembimbings'));
     }
 
-    public function anggota_kelompok()
-    {
-        $siswa = siswa::all();
-        $kelompok = kelompok::all();
-        return view('kelompok.tambah', compact('siswa','kelompok'));
-    }
 
     
     public function store(Request $request)
@@ -50,6 +59,23 @@ class KelompokController extends Controller
 
         $kelompok->save();
         return redirect('admin/kelompok');
+    }
+
+    public function store_anggota(Request $request)
+    {
+        $this->Validate($request,[
+            'id_kelompok'     =>'required',
+            'id_siswa'         =>'required',
+            
+        ]);
+        $anggota = new AnggotaKelompok([
+            'id_kelompok'     =>$request->get('id_kelompok'),
+            'id_siswa'     =>$request->get('id_siswa'),
+            
+        ]);
+
+        $anggota->save();
+        return redirect('admin/view/kelompok/{id}');   
     }
 
     
@@ -100,12 +126,11 @@ class KelompokController extends Controller
         return redirect('admin/kelompok');
     }
 
-    public function AnggotaKelompok()
+
+    public function create_anggota($id)
     {
-        $kelompok = DB::table('kelompoks')
-            ->join('', 'users.id', '=', 'contacts.user_id')
-            ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->select('users.*', 'contacts.phone', 'orders.price')
-            ->get();
-    }
+        $siswas = siswa::all();
+        $kelompok=Kelompok::findOrfail($id);
+        return view('kelompok.tambah', compact('siswas','kelompok'));
+        }
 }
