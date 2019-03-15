@@ -89,17 +89,14 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     Route::get('photo', ['as'=>'photo','uses'=>'UserController@photo']);
     Route::post('update/photo', ['as'=>'update_photo','uses'=>'UserController@photo_upd']);
     Route::get('edit/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
-Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
-    
+    Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
+    Route::get('kelompok/index/view/{id}',  ['as' => 'index.view', 'uses' => 'KelompokController@inview']);
     route::post('/store/admin',[
         'uses'  => 'UserController@store',
         'as'    =>  'store.user'
     ]);
 
-    route::get('/view/anggota/kelompok',[
-        'uses'  =>  'KelompokController@AnggotaKelompok',
-        'as'    =>  'anggota.kelompok'
-    ]);
+    
 
     route::get('/kegiatan/admin/{id}',[
         'uses'  => 'KegiatanController@admin',

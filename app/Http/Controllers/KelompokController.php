@@ -25,7 +25,7 @@ class KelompokController extends Controller
     public function view_kelompok($id)
     {
         
-        $kelompok = Kelompok::find($id);
+        $kelompok = Kelompok::findOrfail($id);
 
 
         return view('kelompok.view')->with('kelompok', $kelompok)
@@ -75,7 +75,8 @@ class KelompokController extends Controller
         ]);
 
         $anggota->save();
-        return redirect('admin/kelompok/{kelompok}');   
+        return redirect()->route('index.view', [$id]);
+        // return view('')
     }
 
     
@@ -127,5 +128,16 @@ class KelompokController extends Controller
         $siswas = siswa::all();
         $kelompok=Kelompok::findOrfail($id);
         return view('kelompok.tambah', compact('siswas','kelompok'));
-        }
+    }
+
+    public function inview($id)
+    {
+        $kelompok = Kelompok::findOrfail($id);
+
+
+        return view('kelompok.view')->with('kelompok', $kelompok)
+                                 ->with('pembimbing', Pembimbing::all())
+                                 ->with('guru', Guru::all())
+                                 ->with('siswa', Siswa::all());
+    }
 }
