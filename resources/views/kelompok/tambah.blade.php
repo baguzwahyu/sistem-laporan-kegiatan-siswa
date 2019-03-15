@@ -61,12 +61,44 @@
                       </select>
                       </div>
                       </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Kelas</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" name="id_siswa">
+                          @foreach ($siswas as $row)
+                        <option value="{{$row->id}}">{{$row->kelas}}</option>
+                          @endforeach                         
+                      </select>
+                      </div>
+                      </div>
              
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Jurusan</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" name="id_siswa">
+                          @foreach ($siswas as $row)
+                        <option value="{{$row->id}}">{{$row->jurusan}}</option>
+                          @endforeach                         
+                      </select>
+                      </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Alamat</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" name="id_siswa">
+                          @foreach ($siswas as $row)
+                        <option value="{{$row->id}}">{{$row->alamat}}</option>
+                          @endforeach                         
+                      </select>
+                      </div>
+                      </div>
                 <div class="ln_solid"></div>
       
                 <div class="form-group">
                   <div class="col-md-9 col-md-offset-3">
-                  {{-- <a class="btn btn-primary" href="{{url('admin/pembimbing')}}">Cancel</a> --}}
+                  <a class="btn btn-primary" href="{{url('admin/kelompok')}}">Cancel</a>
                     <button type="submit" value="save" class="btn btn-success">save</button>
                   </div>
                 </div>

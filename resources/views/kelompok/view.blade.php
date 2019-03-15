@@ -18,7 +18,7 @@
             <div class="x_title">
               <h2>Detail Kelompok</h2>
               <ul class="nav navbar-right panel_toolbox">
-              <a class="btn btn-success" href="{{URL::to('admin/create/anggota/kelompok')}}/{{$kelompok->id}}"><p class="glyphicon glyphicon">Tambahkan Anggota</p></a>
+              <a class="btn btn-success" href="{{URL::to('admin/create/anggota/kelompok')}}/{{$kelompok->id}}"><p class="glyphicon glyphicon">+ Anggota</p></a>
               </ul>
               <div class="clearfix"></div>
             </div>
@@ -70,7 +70,7 @@
        <table class="table table-bordered jambo_table">
          <thead> 
            <tr>
-             <th><h4>No</h4></th>
+             <th><h4># Id</h4></th>
              <th><h4>Anggota Kelompok</h4></th>
              <th><h4>Kelas</h4></th>
              <th><h4>Jurusan</h4></th>
@@ -78,16 +78,16 @@
            </tr>
          </thead>
          <tbody>
-            {{-- @foreach ($kelompok as $asd)
-              <tr>
-              <td>{{$asd->id}}</td>
-              <td>{{$asd->siswa->nama}}</td>
-              <td>{{$asd->siswa->alamat}}</td>
-              <td>{{$asd->siswa->kelas}}</td>
-              <td>{{$asd->siswa->jurusan}}</td>
-               </tr>
-               @endforeach --}}
-               
+         @foreach($anggota as $key => $sin)
+                <tr>
+		    <th scope="row">{{$sin->id}}</th>
+                    <td>{{$sin->siswa->nama}}</td>
+                    <td>{{$sin->siswa->kelas}}</td>
+                    <td>{{$sin->siswa->jurusan}}</td>
+                    <td>{{$sin->siswa->alamat}}</td>
+                   
+                </tr>
+            @endforeach
          </tbody>
        </table>
      </div>

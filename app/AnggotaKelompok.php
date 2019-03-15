@@ -14,7 +14,7 @@ class AnggotaKelompok extends Model
     
     public function siswa()
     {
-    return $this->belongsTo('App\Siswa');
+    return $this->hasOne('App\Siswa', 'id', 'id_siswa');
     }
 
     public function kelompok()
