@@ -129,5 +129,16 @@ class KelompokController extends Controller
         $siswas = siswa::all();
         $kelompok=Kelompok::findOrfail($id);
         return view('kelompok.tambah', compact('siswas','kelompok'));
-        }
+    }
+
+    public function inview($id)
+    {
+        $kelompok = Kelompok::findOrfail($id);
+
+
+        return view('kelompok.view')->with('kelompok', $kelompok)
+                                 ->with('pembimbing', Pembimbing::all())
+                                 ->with('guru', Guru::all())
+                                 ->with('siswa', Siswa::all());
+    }
 }

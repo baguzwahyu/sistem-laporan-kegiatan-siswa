@@ -14,7 +14,7 @@
         </div>
       @endif
 
-      <form class="form-horizontal form-label-left" action="{{route('store.anggota')}}" method="POST" enctype="multipart/form-data">
+      <form class="form-horizontal form-label-left" action="{{route('store.anggota')}}" method="POST" >
         {{ csrf_field() }}
        
         <div class="col-md-12 col-sm-24 col-xs-24">
