@@ -40,7 +40,7 @@
           </thead>
           <tbody>
             @foreach($kelompok as $key => $sin)
-                <tr>
+                <tr> 
 		    <th scope="row">{{$sin->id}}</th>
                     <td>{{$sin->nama_kelompok}}</td>
                     <td>{{$sin->guru->nama}}</td>
@@ -54,7 +54,7 @@
                     </form>
                     </td>
                     <td>
-                         <a href="{{route('view_kelompok',$sin->id)}}" class="btn btn-success">view</a>
+                         <a href="{{route('kelompok.show',$sin->id)}}" class="btn btn-primary">view</a>
                    </td>
                 </tr>
             @endforeach
