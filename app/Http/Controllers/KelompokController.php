@@ -25,7 +25,8 @@ class KelompokController extends Controller
 
         return view('kelompok.index')->with('kelompok', $kelompok)
                                  ->with('pembimbing', Pembimbing::all())
-                                 ->with('guru', Guru::all());
+                                 ->with('guru', Guru::all())
+                                 ->with('siswa', Siswa::all());
     }
 
      
@@ -108,11 +109,11 @@ class KelompokController extends Controller
 
     public function view_update(Request $request,$id)
     {
-        $kelompok=Kelompok::findOrfail($id);
+        $kelompok=Kelompok::find($id);
 
         $kelompok->update($request->all());
 
-        return redirect('view_kelompok');
+        return redirect('admin/kelompok/{kelompok}');
     }
 
     

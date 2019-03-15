@@ -68,7 +68,7 @@
      <div class="x_content">
 
        <table class="table table-bordered jambo_table">
-         <thead>
+         <thead> 
            <tr>
              <th><h4># Id</h4></th>
              <th><h4>Anggota Kelompok</h4></th>
@@ -94,6 +94,6 @@
      </div>
    </div>
  </div>
- </form>
+
  @endsection
  

@@ -85,6 +85,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'],function(){
     ]);
     Route::post('store/anggota',['as'=>'store.anggota','uses'=>'KelompokController@store_anggota']);
     Route::get('create/anggota/kelompok/{id}',['as'=>'create_anggota','uses'=>'KelompokController@create_anggota']);
+    Route::get('show/anggota',['as'=>'show_anggota','uses'=>'KelompokController@show']);
     Route::get('photo', ['as'=>'photo','uses'=>'UserController@photo']);
     Route::post('update/photo', ['as'=>'update_photo','uses'=>'UserController@photo_upd']);
     Route::get('edit/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
