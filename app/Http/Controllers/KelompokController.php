@@ -16,24 +16,19 @@ class KelompokController extends Controller
     
     public function index()
     {
-        $kelompok = kelompok::with('guru')->get();
-        $kelompok = kelompok::with('pembimbing')->get();
+        // $kelompok = kelompok::with('guru')->get();
+        // $kelompok = kelompok::with('pembimbing')->get();
 
-        return view('kelompok.index',compact('kelompok') );
-    }
-
-    public function view_kelompok($id)
-    {
-        
-
-        $kelompok = Kelompok::find($id);
+        // return view('kelompok.index',compact('kelompok') );
+        $kelompok = Kelompok::all();
 
 
-        return view('kelompok.view')->with('kelompok', $kelompok)
+        return view('kelompok.index')->with('kelompok', $kelompok)
                                  ->with('pembimbing', Pembimbing::all())
                                  ->with('guru', Guru::all());
     }
 
+     
    
     public function create()
     {
@@ -75,18 +70,19 @@ class KelompokController extends Controller
         ]);
 
         $anggota->save();
-        return redirect('admin/view/kelompok/{id}');   
+        return redirect('admin/kelompok/'.$request->get('id_kelompok'));   
     }
 
     
     public function show($id)
     {
         $kelompok = Kelompok::find($id);
+        $anggota = AnggotaKelompok::where('id_kelompok',$id)->get();
 
 
         return view('kelompok.view')->with('kelompok', $kelompok)
                                  ->with('pembimbing', Pembimbing::all())
-                                 ->with('guru', Guru::all());
+                                 ->with('guru', Guru::all())->with('anggota',$anggota);
     }
 
     
